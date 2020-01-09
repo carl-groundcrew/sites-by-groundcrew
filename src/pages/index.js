@@ -16,10 +16,7 @@ class IndexPage extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <p>
-          Hey people{" "}
-          <span role="img" aria-label="wave emoji">
-            👋
-          </span>
+          Websites By Groundcrew 
         </p>
         <Link to="/blog/">
           <Button marginTop="35px">Go to Blog</Button>
