@@ -1,6 +1,6 @@
 backend:
-  name: test-repo
-
+  name: github
+  repo: carl-groundcrew/sites-by-groundcrew
 media_folder: static/assets
 public_folder: assets
 
