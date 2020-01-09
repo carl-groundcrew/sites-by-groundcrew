@@ -8,4 +8,4 @@ This is the content.
 
 And this is some more text. Another Line.
 
-![](assets/archie.png)
+![](assets/mgc.png)
