@@ -5,3 +5,5 @@ title: This is the first post
 description: This is the desc.
 ---
 This is the content.
+
+![](assets/archie.png)
