@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "CommonSans";
+  src: url("../../static/fonts/CommonSans-Regular.woff")   format("woff");
+} 
+
+body {
+	font-family: "CommonSans";
+}
+
+h3 {
+	font-family: "CommonSans";
+}

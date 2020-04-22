@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import { rhythm } from "../utils/typography"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Button from "../components/button"
+//import Button from "../components/button"
 
 class IndexPage extends React.Component {
   render() {
@@ -17,11 +17,13 @@ class IndexPage extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <p>Websites By Groundcrew</p>
+
         <div style={{ margin: "20px 0 40px" }}>
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
               <div key={node.fields.slug}>
+
                 <h3
                   style={{
                     marginBottom: rhythm(1 / 4),
@@ -44,9 +46,7 @@ class IndexPage extends React.Component {
             )
           })}
         </div>
-        <Link to="/blog/">
-          <Button marginTop="35px">Go to Blog</Button>
-        </Link>
+
       </Layout>
     )
   }
