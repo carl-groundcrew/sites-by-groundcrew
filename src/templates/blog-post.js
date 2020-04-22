@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-
+import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
@@ -20,8 +20,9 @@ class BlogPostTemplate extends React.Component {
         />
         <p>{post.frontmatter.title}</p>
       
-        <img src={"/"+post.frontmatter.image} alt={post.frontmatter.title}/> 
-      
+        <img src={'/'+post.frontmatter.image} alt={post.frontmatter.title + "- Featured Shot"} />
+
+         
 
         <MDXRenderer>{post.body}</MDXRenderer>
         <hr
