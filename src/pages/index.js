@@ -18,11 +18,11 @@ class IndexPage extends React.Component {
         />
         <p>Websites By Groundcrew</p>
 
-        <div style={{ margin: "20px 0 40px" }}>
+        <div className="projects" style={{ margin: "20px 0 40px" }}>
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
-              <div key={node.fields.slug}>
+              <div className="single-project" key={node.fields.slug}>
 
                 <h3
                   style={{
@@ -36,7 +36,7 @@ class IndexPage extends React.Component {
                     {title}
                   </Link>
                 </h3>
-                <small>{node.frontmatter.date}</small>
+                 
                 <p
                   dangerouslySetInnerHTML={{
                     __html: node.frontmatter.description || node.excerpt,
