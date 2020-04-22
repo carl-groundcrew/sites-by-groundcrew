@@ -1,11 +1,8 @@
 ---
-path: hello
+path: archie-bolden
 date: 2020-01-09T01:24:44.343Z
-title: This is the first post
-description: This is the desc.
+title: Archie Bolden
+description: Archie Bolden by Groundcrew
+image: assets/archie.png
 ---
-This is the content.
-
-And this is some more text. Another Line.
-
-![](assets/mgc.png)
+Website design and development
