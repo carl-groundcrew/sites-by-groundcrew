@@ -8,7 +8,3 @@ gallery:
   - Test
 ---
 Website design and development
-
-
-
-![](assets/archie.png)
