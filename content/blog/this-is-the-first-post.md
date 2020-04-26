@@ -6,5 +6,7 @@ description: Archie Bolden by Groundcrew
 image: assets/archie.png
 gallery:
   - Test
+mainImages:
+  - assets/archie.png
 ---
 Website design and development
