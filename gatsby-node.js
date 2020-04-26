@@ -1,4 +1,5 @@
 const path = require(`path`)
+const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = ({ graphql, actions }) => {
@@ -54,6 +55,7 @@ exports.createPages = ({ graphql, actions }) => {
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
+  fmImagesToRelative(node)
 
   if (node.internal.type === `Mdx`) {
     const value = createFilePath({ node, getNode })
