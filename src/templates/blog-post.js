@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import Imagery from "../components/imagery"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -17,41 +17,28 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <p>{post.frontmatter.title}</p>
-      
-        <img src={'/'+post.frontmatter.image} alt={post.frontmatter.title + "- Featured Shot"} />
 
-        <MDXRenderer>{post.body}</MDXRenderer>
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
+        <Imagery /> 
 
+        <div style={{ padding: `40px`}}>
+          <p>{post.frontmatter.title}</p>
+          <MDXRenderer>{post.body}</MDXRenderer>
+        </div>
+       
         <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 20,
-          }}
-        >
+          style={{ display: `flex`, flexWrap: `wrap`, justifyContent: `space-between`, listStyle: `none`,  padding:`20px 40px` }}>
           <li>
             {previous && (
-              <Link to={`blog${previous.fields.slug}`} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
+              <Link to={`blog${previous.fields.slug}`} style={{ color: `#000`, boxShadow: `none` }} rel="prev"> ← {previous.frontmatter.title} </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={`blog${next.fields.slug}`} rel="next">
-                {next.frontmatter.title} →
-              </Link>
+              <Link to={`blog${next.fields.slug}`} rel="next" style={{ color: `#000`, boxShadow: `none` }}> {next.frontmatter.title} → </Link>
             )}
           </li>
         </ul>
+
       </Layout>
     )
   }
