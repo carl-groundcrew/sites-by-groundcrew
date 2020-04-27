@@ -21,8 +21,6 @@ class BlogPostTemplate extends React.Component {
       
         <img src={'/'+post.frontmatter.image} alt={post.frontmatter.title + "- Featured Shot"} />
 
-         
-
         <MDXRenderer>{post.body}</MDXRenderer>
         <hr
           style={{
@@ -76,6 +74,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         image
+        anotherImage 
         date(formatString: "MMMM DD, YYYY")
         description
       }
