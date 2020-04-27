@@ -6,4 +6,4 @@ description: Archie Bolden by Groundcrew
 image: assets/archie.png
 secondImage: assets/archie.png
 ---
-Website design and development
+For one night only, style hunters and those alike take the streets of Brisbane for Marie Claire Up Late. We were engaged by James Street to create branding and design for the event’s 8th year.
