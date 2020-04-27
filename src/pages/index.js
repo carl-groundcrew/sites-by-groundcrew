@@ -19,7 +19,7 @@ class IndexPage extends React.Component {
 
        <Banner /> 
 
-        <div className="projects" style={{ margin: "20px" }}>
+        <div className="projects" style={{ margin: "40px" }}>
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
@@ -31,7 +31,7 @@ class IndexPage extends React.Component {
                   }}
                 >
                   <Link
-                    style={{ boxShadow: `none` }}
+                    style={{ boxShadow: `none`, color:`#000`  }}
                     to={`blog${node.fields.slug}`}
                   >
                     {title}
