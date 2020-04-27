@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { rhythm } from "../utils/typography"
 import Layout from "../components/layout"
+import Bio from "../components/bio"
 import SEO from "../components/seo"
 //import Button from "../components/button"
 
@@ -17,6 +18,8 @@ class IndexPage extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <p>Websites By Groundcrew</p>
+
+       <Bio/> 
 
         <div className="projects" style={{ margin: "20px 0 40px" }}>
           {posts.map(({ node }) => {
