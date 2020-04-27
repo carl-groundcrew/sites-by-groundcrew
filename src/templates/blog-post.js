@@ -76,7 +76,6 @@ export const pageQuery = graphql`
       frontmatter {
         title
         image
-        mainImage
         date(formatString: "MMMM DD, YYYY")
         description
       }
