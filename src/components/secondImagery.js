@@ -7,10 +7,10 @@ import { StaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 import styled from "styled-components"
 
-function Imagery() {
+function secondImagery() {
   return (
     <StaticQuery
-      query={imageQuery}
+      query={secondQuery}
       render={data => {
         const { author } = data.site.siteMetadata
         return (
@@ -72,37 +72,37 @@ function Imagery() {
   )
 }
 
-const imageQuery = graphql`
-  query imageQuery {
-    hero: file(absolutePath: { regex: "/one.jpg/" }) { 
+const secondQuery = graphql`
+  query secondQuery {
+    hero: file(absolutePath: { regex: "/six.jpg/" }) { 
       childImageSharp {
         fluid(maxWidth: 1600, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
-    cherub: file(absolutePath: { regex: "/two.jpg/" }) {  
+    cherub: file(absolutePath: { regex: "/seven.jpg/" }) {  
       childImageSharp {
         fluid(maxWidth: 1600, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
-    redvets: file(absolutePath: { regex: "/three.jpg/" }) { 
+    redvets: file(absolutePath: { regex: "/eight.jpg/" }) { 
       childImageSharp {
         fluid(maxWidth: 1600, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
-    notion: file(absolutePath: { regex: "/four.jpg/" }) { 
+    notion: file(absolutePath: { regex: "/nine.jpg/" }) { 
       childImageSharp {
         fluid(maxWidth: 1600, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
-    plantpeople: file(absolutePath: { regex: "/five.jpg/" }) { 
+    plantpeople: file(absolutePath: { regex: "/ten.jpg/" }) { 
       childImageSharp {
         fluid(maxWidth: 1600, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp
@@ -121,4 +121,4 @@ const Container = styled.div`
   display: flex;
 `
 
-export default Imagery
+export default secondImagery

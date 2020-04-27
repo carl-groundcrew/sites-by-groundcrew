@@ -4,12 +4,26 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Imagery from "../components/imagery"
+import Second from "../components/secondImagery"
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
+    let Images
+    Images = (
+        <Imagery /> 
+    )
+    if (post.frontmatter.title === 'Archie Bolden') {
+      Images = (
+        <Imagery /> 
+      )
+    } else {
+      Images = (
+        <Second /> 
+      )
+    }
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -18,7 +32,7 @@ class BlogPostTemplate extends React.Component {
           description={post.frontmatter.description || post.excerpt}
         />
 
-        <Imagery /> 
+        {Images}
 
         <div style={{ padding: `40px`, maxWidth: `700px`}}>
           <p>{post.frontmatter.title}</p>
