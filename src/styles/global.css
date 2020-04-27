@@ -10,6 +10,8 @@ body {
 
 h3 {
 	font-family: "CommonSans";
+	-webkit-font-smoothing: antialiased;
+	font-weight: 100;
 }
 
 p {

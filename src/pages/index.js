@@ -39,6 +39,7 @@ class IndexPage extends React.Component {
                 </h3>
                  
                 <p
+                  style={{ boxShadow: `none`, color:`#000`  }}
                   dangerouslySetInnerHTML={{
                     __html: node.frontmatter.description || node.excerpt,
                   }}
