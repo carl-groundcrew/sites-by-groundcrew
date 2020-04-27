@@ -6,7 +6,7 @@ public_folder: assets
 
 collections:
   - name: blog
-    label: Blog
+    label: Projects
     folder: content/blog
     create: true
     fields:
@@ -16,5 +16,5 @@ collections:
       - { name: description, label: Description }
       - { name: body, label: Body, widget: markdown }
       - { name: image, label: Thumbnail, widget: image}
-      - { name: mainImage, label: Main Image, widget: image}
-
+      - { name: mainImage, label: Gallery Image, widget: image}
+     

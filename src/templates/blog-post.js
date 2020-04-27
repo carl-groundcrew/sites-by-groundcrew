@@ -19,7 +19,9 @@ class BlogPostTemplate extends React.Component {
         />
         <p>{post.frontmatter.title}</p>
       
-        <img src={'/'+post.frontmatter.image} alt={post.frontmatter.title + " - Project Image"} />
+        <img src={'/'+post.frontmatter.image} alt={post.frontmatter.title + "- Featured Shot"} />
+
+         
 
         <MDXRenderer>{post.body}</MDXRenderer>
         <hr
@@ -72,9 +74,9 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       body
       frontmatter {
-        image 
+        title
+        image
         mainImage
-        title 
         date(formatString: "MMMM DD, YYYY")
         description
       }
