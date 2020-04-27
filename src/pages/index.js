@@ -2,9 +2,8 @@ import React from "react"
 import { Link } from "gatsby"
 import { rhythm } from "../utils/typography"
 import Layout from "../components/layout"
-import Bio from "../components/bio"
+import Banner from "../components/banner"
 import SEO from "../components/seo"
-//import Button from "../components/button"
 
 class IndexPage extends React.Component {
   render() {
@@ -19,7 +18,7 @@ class IndexPage extends React.Component {
         />
         <p>Websites By Groundcrew</p>
 
-       <Bio/> 
+       <Banner /> 
 
         <div className="projects" style={{ margin: "20px 0 40px" }}>
           {posts.map(({ node }) => {
