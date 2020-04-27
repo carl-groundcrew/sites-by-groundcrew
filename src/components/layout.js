@@ -8,27 +8,11 @@ class Layout extends React.Component {
     let header
 
     header = (
-      <p
-        style={{
-          padding: 20,
-          margin: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          <img src={'/assets/logo.svg'} alt="Logo" style={{
-            width: `120px`,
-            textDecoration: `none`,
-            color: `inherit`,
-          }} />
-        </Link>
-      </p>
+        <p style={{  margin: 0 }} >
+          <Link style={{boxShadow: `none`, textDecoration: `none`, color: `inherit` }} to={`/`}>
+            <img src={'/assets/logo.svg'} alt="Logo" style={{ width: `120px` }} />
+          </Link>
+        </p>
     )
 
     return (
@@ -39,7 +23,10 @@ class Layout extends React.Component {
             marginRight: `auto`,
           }}
         >
-          <header>{header}</header>
+          <Header>
+            {header}
+            <img src={'/assets/menu.svg'} alt="Menu" style={{ width: `25px`, cursor:`pointer`, margin:`auto`, marginRight:`0px`}} />
+          </Header>
           <main>{children}</main>
         </div>
         <Footer style={{
@@ -52,6 +39,11 @@ class Layout extends React.Component {
     )
   }
 }
+
+const Header = styled.div`
+ display: flex;
+ padding:20px;
+`
 
 const Wrapper = styled.div`
   min-height: 100vh;
