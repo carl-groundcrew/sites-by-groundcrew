@@ -34,7 +34,7 @@ class BlogPostTemplate extends React.Component {
             flexWrap: `wrap`,
             justifyContent: `space-between`,
             listStyle: `none`,
-            padding: 0,
+            padding: 20,
           }}
         >
           <li>
@@ -74,7 +74,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         image
-        anotherImage 
+        anotherImage
         date(formatString: "MMMM DD, YYYY")
         description
       }

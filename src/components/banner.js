@@ -78,35 +78,35 @@ const bannerQuery = graphql`
   query bannerQuery {
     hero: file(absolutePath: { regex: "/hero.jpg/" }) { 
       childImageSharp {
-        fluid(maxWidth: 2000, quality: 100) {
+        fluid(maxWidth: 1600, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     cherub: file(absolutePath: { regex: "/cherub.jpg/" }) { 
       childImageSharp {
-        fluid(maxWidth: 2000, quality: 100) {
+        fluid(maxWidth: 1600, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     redvets: file(absolutePath: { regex: "/redvets.jpg/" }) { 
       childImageSharp {
-        fluid(maxWidth: 2000, quality: 100) {
+        fluid(maxWidth: 1600, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     notion: file(absolutePath: { regex: "/notion.jpg/" }) { 
       childImageSharp {
-        fluid(maxWidth: 2000, quality: 100) {
+        fluid(maxWidth: 1600, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     plantpeople: file(absolutePath: { regex: "/plant-people.jpg/" }) { 
       childImageSharp {
-        fluid(maxWidth: 2000, quality: 100) {
+        fluid(maxWidth: 1600, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }

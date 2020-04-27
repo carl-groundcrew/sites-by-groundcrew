@@ -2,57 +2,35 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-import { rhythm, scale } from "../utils/typography"
-
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    const blogPath = `${__PATH_PREFIX__}/blog/`
+    const { children } = this.props
     let header
 
-    if (location.pathname === rootPath || location.pathname === blogPath) {
-      header = (
-        <p
+    header = (
+      <p
+        style={{
+          padding: 20,
+          margin: 0,
+        }}
+      >
+        <Link
           style={{
-            ...scale(1),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
+            boxShadow: `none`,
+            textDecoration: `none`,
+            color: `inherit`,
           }}
+          to={`/`}
         >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={location.pathname === blogPath ? `/blog/` : `/`}
-          >
-            {title}
-          </Link>
-        </p>
-      )
-    } else {
-      header = (
-        <p
-          style={{
-            fontSize:'2.5rem',
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/blog/`}
-          >
-            {title}
-          </Link>
-        </p>
-      )
-    }
+          <img src={'/assets/logo.svg'} alt="Logo" style={{
+            width: `120px`,
+            textDecoration: `none`,
+            color: `inherit`,
+          }} />
+        </Link>
+      </p>
+    )
+
     return (
       <Wrapper>
         <div
@@ -64,10 +42,11 @@ class Layout extends React.Component {
           <header>{header}</header>
           <main>{children}</main>
         </div>
-        <Footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        <Footer style={{
+            textAlign: `left`,
+            opacity: `0.4`,
+          }} >
+          © {new Date().getFullYear()} Groundcrew Agency Pty Ltd
         </Footer>
       </Wrapper>
     )

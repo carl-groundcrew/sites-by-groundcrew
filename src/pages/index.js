@@ -16,11 +16,10 @@ class IndexPage extends React.Component {
           title="Home"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        <p>Websites By Groundcrew</p>
 
        <Banner /> 
 
-        <div className="projects" style={{ margin: "20px 0 40px" }}>
+        <div className="projects" style={{ margin: "20px  40px" }}>
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
