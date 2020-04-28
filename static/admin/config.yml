@@ -1,6 +1,7 @@
 backend:
-  name: github
-  repo: carl-groundcrew/sites-by-groundcrew
+  name: git-gateway
+  branch: master
+  
 media_folder: static/assets
 public_folder: assets
 
