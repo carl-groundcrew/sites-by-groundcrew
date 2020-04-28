@@ -32,7 +32,7 @@ class IndexPage extends React.Component {
                 >
                   <Link
                     style={{ boxShadow: `none`, color:`#000`  }}
-                    to={`blog${node.fields.slug}`}
+                    to={`project${node.fields.slug}`}
                   >
                     {title}
                   </Link>
@@ -63,7 +63,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+     allMdx(filter: {fileAbsolutePath: {regex: "/projects/"}}) {
       edges {
         node {
           excerpt
