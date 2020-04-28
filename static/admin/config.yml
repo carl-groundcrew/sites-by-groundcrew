@@ -5,8 +5,30 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
-  - name: blog
+  - name: projects
     label: Projects
+    folder: content/projects 
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: date }
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: body, label: Body, widget: markdown }
+      - { name: image, label: Thumbnail, widget: image} 
+  - name: Pages
+    label: Pages
+    folder: content/pages 
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: date }
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: body, label: Body, widget: markdown }
+      - { name: image, label: Thumbnail, widget: image} 
+  - name: blog
+    label: Blog
     folder: content/blog
     create: true
     fields:
@@ -15,5 +37,4 @@ collections:
       - { name: title, label: Title }
       - { name: description, label: Description }
       - { name: body, label: Body, widget: markdown }
-      - { name: image, label: Thumbnail, widget: image}   
-      - { name: secondImage, label: Image, widget: image}     
+      - { name: image, label: Thumbnail, widget: image} 
