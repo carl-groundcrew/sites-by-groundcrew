@@ -1,9 +1,8 @@
 ---
-path: archie-bolden
+path: brand-language
 date: 2020-01-09T01:24:44.343Z
-title: Archie Bolden
-description: Archie Bolden by Groundcrew
+title: Decoding Brand Language
+description: Article By Groundcrew
 image: assets/archie.png
-secondImage: assets/archie.png
 ---
-For one night only, style hunters and those alike take the streets of Brisbane for Marie Claire Up Late. We were engaged by James Street to create branding and design for the event’s 8th year.
+With all the brand jargon currently floating around it’s no wonder the world’s confused. I mean honestly, we’ve got more industry specific terms than a cat has lives. Look do yourself a favour, pop the kettle on, sit down and we’ll break it all down for you.
