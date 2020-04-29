@@ -16,7 +16,12 @@ class IndexPage extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
 
-        <Image fluid={data.hero.childImageSharp.fluid} alt="Hero Image - Groundcrew" /> 
+        <div class="image-wrapper" style={{backgroundColor:`#351f44`}}>
+          <Image fluid={data.hero.childImageSharp.fluid} alt="Hero Image - Groundcrew" /> 
+        </div>
+        <div class="intro" style={{  padding:`40px`, marginBottom:`150px`}}> 
+          <h3>We’re Groundcrew <span class="freight">a boutique and independent  <br/>brand and digital design studio based in Newstead, Brisbane.</span></h3>
+        </div>
 
         <div className="projects">
           {posts.map(({ node }) => {

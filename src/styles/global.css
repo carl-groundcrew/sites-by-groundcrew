@@ -2,6 +2,10 @@
   font-family: "CommonSans";
   src: url("../../static/fonts/CommonSans-Regular.woff")   format("woff");
 } 
+@font-face {
+  font-family: "FreightBigPro";
+  src: url("../../static/fonts/Freight-BigLight.woff")   format("woff");
+} 
 
 body {
 	font-family: "CommonSans";
@@ -12,6 +16,16 @@ h3 {
 	font-family: "CommonSans";
 	-webkit-font-smoothing: antialiased;
 	font-weight: 100;
+	margin: 0px;
+	font-size: 36px;
+	line-height: 1.35;
+}
+h3 .freight {
+	font-size: 42px;
+} 
+
+.freight {
+	font-family: "FreightBigPro";
 }
 
 p {
