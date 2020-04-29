@@ -29,7 +29,7 @@ class Layout extends React.Component {
           </Header>
           <main>{children}</main>
         </div>
-        <Footer>
+        <Footer style={{ marginTop: `40px`}}>
           <p style={{ textAlign: `left`, opacity: `0.4`, margin:0 }}>
             © {new Date().getFullYear()} Groundcrew Agency Pty Ltd
           </p> 

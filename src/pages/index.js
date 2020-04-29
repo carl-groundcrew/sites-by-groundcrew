@@ -23,7 +23,7 @@ class IndexPage extends React.Component {
           <h3>We’re Groundcrew <span class="freight">a boutique and independent  <br/>brand and digital design studio based in Newstead, Brisbane.</span></h3>
         </div>
 
-        <div className="projects">
+        <div className="projects" style={{ paddingBottom:`40px`}}>
           {posts.map(({ node }) => {
             return (
               <div className="single-project" key={node.fields.slug}>
