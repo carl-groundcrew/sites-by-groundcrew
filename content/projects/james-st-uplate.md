@@ -1,6 +1,6 @@
 ---
 path: uplate
-date: 2020-04-29T10:52:42.970Z
+date: 2020-04-28T14:00:00.000Z
 title: James St Uplate
 description: Design and Development
 image: assets/hero.jpg
