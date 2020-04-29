@@ -1,8 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import { rhythm } from "../utils/typography"
 import Layout from "../components/layout"
-import Banner from "../components/banner"
+import Image from "gatsby-image"
 import SEO from "../components/seo"
 
 class IndexPage extends React.Component {
@@ -17,33 +16,18 @@ class IndexPage extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
 
-       <Banner /> 
+        <Image fluid={data.hero.childImageSharp.fluid} alt="Hero Image - Groundcrew" /> 
 
-        <div className="projects" style={{ margin: "40px" }}>
+        <div className="projects">
           {posts.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug
             return (
               <div className="single-project" key={node.fields.slug}>
 
-                <h3
-                  style={{
-                    marginBottom: rhythm(1 / 4),
-                  }}
-                >
-                  <Link
-                    style={{ boxShadow: `none`, color:`#000`  }}
-                    to={`project${node.fields.slug}`}
-                  >
-                    {title}
-                  </Link>
-                </h3>
-                 
-                <p
-                  style={{ boxShadow: `none`, color:`#000`  }}
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
-                  }}
-                />
+                <Link style={{ boxShadow: `none`, color:`#000`  }} to={`project${node.fields.slug}`}>
+                    <Image
+                      fluid={node.frontmatter.image.childImageSharp.fluid}
+                      alt={node.frontmatter.title}/> 
+                </Link>
               </div>
             )
           })}
@@ -63,7 +47,14 @@ export const pageQuery = graphql`
         title
       }
     }
-     allMdx(filter: {fileAbsolutePath: {regex: "/projects/"}}) {
+    hero: file(relativePath: { eq: "hero.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1600, quality: 90) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
+    allMdx(filter: {fileAbsolutePath: {regex: "/projects/"}}) {
       edges {
         node {
           excerpt
@@ -73,6 +64,13 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            image {
+              childImageSharp {
+                fluid(maxWidth: 1600, quality: 90) {
+                  ...GatsbyImageSharpFluid_withWebp_noBase64
+                }
+              }
+            }
             description
           }
         }

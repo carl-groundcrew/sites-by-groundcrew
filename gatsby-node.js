@@ -88,7 +88,7 @@ exports.createPages = ({ graphql, actions }) => {
     return null
   })
 }
-
+ 
 exports.onCreateNode = ({ node, actions, getNode }) => {
     const { createNodeField } = actions;
     fmImagesToRelative(node);

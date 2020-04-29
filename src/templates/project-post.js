@@ -3,27 +3,13 @@ import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Imagery from "../components/imagery"
-import Second from "../components/secondImagery"
+import Image from "gatsby-image"
 
 class ProjectPostTemplate extends React.Component {
   render() {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
-    let Images
-    Images = (
-        <Imagery /> 
-    )
-    if (post.frontmatter.title === 'Archie Bolden') {
-      Images = (
-        <Imagery /> 
-      )
-    } else {
-      Images = (
-        <Second /> 
-      )
-    }
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -31,9 +17,17 @@ class ProjectPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        {Images}
+       
+        <Image
+          fluid={post.frontmatter.image.childImageSharp.fluid}
+          alt="Groundcrew"
+          style={{
+            marginBottom: 0,
+            width: '100%',
+          }}
+        /> 
 
-        <div style={{ padding: `40px`, maxWidth: `700px`}}>
+        <div style={{ padding: `40px`, maxWidth: `100%`}}>
           <p>{post.frontmatter.title}</p>
           <MDXRenderer>{post.body}</MDXRenderer>
         </div>
@@ -73,7 +67,13 @@ export const pageQuery = graphql`
       body
       frontmatter {
         title
-        image
+        image {
+          childImageSharp {
+            fluid(maxWidth: 1600, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp_noBase64
+            }
+          }
+        }
         date(formatString: "MMMM DD, YYYY")
         description
       }

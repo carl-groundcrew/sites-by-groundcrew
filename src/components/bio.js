@@ -19,7 +19,7 @@ function Bio() {
         return (
           <Container>
             <Image
-              fluid={data.avatar.childImageSharp.fluid}
+              fluid={data.hero.childImageSharp.fluid}
               alt={author}
               style={{
                 marginBottom: 0,
@@ -35,10 +35,10 @@ function Bio() {
 
 const bioQuery = graphql`
   query BioQuery {
-    avatar: file(absolutePath: { regex: "/hero.jpg/" }) { 
+    hero: file(relativePath: { eq: "mgc.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1600, quality: 100) {
-          ...GatsbyImageSharpFluid
+        fluid(maxWidth: 1600, maxHeight: 800) {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

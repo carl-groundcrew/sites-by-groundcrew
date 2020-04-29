@@ -1,3 +1,10 @@
+var netlifyCmsPaths = {
+  resolve: `gatsby-plugin-netlify-cms-paths`,
+  options: {
+    cmsConfig: `/static/admin/config.yml`,
+  },
+}
+
 module.exports = {
   siteMetadata: {
     // edit below
@@ -6,17 +13,30 @@ module.exports = {
     description: `Websites by Groundcrew`,
     siteUrl: `https://sites-by-groundcrew.netlify.com`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `groundcrew.com.au`,
     },
   },
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-feed-mdx`,
+    {
+        resolve: `gatsby-source-filesystem`,
+        options: {
+            path: `${__dirname}/static/assets`,
+            name: 'images',
+        },
+    },
+    {
+        resolve: `gatsby-source-filesystem`,
+        options: {
+            path: `${__dirname}/static/assets`,
+            name: 'assets',
+        },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -31,35 +51,17 @@ module.exports = {
         name: `project`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`,
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-          plugins: [
-              {
-                  resolve: `gatsby-remark-images`,
-                  options: {
-                      maxWidth: 590,
-                  },
-              },
-          ],
-      },
-    },
+    netlifyCmsPaths,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [".mdx", ".md"],
         gatsbyRemarkPlugins: [
+          netlifyCmsPaths,
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 1200,
             },
           },
           {
@@ -81,13 +83,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        // edit below
-        // trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Gatsby Starter Blog`,
@@ -106,5 +101,6 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    `gatsby-plugin-netlify-cms`,
   ],
 }
