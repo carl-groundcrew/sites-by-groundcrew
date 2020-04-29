@@ -76,36 +76,36 @@ const imageQuery = graphql`
   query imageQuery {
     hero: file(absolutePath: { regex: "/one.jpg/" }) { 
       childImageSharp {
-        fluid(maxWidth: 1600, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
+        fluid(maxWidth: 1600, quality: 90) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
     }
     cherub: file(absolutePath: { regex: "/two.jpg/" }) {  
       childImageSharp {
-        fluid(maxWidth: 1600, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
+        fluid(maxWidth: 1600, quality: 90) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
     }
     redvets: file(absolutePath: { regex: "/three.jpg/" }) { 
       childImageSharp {
-        fluid(maxWidth: 1600, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
+        fluid(maxWidth: 1600, quality: 90) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
     }
     notion: file(absolutePath: { regex: "/four.jpg/" }) { 
       childImageSharp {
-        fluid(maxWidth: 1600, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
+        fluid(maxWidth: 1600, quality: 90) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
     }
     plantpeople: file(absolutePath: { regex: "/five.jpg/" }) { 
       childImageSharp {
-        fluid(maxWidth: 1600, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
+        fluid(maxWidth: 1600, quality: 90) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
     }
