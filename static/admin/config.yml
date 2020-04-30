@@ -26,6 +26,7 @@ collections:
       - { name: description, label: Description }
       - { name: body, label: Body, widget: markdown }
       - { name: image, label: Feature Image, widget: image} 
+      - { name: projectImage1, label: Project Image 1, optional: true, widget: image} 
   - name: blog
     label: Blog
     folder: content/blog
