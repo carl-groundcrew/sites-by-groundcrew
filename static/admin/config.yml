@@ -25,8 +25,8 @@ collections:
       - { name: title, label: Title }
       - { name: description, label: Description }
       - { name: body, label: Body, widget: markdown }
-      - { name: collaborations, label: Collaborations, widget: list }
-      - { name: website, label: Website }
+      - { name: collaborations, label: Collaborations, widget: list, required: false }
+      - { name: website, label: Website, required: false, }
       - { name: color, label: Project Color }
       - { name: image, label: Feature Image, widget: image} 
       - { name: projectImage1, label: Project Image 1, required: false, widget: image}
