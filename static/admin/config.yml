@@ -36,4 +36,4 @@ collections:
       - { name: title, label: Title }
       - { name: description, label: Description }
       - { name: body, label: Body, widget: markdown }
-      - { name: image, label: Thumbnail, widget: image} 
+      - { name: image, label: Feature Image, widget: image} 
