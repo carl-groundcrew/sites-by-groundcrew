@@ -3,6 +3,7 @@ path: plant-people
 date: 2020-04-30T02:43:01.258Z
 title: Plant People
 description: The Plant People
+color: '#3d5f46'
 image: assets/plantpeople.jpg
 projectImage1: assets/plantpeople-1.png
 projectImage2: assets/plantpeople-2.png
