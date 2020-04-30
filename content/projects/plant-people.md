@@ -15,6 +15,6 @@ projectImage4: assets/plantpeople-4.png
 projectImage5: assets/plantpeople-5.png
 projectImage6: assets/plantpeople.jpg
 ---
-### For one night only, style hunters and those alike take the streets of Brisbane for Marie Claire Up Late. We were engaged by James Street to create branding and design for the event’s 8th year.
+### Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
 Lorem ipsum - dolor amet
