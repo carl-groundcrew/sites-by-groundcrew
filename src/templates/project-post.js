@@ -17,6 +17,7 @@ class ProjectPostTemplate extends React.Component {
           description={post.frontmatter.description || post.excerpt}
         />
        
+        {!post.frontmatter.projectImage1 && (
         <Image
           fluid={post.frontmatter.image.childImageSharp.fluid}
           alt="Groundcrew"
@@ -24,7 +25,8 @@ class ProjectPostTemplate extends React.Component {
             marginBottom: 0,
             width: '100%',
           }}
-        /> 
+        />
+        )} 
         
         {post.frontmatter.projectImage1 && (
         <Image
@@ -32,7 +34,7 @@ class ProjectPostTemplate extends React.Component {
           alt="Groundcrew"
           style={{ marginBottom: 0,  width: '100%', }} 
         />
-        )}
+        )} 
 
         {post.frontmatter.projectImage2 && (
         <Image
