@@ -15,6 +15,6 @@ projectImage4: assets/cherub-3.jpg
 projectImage5: assets/cherub-4.jpg
 projectImage6: assets/cherub.jpg
 ---
-### Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+### Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
 Penny Baldas – Cherub Sydney
