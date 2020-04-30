@@ -1,6 +1,6 @@
 ---
 path: uplate
-date: 2020-04-28T14:00:00.000Z
+date: 2020-04-29T14:00:00.000Z
 title: James St Uplate
 description: Design and Development
 collaborations:
