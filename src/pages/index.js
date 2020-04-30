@@ -20,7 +20,7 @@ class IndexPage extends React.Component {
           <Image fluid={data.hero.childImageSharp.fluid} alt="Hero Image - Groundcrew" /> 
         </div>
         <div class="intro" style={{  padding:`40px`, marginBottom:`150px`}}> 
-          <h3>We’re Groundcrew <span class="freight">a boutique and independent  <br/>brand and digital design studio based in Newstead, Brisbane.</span></h3>
+          <h3><span class="common">We’re Groundcrew</span> a boutique and independent  <br/>brand and digital design studio based in Newstead, Brisbane.</h3>
         </div>
 
         <div className="projects" style={{ paddingBottom:`40px`}}>
