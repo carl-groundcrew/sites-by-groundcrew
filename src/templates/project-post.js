@@ -16,31 +16,25 @@ class ProjectPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-       
-        {!post.frontmatter.projectImage1 && (
-        <Image
-          fluid={post.frontmatter.image.childImageSharp.fluid}
-          alt="Groundcrew"
-          style={{
-            marginBottom: 0,
-            width: '100%',
-          }}
-        />
-        )} 
         
-        {post.frontmatter.projectImage1 && (
-        <Image
-          fluid={post.frontmatter.projectImage1.childImageSharp.fluid}
-          alt="Groundcrew"
-          style={{ marginBottom: 0,  width: '100%', }} 
-        />
-        )} 
+        <div class="image-wrapper" style={{backgroundColor:`#666`}}>
+          {!post.frontmatter.projectImage1 && (
+            <Image
+            fluid={post.frontmatter.image.childImageSharp.fluid}
+            alt="Project Image" style={{ width: '100%'}} />
+          )}        
+          {post.frontmatter.projectImage1 && (
+            <Image
+            fluid={post.frontmatter.projectImage1.childImageSharp.fluid}
+            alt="Groundcrew" style={{ width: '100%', }}  />
+          )} 
+        </div>
 
         {post.frontmatter.projectImage2 && (
         <Image
           fluid={post.frontmatter.projectImage2.childImageSharp.fluid}
           alt="Groundcrew"
-          style={{ marginBottom: 0,  width: '100%', }} 
+          style={{ width: '100%', }} 
         />
         )}
 
@@ -48,7 +42,7 @@ class ProjectPostTemplate extends React.Component {
         <Image
           fluid={post.frontmatter.projectImage3.childImageSharp.fluid}
           alt="Groundcrew"
-          style={{ marginBottom: 0,  width: '100%', }} 
+          style={{ width: '100%', }} 
         />
         )}
 
@@ -56,7 +50,7 @@ class ProjectPostTemplate extends React.Component {
         <Image
           fluid={post.frontmatter.projectImage4.childImageSharp.fluid}
           alt="Groundcrew"
-          style={{ marginBottom: 0,  width: '100%', }} 
+          style={{  width: '100%', }} 
         />
         )}
 
@@ -64,7 +58,7 @@ class ProjectPostTemplate extends React.Component {
         <Image
           fluid={post.frontmatter.projectImage5.childImageSharp.fluid}
           alt="Groundcrew"
-          style={{ marginBottom: 0,  width: '100%', }} 
+          style={{ width: '100%', }} 
         />
         )}
 
@@ -72,7 +66,7 @@ class ProjectPostTemplate extends React.Component {
         <Image
           fluid={post.frontmatter.projectImage6.childImageSharp.fluid}
           alt="Groundcrew"
-          style={{ marginBottom: 0,  width: '100%', }} 
+          style={{ width: '100%', }} 
         />
         )}
 
@@ -119,49 +113,49 @@ export const pageQuery = graphql`
         image {
           childImageSharp {
             fluid(maxWidth: 1600, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp_noBase64
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
         projectImage1 {
           childImageSharp {
             fluid(maxWidth: 1600, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp_noBase64
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
         projectImage2 {
           childImageSharp {
             fluid(maxWidth: 1600, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp_noBase64
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
         projectImage3 {
           childImageSharp {
             fluid(maxWidth: 1600, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp_noBase64
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
         projectImage4 {
           childImageSharp {
             fluid(maxWidth: 1600, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp_noBase64
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
         projectImage5 {
           childImageSharp {
             fluid(maxWidth: 1600, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp_noBase64
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
         projectImage6 {
           childImageSharp {
             fluid(maxWidth: 1600, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp_noBase64
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
