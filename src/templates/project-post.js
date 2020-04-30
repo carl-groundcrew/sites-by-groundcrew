@@ -17,7 +17,7 @@ class ProjectPostTemplate extends React.Component {
           description={post.frontmatter.description || post.excerpt}
         />
         
-        <div style={{backgroundColor:`#000`}}>
+        <div style={{backgroundColor:`${post.frontmatter.color}`}}>
           {!post.frontmatter.projectImage1 && (
             <Image
             fluid={post.frontmatter.image.childImageSharp.fluid}
@@ -109,6 +109,7 @@ export const pageQuery = graphql`
       body
       frontmatter {
         title
+        color
         image {
           childImageSharp {
             fluid(maxWidth: 1600, quality: 90) {
