@@ -29,11 +29,11 @@ class Layout extends React.Component {
           </Header>
           <main>{children}</main>
         </div>
-        <Footer style={{ marginTop: `40px`}}>
-          <p style={{ textAlign: `left`, opacity: `0.4`, margin:0 }}>
+        <Footer className="flex" style={{ marginTop: `40px`}}>
+          <p className="m-100" style={{ textAlign: `left`, opacity: `0.4`, margin:0 }}>
             © {new Date().getFullYear()} Groundcrew Agency Pty Ltd
           </p> 
-          <p style={{ margin:`auto`, marginRight: `0px`}}>
+          <p className="m-100" style={{ margin:`auto`, marginRight: `0px`}}>
             <a style={{ textDecoration:`none`, boxShadow:`none`, color: `#000`, marginRight:`30px`}} href="https://www.facebook.com/groundcrew.com.au">Facebook</a>
             <a style={{ textDecoration:`none`, boxShadow:`none`, color: `#000`}}  href="https://www.instagram.com/groundcrew.com.au">Instagram</a>
           </p>
@@ -53,7 +53,6 @@ const Wrapper = styled.div`
 `
 
 const Footer = styled.footer`
-  display:flex;
   text-align: center;
   margin: 20px 40px;
 `

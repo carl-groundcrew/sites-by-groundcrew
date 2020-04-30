@@ -16,11 +16,11 @@ class IndexPage extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
 
-        <div class="image-wrapper" style={{backgroundColor:`#351f44`}}>
+        <div className="image-wrapper" style={{backgroundColor:`#351f44`}}>
           <Image fluid={data.hero.childImageSharp.fluid} alt="Hero Image - Groundcrew" /> 
         </div>
-        <div class="intro" style={{  padding:`40px`, marginBottom:`150px`}}> 
-          <h3><span class="common">We’re Groundcrew</span> a boutique and independent  <br/>brand and digital design studio based in Newstead, Brisbane.</h3>
+        <div className="intro" style={{  padding:`40px`, marginBottom:`150px`, maxWidth:`900px`}}> 
+          <h3><span className="common">We’re Groundcrew</span> a boutique and independent  brand and digital design studio based in Newstead, Brisbane.</h3>
         </div>
 
         <div className="projects" style={{ paddingBottom:`40px`}}>
@@ -29,7 +29,7 @@ class IndexPage extends React.Component {
               <div className="single-project" key={node.fields.slug}>
 
                 <Link style={{ boxShadow: `none`, color:`#000`  }} to={`project${node.fields.slug}`}>
-                    <Image
+                    <Image style={{backgroundColor:`${node.frontmatter.color}`}}
                       fluid={node.frontmatter.image.childImageSharp.fluid}
                       alt={node.frontmatter.title}/> 
                 </Link>
@@ -71,6 +71,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            color
             image {
               childImageSharp {
                 fluid(maxWidth: 1600, quality: 90) {

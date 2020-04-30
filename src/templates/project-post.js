@@ -70,8 +70,25 @@ class ProjectPostTemplate extends React.Component {
         />
         )}
 
-        <div style={{ padding: `40px`, maxWidth: `800px`}}>
-          <MDXRenderer>{post.body}</MDXRenderer>
+        <div className="flex pb20 bb1" style={{ padding: `40px`}}>
+          <div className="half pr1 br1" style={{ paddingBottom: `150px`}}>
+
+            <MDXRenderer>{post.body}</MDXRenderer>
+          </div>
+          <div className="half pl1">
+            {post.frontmatter.collaborations && (
+              <div>
+                <p className="black mb0">Collaborations</p>
+                <p>{post.frontmatter.collaborations}</p>
+              </div>
+            )}
+            {post.frontmatter.website && (
+              <div>
+                <p className="black mb0">View Website</p>
+                <p><a href={post.frontmatter.website}  rel="noopener noreferrer" style={{ color: `#9e9e9e` }} target="_blank">{post.frontmatter.website}</a></p>
+              </div>
+            )}
+          </div>
         </div>
        
         <ul
@@ -110,6 +127,8 @@ export const pageQuery = graphql`
       frontmatter {
         title
         color
+        collaborations
+        website
         image {
           childImageSharp {
             fluid(maxWidth: 1600, quality: 90) {
