@@ -127,35 +127,35 @@ export const pageQuery = graphql`
         projectImage2 {
           childImageSharp {
             fluid(maxWidth: 1600, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
           }
         }
         projectImage3 {
           childImageSharp {
             fluid(maxWidth: 1600, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
           }
         }
         projectImage4 {
           childImageSharp {
             fluid(maxWidth: 1600, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
           }
         }
         projectImage5 {
           childImageSharp {
             fluid(maxWidth: 1600, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
           }
         }
         projectImage6 {
           childImageSharp {
             fluid(maxWidth: 1600, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
           }
         }
