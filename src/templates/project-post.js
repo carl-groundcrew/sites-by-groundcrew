@@ -34,6 +34,38 @@ class ProjectPostTemplate extends React.Component {
         />
         )}
 
+        {post.frontmatter.projectImage2 && (
+        <Image
+          fluid={post.frontmatter.projectImage2.childImageSharp.fluid}
+          alt="Groundcrew"
+          style={{ marginBottom: 0,  width: '100%', }} 
+        />
+        )}
+
+        {post.frontmatter.projectImage3 && (
+        <Image
+          fluid={post.frontmatter.projectImage3.childImageSharp.fluid}
+          alt="Groundcrew"
+          style={{ marginBottom: 0,  width: '100%', }} 
+        />
+        )}
+
+        {post.frontmatter.projectImage4 && (
+        <Image
+          fluid={post.frontmatter.projectImage4.childImageSharp.fluid}
+          alt="Groundcrew"
+          style={{ marginBottom: 0,  width: '100%', }} 
+        />
+        )}
+
+        {post.frontmatter.projectImage5 && (
+        <Image
+          fluid={post.frontmatter.projectImage5.childImageSharp.fluid}
+          alt="Groundcrew"
+          style={{ marginBottom: 0,  width: '100%', }} 
+        />
+        )}
+
         <div style={{ padding: `40px`, maxWidth: `700px`}}>
           <p>{post.frontmatter.title}</p>
           <MDXRenderer>{post.body}</MDXRenderer>
@@ -82,6 +114,34 @@ export const pageQuery = graphql`
           }
         }
         projectImage1 {
+          childImageSharp {
+            fluid(maxWidth: 1600, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp_noBase64
+            }
+          }
+        }
+        projectImage2 {
+          childImageSharp {
+            fluid(maxWidth: 1600, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp_noBase64
+            }
+          }
+        }
+        projectImage3 {
+          childImageSharp {
+            fluid(maxWidth: 1600, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp_noBase64
+            }
+          }
+        }
+        projectImage4 {
+          childImageSharp {
+            fluid(maxWidth: 1600, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp_noBase64
+            }
+          }
+        }
+        projectImage5 {
           childImageSharp {
             fluid(maxWidth: 1600, quality: 90) {
               ...GatsbyImageSharpFluid_withWebp_noBase64
