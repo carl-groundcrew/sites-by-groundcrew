@@ -10,7 +10,6 @@ class ProjectPostTemplate extends React.Component {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
-
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
@@ -26,6 +25,14 @@ class ProjectPostTemplate extends React.Component {
             width: '100%',
           }}
         /> 
+        
+        {post.frontmatter.projectImage1 && (
+        <Image
+          fluid={post.frontmatter.projectImage1.childImageSharp.fluid}
+          alt="Groundcrew"
+          style={{ marginBottom: 0,  width: '100%', }} 
+        />
+        )}
 
         <div style={{ padding: `40px`, maxWidth: `700px`}}>
           <p>{post.frontmatter.title}</p>
@@ -68,6 +75,13 @@ export const pageQuery = graphql`
       frontmatter {
         title
         image {
+          childImageSharp {
+            fluid(maxWidth: 1600, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp_noBase64
+            }
+          }
+        }
+        projectImage1 {
           childImageSharp {
             fluid(maxWidth: 1600, quality: 90) {
               ...GatsbyImageSharpFluid_withWebp_noBase64
