@@ -59,7 +59,9 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMdx(filter: {fileAbsolutePath: {regex: "/projects/"}}) {
+    allMdx(
+      sort: { fields: [frontmatter___date], order: DESC}
+      filter: {fileAbsolutePath: {regex: "/projects/"}}) {
       edges {
         node {
           excerpt
