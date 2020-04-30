@@ -30,7 +30,8 @@ collections:
       - { name: projectImage2, label: Project Image 2, required: false, widget: image}
       - { name: projectImage3, label: Project Image 3, required: false, widget: image}
       - { name: projectImage4, label: Project Image 4, required: false, widget: image}
-      - { name: projectImage5, label: Project Image 5, required: false, widget: image} 
+      - { name: projectImage5, label: Project Image 5, required: false, widget: image}
+      - { name: projectImage6, label: Project Image 6, required: false, widget: image} 
   - name: blog
     label: Blog
     folder: content/blog
