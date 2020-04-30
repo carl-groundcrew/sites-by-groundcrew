@@ -70,8 +70,7 @@ class ProjectPostTemplate extends React.Component {
         />
         )}
 
-        <div style={{ padding: `40px`, maxWidth: `700px`}}>
-          <p>{post.frontmatter.title}</p>
+        <div style={{ padding: `40px`, maxWidth: `800px`}}>
           <MDXRenderer>{post.body}</MDXRenderer>
         </div>
        

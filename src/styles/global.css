@@ -13,18 +13,16 @@ body {
 }
 
 h3 {
-	font-family: "CommonSans";
+	font-family: "FreightBigPro";
 	-webkit-font-smoothing: antialiased;
 	font-weight: 100;
 	margin: 0px;
-	font-size: 36px;
-	line-height: 1.35;
-}
-h3 .freight {
 	font-size: 42px;
+	line-height: 1.35;
+	margin-bottom: 40px;
 } 
 
-.freight {
+.common {
 	font-family: "FreightBigPro";
 }
 
