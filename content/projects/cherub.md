@@ -3,6 +3,10 @@ path: cherub
 date: 2020-04-27T14:00:00.000Z
 title: Cherub
 description: Cherub Website
+collaborations:
+  - 'Images: Nick Smith'
+website: 'https://www.cherubsydney.com'
+color: '#93000f'
 image: assets/cherub.jpg
 projectImage1: assets/Intro.png
 projectImage2: assets/cherub-banner.jpg
