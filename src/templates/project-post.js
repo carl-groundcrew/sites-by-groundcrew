@@ -17,7 +17,7 @@ class ProjectPostTemplate extends React.Component {
           description={post.frontmatter.description || post.excerpt}
         />
         
-        <div class="image-wrapper" style={{backgroundColor:`#666`}}>
+        <div style={{backgroundColor:`#000`}}>
           {!post.frontmatter.projectImage1 && (
             <Image
             fluid={post.frontmatter.image.childImageSharp.fluid}
