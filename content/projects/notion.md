@@ -6,4 +6,6 @@ description: Notion Projects
 color: '#c5c5c5'
 image: assets/notion.jpg
 ---
-### Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+### Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+Lorem ipsum dolor - sit amet
