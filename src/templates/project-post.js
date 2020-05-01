@@ -72,8 +72,9 @@ class ProjectPostTemplate extends React.Component {
 
         <div className="flex pb20 bb1" style={{ padding: `40px`}}>
           <div className="half pr1 br1" style={{ paddingBottom: `150px`}}>
-
-            <MDXRenderer>{post.body}</MDXRenderer>
+            <div style={{maxWidth: `750px`}}>
+              <MDXRenderer>{post.body}</MDXRenderer>
+            </div>
           </div>
           <div className="half pl1">
             {post.frontmatter.collaborations && (

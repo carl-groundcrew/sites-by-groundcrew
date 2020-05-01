@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
+import PageTransition from 'gatsby-plugin-page-transitions';
 
 class Layout extends React.Component {
   render() {
@@ -17,27 +18,24 @@ class Layout extends React.Component {
 
     return (
       <Wrapper>
-        <div
-          style={{
-            marginLeft: `auto`,
-            marginRight: `auto`,
-          }}
-        >
-          <Header>
-            {header}
-            <img src={'/assets/menu.svg'} alt="Menu" style={{ width: `25px`, cursor:`pointer`, margin:`auto`, marginRight:`0px`}} />
-          </Header>
-          <main>{children}</main>
-        </div>
-        <Footer className="flex" style={{ marginTop: `40px`}}>
-          <p className="m-100" style={{ textAlign: `left`, opacity: `0.4`, margin:0 }}>
-            © {new Date().getFullYear()} Groundcrew Agency Pty Ltd
-          </p> 
-          <p className="m-100" style={{ margin:`auto`, marginRight: `0px`}}>
-            <a style={{ textDecoration:`none`, boxShadow:`none`, color: `#000`, marginRight:`30px`}} href="https://www.facebook.com/groundcrew.com.au">Facebook</a>
-            <a style={{ textDecoration:`none`, boxShadow:`none`, color: `#000`}}  href="https://www.instagram.com/groundcrew.com.au">Instagram</a>
-          </p>
-        </Footer>
+        <PageTransition>
+          <div>
+            <Header>
+              {header}
+              <img src={'/assets/menu.svg'} alt="Menu" style={{ width: `25px`, cursor:`pointer`, margin:`auto`, marginRight:`0px`}} />
+            </Header>
+            <main className="main-content">{children}</main>
+          </div>
+          <Footer className="flex" style={{ marginTop: `40px`}}>
+            <p className="m-100" style={{ textAlign: `left`, opacity: `0.4`, margin:0 }}>
+              © {new Date().getFullYear()} Groundcrew Agency Pty Ltd
+            </p> 
+            <p className="m-100" style={{ margin:`auto`, marginRight: `0px`}}>
+              <a style={{ textDecoration:`none`, boxShadow:`none`, color: `#000`, marginRight:`30px`}} href="https://www.facebook.com/groundcrew.com.au">Facebook</a>
+              <a style={{ textDecoration:`none`, boxShadow:`none`, color: `#000`}}  href="https://www.instagram.com/groundcrew.com.au">Instagram</a>
+            </p>
+          </Footer>
+        </PageTransition>
       </Wrapper>
     )
   }

@@ -23,6 +23,8 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-feed-mdx`,
+    `gatsby-plugin-page-transitions`,
+    'gatsby-plugin-page-transitions',
     {
         resolve: `gatsby-source-filesystem`,
         options: {
