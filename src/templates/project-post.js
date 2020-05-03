@@ -64,13 +64,7 @@ class ProjectPostTemplate extends React.Component {
         />
         )}
 
-        {post.frontmatter.projectImage6 && (
-        <Image
-          fluid={post.frontmatter.projectImage6.childImageSharp.fluid}
-          alt="Groundcrew"
-          style={{ width: '100%', }} 
-        />
-        )}
+        
 
         <div className="flex pb20 bb1" style={{ padding: `40px`}}>
           <div className="half pr1 br1" style={{ paddingBottom: `150px`}}>
@@ -168,13 +162,6 @@ export const pageQuery = graphql`
           }
         }
         projectImage5 {
-          childImageSharp {
-            fluid(maxWidth: 1600, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp_noBase64
-            }
-          }
-        }
-        projectImage6 {
           childImageSharp {
             fluid(maxWidth: 1600, quality: 90) {
               ...GatsbyImageSharpFluid_withWebp_noBase64

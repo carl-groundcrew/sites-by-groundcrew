@@ -68,23 +68,22 @@ exports.createPages = ({ graphql, actions }) => {
         },
       })
     })
-    if(false){
-      projects.forEach(({ node }) => {
-        const previous = ''
-        const next = ''
-        const path = 'project'
+    
+    projects.forEach(({ node }) => {
+      const previous = ''
+      const next = ''
+      const path = 'project'
 
-        createPage({
-          path: `${path}${node.fields.slug}`,
-          component: projectPost,
-          context: {
-            slug: node.fields.slug,
-            previous,
-            next,
-          }
-        })
+      createPage({
+        path: `${path}${node.fields.slug}`,
+        component: projectPost,
+        context: {
+          slug: node.fields.slug,
+          previous,
+          next,
+        }
       })
-    }
+    })
 
     return null
   })

@@ -22,7 +22,6 @@ collections:
     fields:
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
-      - { name: type, label: Post Type, widget: hidden, default: 'project' }
       - { name: title, label: Title }
       - { name: description, label: Description }
       - { name: body, label: Body, widget: markdown }
@@ -36,7 +35,6 @@ collections:
       - { name: projectImage4, label: Project Image 4, required: false, widget: image}
       - { name: projectImage5, label: Project Image 5, required: false, widget: image}
       - { name: projectImage6, label: Project Image 6, required: false, widget: image} 
-      - { name: projectImage7, label: Project Image 7, required: false, widget: image} 
   - name: blog
     label: Blog
     folder: content/blog
@@ -44,7 +42,6 @@ collections:
     fields:
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
-      - { name: type, label: Post Type, widget: hidden, default: 'blog' }
       - { name: title, label: Title }
       - { name: description, label: Description }
       - { name: body, label: Body, widget: markdown }
