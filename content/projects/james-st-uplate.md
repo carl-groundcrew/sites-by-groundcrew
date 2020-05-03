@@ -2,7 +2,6 @@
 path: uplate
 date: 2020-04-29T14:00:00.000Z
 title: James St Uplate
-type: project
 description: Design and Development
 collaborations:
   - "Images: Nick Smith"

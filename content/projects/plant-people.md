@@ -2,7 +2,6 @@
 path: plant-people
 date: 2020-04-25T14:00:00.000Z
 title: Plant People
-type: project
 description: The Plant People
 collaborations:
   - 'Images: Nick Smith'
