@@ -2,6 +2,7 @@ const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const { fmImagesToRelative } = require('gatsby-remark-relative-images');
 
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 

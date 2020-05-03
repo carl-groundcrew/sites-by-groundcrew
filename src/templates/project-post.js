@@ -6,10 +6,12 @@ import SEO from "../components/seo"
 import Image from "gatsby-image"
 
 class ProjectPostTemplate extends React.Component {
+
   render() {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
+    const { previous, next} = this.props.pageContext
+
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
@@ -91,7 +93,7 @@ class ProjectPostTemplate extends React.Component {
             )}
           </div>
         </div>
-       
+
         <ul
           style={{ display: `flex`, flexWrap: `wrap`, justifyContent: `space-between`, listStyle: `none`,  padding:`20px 40px` }}>
           <li>

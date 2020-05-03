@@ -22,6 +22,7 @@ collections:
     fields:
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
+      - { name: postType, label: Post Type, widget: "hidden", default: "project" }
       - { name: title, label: Title }
       - { name: description, label: Description }
       - { name: body, label: Body, widget: markdown }
@@ -41,6 +42,7 @@ collections:
     create: true
     fields:
       - { name: path, label: Path }
+      - { name: postType, label: Post Type, widget: "hidden", default: "blog" }
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
       - { name: description, label: Description }
