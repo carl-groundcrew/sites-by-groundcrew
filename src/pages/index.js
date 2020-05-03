@@ -1,10 +1,35 @@
 import React from "react"
-import { Link } from "gatsby"
+//import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Image from "gatsby-image"
 import SEO from "../components/seo"
+import TransitionLink from "gatsby-plugin-transition-link"
+import gsap from 'gsap'
+
 
 class IndexPage extends React.Component {
+  
+  enter(entry, node) {
+    return gsap.from(
+      node.querySelector('.app'),
+      { 
+        opacity: 0,
+        ease: 'power1.in',
+        duration:.5,
+      },
+    )
+  }
+  exit(exit, node) {
+    return gsap.to(
+      node.querySelector('.app'),
+      { 
+        opacity: 0, 
+        ease: 'power1.in',
+        duration:.5,
+      },
+    )
+  }
+
   render() {
     const { data } = this.props
     const siteTitle = "Sites by Groundcrew"
@@ -28,11 +53,14 @@ class IndexPage extends React.Component {
             return (
               <div className="single-project" key={node.fields.slug}>
 
-                <Link style={{ boxShadow: `none`, color:`#000`  }} to={`project${node.fields.slug}`}>
-                    <Image style={{backgroundColor:`${node.frontmatter.color}`}}
-                      fluid={node.frontmatter.image.childImageSharp.fluid}
-                      alt={node.frontmatter.title}/> 
-                </Link>
+                <TransitionLink 
+                  exit={{ length:.5, trigger: ({ exit, node }) => this.exit(exit, node)}}
+                  entry={{ delay:.75, length:.5, trigger: ({ entry, node }) => this.enter(entry, node)}}
+                  to={`project${node.fields.slug}`}>
+                  <Image style={{backgroundColor:`${node.frontmatter.color}`}}
+                    fluid={node.frontmatter.image.childImageSharp.fluid}
+                    alt={node.frontmatter.title}/> 
+                </TransitionLink>
               </div>
             )
           })}

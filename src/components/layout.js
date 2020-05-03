@@ -1,22 +1,50 @@
 import React from "react"
-import { Link } from "gatsby"
+import TransitionLink from "gatsby-plugin-transition-link"
+import gsap from 'gsap'
 import styled from "styled-components"
 
 class Layout extends React.Component {
+
+  exit(exit, node) {
+    return gsap.to(
+      node.querySelector('.app'),
+      { 
+        opacity: 0, 
+        ease: 'power1.in',
+        duration:.5 
+      },
+    )
+  }
+
+  enter(entry, node) {
+    return gsap.from(
+      node.querySelector('.app'),
+      { 
+        opacity: 0,
+        ease: 'power1.in',
+        duration:.5,
+        delay:.75
+      },
+    )
+  }
+
   render() {
     const { children } = this.props
     let header
 
     header = (
         <p style={{  margin: 0 }} >
-          <Link style={{boxShadow: `none`, textDecoration: `none`, color: `inherit` }} to={`/`}>
+          <TransitionLink
+            exit={{ length:.5, trigger: ({ exit, node }) => this.exit(exit, node)}}
+            entry={{ length:.5, trigger: ({ entry, node }) => this.enter(entry, node)}}
+            style={{boxShadow: `none`, textDecoration: `none`, color: `inherit` }} to={`/`}>
             <img src={'/assets/logo.svg'} alt="Logo" style={{ width: `120px` }} />
-          </Link>
+          </TransitionLink>
         </p>
     )
 
     return (
-      <Wrapper>
+      <Wrapper className="app">
         <div>
           <Header>
             {header}
