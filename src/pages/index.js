@@ -9,6 +9,17 @@ import gsap from 'gsap'
 
 class IndexPage extends React.Component {
   
+  exit(exit, node) {
+    return gsap.to(
+      node.querySelector('.app'),
+      { 
+        opacity: 0, 
+        ease: 'power1.in',
+        duration:.5 
+      },
+    )
+  }
+
   enter(entry, node) {
     return gsap.from(
       node.querySelector('.app'),
@@ -16,16 +27,7 @@ class IndexPage extends React.Component {
         opacity: 0,
         ease: 'power1.in',
         duration:.5,
-      },
-    )
-  }
-  exit(exit, node) {
-    return gsap.to(
-      node.querySelector('.app'),
-      { 
-        opacity: 0, 
-        ease: 'power1.in',
-        duration:.5,
+        delay:.25
       },
     )
   }
@@ -55,7 +57,7 @@ class IndexPage extends React.Component {
 
                 <TransitionLink 
                   exit={{ length:.5, trigger: ({ exit, node }) => this.exit(exit, node)}}
-                  entry={{ delay:.75, length:.5, trigger: ({ entry, node }) => this.enter(entry, node)}}
+                  entry={{ delay:.5, length:.5, trigger: ({ entry, node }) => this.enter(entry, node)}}
                   to={`project${node.fields.slug}`}>
                   <Image style={{backgroundColor:`${node.frontmatter.color}`}}
                     fluid={node.frontmatter.image.childImageSharp.fluid}
