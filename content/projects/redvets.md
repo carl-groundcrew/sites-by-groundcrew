@@ -2,6 +2,7 @@
 path: red-vets
 date: 2020-04-27T14:00:00.000Z
 title: REDVets
+type: project
 description: REDVets Toowomba
 collaborations:
   - "Images: Nick Smith"

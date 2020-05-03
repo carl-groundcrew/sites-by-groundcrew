@@ -2,6 +2,7 @@
 path: cherub
 date: 2020-04-28T14:00:00.000Z
 title: Cherub
+type: project
 description: Cherub Website
 collaborations:
   - "Images: Nick Smith"
