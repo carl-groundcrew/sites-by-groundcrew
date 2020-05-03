@@ -22,7 +22,7 @@ collections:
     fields:
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
-      - { name: type, label: Post Type, default: 'project' }
+      - { name: type, label: Post Type, widget: hidde, default: 'project' }
       - { name: title, label: Title }
       - { name: description, label: Description }
       - { name: body, label: Body, widget: markdown }
@@ -44,6 +44,7 @@ collections:
     fields:
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
+      - { name: type, label: Post Type, widget: hidde, default: 'blog' }
       - { name: title, label: Title }
       - { name: description, label: Description }
       - { name: body, label: Body, widget: markdown }
