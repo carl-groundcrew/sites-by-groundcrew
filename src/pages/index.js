@@ -51,6 +51,10 @@ class IndexPage extends React.Component {
         </div>
 
         <div className="projects" style={{ paddingBottom:`40px`}}>
+          <div className="title-area flex" style={{ padding:`20px 40px`}}>
+            <span className="m0">Featured Projects</span>
+            <span className="m0 mla">See All</span>
+          </div>
           {posts.map(({ node }) => {
             return (
               <div className="single-project" key={node.fields.slug}>
