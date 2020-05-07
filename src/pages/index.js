@@ -1,36 +1,10 @@
 import React from "react"
-//import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Image from "gatsby-image"
 import SEO from "../components/seo"
-import TransitionLink from "gatsby-plugin-transition-link"
-import gsap from 'gsap'
-
+import PageLink from "../components/pageLink"
 
 class IndexPage extends React.Component {
-  
-  exit(exit, node) {
-    return gsap.to(
-      node.querySelector('.app'),
-      { 
-        opacity: 0, 
-        ease: 'power1.in',
-        duration:.5 
-      },
-    )
-  }
-
-  enter(entry, node) {
-    return gsap.from(
-      node.querySelector('.app'),
-      { 
-        opacity: 0,
-        ease: 'power1.in',
-        duration:.5,
-        delay:.25
-      },
-    )
-  }
 
   render() {
     const { data } = this.props
@@ -59,14 +33,11 @@ class IndexPage extends React.Component {
             return (
               <div className="single-project" key={node.fields.slug}>
                 {node.frontmatter.featureImage && (
-                  <TransitionLink 
-                    exit={{ length:.5, trigger: ({ exit, node }) => this.exit(exit, node)}}
-                    entry={{ delay:.5, length:.5, trigger: ({ entry, node }) => this.enter(entry, node)}}
-                    to={`project${node.fields.slug}`}>
-                     <Image style={{backgroundColor:`${node.frontmatter.color}`}}
+                  <PageLink to={`project${node.fields.slug}`}>
+                    <Image style={{backgroundColor:`${node.frontmatter.color}`}}
                       fluid={node.frontmatter.featureImage.childImageSharp.fluid}
                       alt={node.frontmatter.title}/>  
-                  </TransitionLink>
+                  </PageLink>
                 )}
               </div>
             )
