@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -10,7 +10,7 @@ class ProjectPostTemplate extends React.Component {
   render() {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next} = this.props.pageContext
+ 
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -95,21 +95,6 @@ class ProjectPostTemplate extends React.Component {
             )}
           </div>
         </div>
-
-        <ul
-          style={{ display: `flex`, flexWrap: `wrap`, justifyContent: `space-between`, listStyle: `none`,  padding:`20px 40px` }}>
-          <li>
-            {previous && (
-              <Link to={`project${previous.fields.slug}`} style={{ color: `#000`, boxShadow: `none` }} rel="prev"> ← {previous.frontmatter.title} </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={`project${next.fields.slug}`} rel="next" style={{ color: `#000`, boxShadow: `none` }}> {next.frontmatter.title} → </Link>
-            )}
-          </li>
-        </ul>
-
       </Layout>
     )
   }

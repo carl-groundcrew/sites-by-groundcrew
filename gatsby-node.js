@@ -70,8 +70,6 @@ exports.createPages = ({ graphql, actions }) => {
     })
     
     projects.forEach(({ node }) => {
-      const previous = ''
-      const next = ''
       const path = 'project'
 
       createPage({
@@ -79,8 +77,6 @@ exports.createPages = ({ graphql, actions }) => {
         component: projectPost,
         context: {
           slug: node.fields.slug,
-          previous,
-          next,
         }
       })
     })
