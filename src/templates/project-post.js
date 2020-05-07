@@ -19,12 +19,7 @@ class ProjectPostTemplate extends React.Component {
           description={post.frontmatter.description || post.excerpt}
         />
         
-        <div style={{backgroundColor:`${post.frontmatter.color}`}}>
-          {!post.frontmatter.projectImage1 && (
-            <Image
-            fluid={post.frontmatter.image.childImageSharp.fluid}
-            alt="Project Image" style={{ width: '100%'}} />
-          )}        
+        <div style={{backgroundColor:`${post.frontmatter.color}`}}>     
           {post.frontmatter.projectImage1 && (
             <Image
             fluid={post.frontmatter.projectImage1.childImageSharp.fluid}
@@ -119,13 +114,6 @@ export const pageQuery = graphql`
         color
         collaborations
         website
-        image {
-          childImageSharp {
-            fluid(maxWidth: 1600, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
         projectImage1 {
           childImageSharp {
             fluid(maxWidth: 1600, quality: 90) {

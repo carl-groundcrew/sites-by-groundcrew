@@ -63,9 +63,6 @@ class IndexPage extends React.Component {
                   exit={{ length:.5, trigger: ({ exit, node }) => this.exit(exit, node)}}
                   entry={{ delay:.5, length:.5, trigger: ({ entry, node }) => this.enter(entry, node)}}
                   to={`project${node.fields.slug}`}>
-                  <Image style={{backgroundColor:`${node.frontmatter.color}`}}
-                    fluid={node.frontmatter.image.childImageSharp.fluid}
-                    alt={node.frontmatter.title}/> 
                 </TransitionLink>
               </div>
             )
@@ -106,13 +103,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             color
-            image {
-              childImageSharp {
-                fluid(maxWidth: 1600, quality: 90) {
-                  ...GatsbyImageSharpFluid_withWebp_noBase64
-                }
-              }
-            }
+            
             description
           }
         }
