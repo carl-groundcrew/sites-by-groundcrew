@@ -14,7 +14,6 @@ projectImage3: assets/Rectangle 8.jpg
 projectImage4: assets/cherub-3.jpg
 projectImage5: assets/cherub-4.jpg
 projectImage6: assets/cherub-5.jpg
-projectImage7: ""
 image: assets/cherub.jpg
 ---
 ### Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

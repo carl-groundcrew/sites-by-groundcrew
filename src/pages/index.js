@@ -58,12 +58,16 @@ class IndexPage extends React.Component {
           {posts.map(({ node }) => {
             return (
               <div className="single-project" key={node.fields.slug}>
-
-                <TransitionLink 
-                  exit={{ length:.5, trigger: ({ exit, node }) => this.exit(exit, node)}}
-                  entry={{ delay:.5, length:.5, trigger: ({ entry, node }) => this.enter(entry, node)}}
-                  to={`project${node.fields.slug}`}>
-                </TransitionLink>
+                {node.frontmatter.featureImage && (
+                  <TransitionLink 
+                    exit={{ length:.5, trigger: ({ exit, node }) => this.exit(exit, node)}}
+                    entry={{ delay:.5, length:.5, trigger: ({ entry, node }) => this.enter(entry, node)}}
+                    to={`project${node.fields.slug}`}>
+                     <Image style={{backgroundColor:`${node.frontmatter.color}`}}
+                      fluid={node.frontmatter.featureImage.childImageSharp.fluid}
+                      alt={node.frontmatter.title}/>  
+                  </TransitionLink>
+                )}
               </div>
             )
           })}
@@ -103,7 +107,13 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             color
-            
+            featureImage {
+              childImageSharp {
+                fluid(maxWidth: 1600, quality: 90) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
             description
           }
         }
