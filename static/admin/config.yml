@@ -23,7 +23,7 @@ collections:
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
-      - { name: type, label: Type, widget: hidden,default: project}
+      - { name: type, label: Type, widget: hidden, default: project}
       - { name: description, label: Description }
       - { name: body, label: Body, widget: markdown }
       - { name: collaborations, label: Collaborations, widget: list, required: false }
