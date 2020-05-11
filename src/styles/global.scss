@@ -30,6 +30,7 @@ $seven:		768px;
 body {
 	font-family: "CommonSans";
 	-webkit-font-smoothing: antialiased;
+	background-color: #fff;
 }
 
 /*================ Font styles ================*/
@@ -85,6 +86,30 @@ img[aria-hidden="true"] {
 	@media (max-width: $seven) {
 		flex-wrap: wrap;
 	}
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.align-self--start {
+	align-self: flex-start;
+}
+
+.align-self--center {
+	align-self: center;
+}
+
+.align-self--bottom {
+	align-self: flex-end;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.width-100 {
+	width: 100%;
 }
 
 .half {
@@ -147,6 +172,14 @@ img[aria-hidden="true"] {
 }
 .bb1 {
 	border-bottom: 1px solid $grey;
+}
+
+/*================ Image styles ================*/
+
+.image-full {
+	min-height: 100vh;
+	object-fit: cover;
+	object-position: center center;
 }
 
 /*================ Mobile styles ================*/

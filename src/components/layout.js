@@ -8,23 +8,26 @@ class Layout extends React.Component {
     let header
 
     header = (
-        <p style={{  margin: 0 }} >
-          <PageLink to='/'>
-            <img src={'/assets/logo.svg'} alt="Logo" style={{ width: `120px`, boxShadow: `none`, textDecoration: `none`, color: `inherit`  }} />
-          </PageLink>
-        </p>
+        <Header>
+          <div className="menu width-100 flex align-self--start justify-center">
+            <img src={'/assets/menu.svg'} alt="Menu" style={{ width: `15px`, cursor:`pointer`, margin:`0px`}} />
+          </div>
+          
+          <div className="logo flex width-100 align-self--end justify-center" style={{ alignSelf:`flex-end`}}>
+            <PageLink to='/'>
+              <img src={'/assets/logo.svg'} alt="Logo" style={{ width: `15px`, boxShadow: `none`, textDecoration: `none`, color: `inherit`, margin:`0px` }} />
+            </PageLink>
+          </div>
+        </Header>
     )
 
     return (
       <Wrapper className="app">
         <div>
-          <Header>
-            {header}
-            <img src={'/assets/menu.svg'} alt="Menu" style={{ width: `25px`, cursor:`pointer`, margin:`auto`, marginRight:`0px`}} />
-          </Header>
+          {header}
           <main className="main-content">{children}</main>
         </div>
-        <Footer className="flex" style={{ marginTop: `40px`}}>
+        <Footer className="flex" style={{ paddingTop: `80px`}}>
           <p className="m-100" style={{ textAlign: `left`, opacity: `0.4`, margin:0 }}>
             © {new Date().getFullYear()} Groundcrew Agency Pty Ltd
           </p> 
@@ -39,8 +42,16 @@ class Layout extends React.Component {
 }
 
 const Header = styled.div`
+ position:fixed;
+ left:0px;
+ top:0px;
+ z-index:10;
  display: flex;
- padding:20px;
+ flex-wrap:wrap;
+ padding:15px 5px;
+ color:#fff;
+ height:100vh;
+ border-right:1px solid rgba(255,255,255,.4);
 `
 
 const Wrapper = styled.div`
@@ -49,7 +60,7 @@ const Wrapper = styled.div`
 
 const Footer = styled.footer`
   text-align: center;
-  margin: 20px 40px;
+  padding: 20px 40px;
 `
 
 export default Layout
