@@ -15,7 +15,6 @@ projectImage3: assets/plantpeople-3.png
 projectImage4: assets/plantpeople-4.png
 projectImage5: assets/plantpeople-5.png
 projectImage6: assets/plantpeople.jpg
-image: assets/plantpeople.jpg
 ---
 ### Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
