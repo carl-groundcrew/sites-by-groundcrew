@@ -2,6 +2,7 @@
 path: groundcrew-2020
 date: 2020-01-09T01:24:44.343Z
 title: Groundcrew in 2020
+type: blog
 description: Article By Groundcrew
 image: assets/archie.png
 ---

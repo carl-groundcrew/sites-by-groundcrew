@@ -11,24 +11,8 @@ exports.createPages = ({ graphql, actions }) => {
   return graphql(
     `
       {
-        projects: allMdx(
-          sort: { fields: [frontmatter___date], order: DESC }
-          filter: { fileAbsolutePath: { regex: "/projects/" } }
-          limit: 1000
-        ) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-              }
-            }
-          }
-        }
         posts: allMdx(
-          filter: { fileAbsolutePath: {regex: "/blog/"}}
+          sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
         ) {
           edges {
@@ -38,6 +22,7 @@ exports.createPages = ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                type 
               }
             }
           }
@@ -49,35 +34,21 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors
     }
 
-    // Create blog posts pages.
     const posts = result.data.posts.edges
-    const projects = result.data.projects.edges
 
     posts.forEach((post, index) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
       const next = index === 0 ? null : posts[index - 1].node
-      const path = 'blog'
-
+      const path = post.node.frontmatter.type
+      const component = path === 'blog' ? blogPost : projectPost
       createPage({
         path: `${path}${post.node.fields.slug}`,
-        component: blogPost,
+        component: component,
         context: {
           slug: post.node.fields.slug,
           previous,
           next,
         },
-      })
-    })
-    
-    projects.forEach(({ node }) => {
-      const path = 'project'
-
-      createPage({
-        path: `${path}${node.fields.slug}`,
-        component: projectPost,
-        context: {
-          slug: node.fields.slug,
-        }
       })
     })
 

@@ -2,6 +2,7 @@
 path: brand-language
 date: 2020-01-09T01:24:44.343Z
 title: Decoding Brand Language
+type: blog
 description: Article By Groundcrew
 image: assets/mgc.png
 ---
