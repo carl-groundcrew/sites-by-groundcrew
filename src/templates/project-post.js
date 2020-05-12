@@ -1,8 +1,9 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import SlideLink from "../components/slideLink"
 import Image from "gatsby-image"
 
 class ProjectPostTemplate extends React.Component {
@@ -21,12 +22,18 @@ class ProjectPostTemplate extends React.Component {
         
         <div style={{backgroundColor:`${post.frontmatter.color}`}}>     
          
-          {post.frontmatter.featureImage && (
+          {post.frontmatter.featureImage && !post.frontmatter.projectImage1 && (
             <Image
             fluid={post.frontmatter.featureImage.childImageSharp.fluid}
             alt="Project Image" style={{ width: '100%'}} />
           )}    
+          {post.frontmatter.projectImage1 && (
+            <Image
+              fluid={post.frontmatter.projectImage1.childImageSharp.fluid}
+              alt="Groundcrew" style={{ width: '100%', }} />
+          )}
         </div>
+
 
         {post.frontmatter.projectImage2 && (
         <Image
@@ -95,12 +102,24 @@ class ProjectPostTemplate extends React.Component {
         <ul style={{ display: `flex`, flexWrap: `wrap`, justifyContent: `space-between`, listStyle: `none`,  padding:`20px 40px` }}>
           <li>
             {previous && previous.frontmatter.type === 'project' && (
-              <Link to={`project${previous.fields.slug}`} style={{ color: `#000`, boxShadow: `none` }} rel="prev"> ← {previous.frontmatter.title} </Link>
+              <SlideLink direction="left"  to={`project${previous.fields.slug}`} rel="prev"> ← {previous.frontmatter.title} </SlideLink>
             )}
           </li>
           <li>
             {next && next.frontmatter.type === 'project' && (
-              <Link to={`project${next.fields.slug}`} rel="next" style={{ color: `#000`, boxShadow: `none` }}> {next.frontmatter.title} → </Link>
+              <SlideLink direction="right" to={`project${next.fields.slug}`} rel="next"> {next.frontmatter.title} → </SlideLink>
+            )}
+          </li>
+        </ul>
+        <ul style={{ display: `flex`, flexWrap: `wrap`, justifyContent: `space-between`, listStyle: `none`,  padding:`20px 40px` }}>
+          <li>
+            {previous && previous.frontmatter.type === 'project' && (
+              <SlideLink direction="up"  to={`project${previous.fields.slug}`} rel="prev"> ↑ {previous.frontmatter.title} </SlideLink>
+            )}
+          </li>
+          <li>
+            {next && next.frontmatter.type === 'project' && (
+              <SlideLink direction="down" to={`project${next.fields.slug}`} rel="next"> {next.frontmatter.title} ↓ </SlideLink>
             )}
           </li>
         </ul>
@@ -135,7 +154,13 @@ export const pageQuery = graphql`
             }
           }
         }
-        
+        projectImage1 {
+          childImageSharp {
+            fluid(maxWidth: 1600, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp_noBase64
+            }
+          }
+        }
         projectImage2 {
           childImageSharp {
             fluid(maxWidth: 1600, quality: 90) {
