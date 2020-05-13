@@ -4,6 +4,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import SlideLink from "../components/slideLink"
+import PageLink from "../components/pageLink"
 import Image from "gatsby-image"
 
 class ProjectPostTemplate extends React.Component {
@@ -11,7 +12,7 @@ class ProjectPostTemplate extends React.Component {
   render() {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
+    const { previous } = this.props.pageContext
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -19,7 +20,6 @@ class ProjectPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        
         <div style={{backgroundColor:`${post.frontmatter.color}`}}>     
          
           {post.frontmatter.featureImage && !post.frontmatter.projectImage1 && (
@@ -33,8 +33,6 @@ class ProjectPostTemplate extends React.Component {
               alt="Groundcrew" style={{ width: '100%', }} />
           )}
         </div>
-
-
         {post.frontmatter.projectImage2 && (
         <Image
           fluid={post.frontmatter.projectImage2.childImageSharp.fluid}
@@ -42,7 +40,6 @@ class ProjectPostTemplate extends React.Component {
           style={{ width: '100%', }} 
         />
         )}
-
         {post.frontmatter.projectImage3 && (
         <Image
           fluid={post.frontmatter.projectImage3.childImageSharp.fluid}
@@ -50,7 +47,6 @@ class ProjectPostTemplate extends React.Component {
           style={{ width: '100%', }} 
         />
         )}
-
         {post.frontmatter.projectImage4 && (
         <Image
           fluid={post.frontmatter.projectImage4.childImageSharp.fluid}
@@ -58,7 +54,6 @@ class ProjectPostTemplate extends React.Component {
           style={{  width: '100%', }} 
         />
         )}
-
         {post.frontmatter.projectImage5 && (
         <Image
           fluid={post.frontmatter.projectImage5.childImageSharp.fluid}
@@ -66,7 +61,6 @@ class ProjectPostTemplate extends React.Component {
           style={{ width: '100%', }} 
         />
         )}
-
         {post.frontmatter.projectImage6 && (
         <Image
           fluid={post.frontmatter.projectImage6.childImageSharp.fluid}
@@ -74,10 +68,7 @@ class ProjectPostTemplate extends React.Component {
           style={{ width: '100%', }} 
         />
         )}
-
-        
-
-        <div className="flex pb20 bb1" style={{ padding: `40px`, paddingLeft:`60px`,}}>
+        <div className="flex pb20 bb1 p1 pl2">
           <div className="half pr1 br1" style={{ paddingBottom: `150px`}}>
             <div style={{maxWidth: `750px`}}>
               <MDXRenderer>{post.body}</MDXRenderer>
@@ -86,43 +77,33 @@ class ProjectPostTemplate extends React.Component {
           <div className="half pl1">
             {post.frontmatter.collaborations && (
               <div>
-                <p className="black mb0">Collaborations</p>
+                <p className="text-black mb0">Collaborations</p>
                 <p>{post.frontmatter.collaborations}</p>
               </div>
             )}
             {post.frontmatter.website && (
               <div>
-                <p className="black mb0">View Website</p>
-                <p><a href={post.frontmatter.website}  rel="noopener noreferrer" style={{ color: `#9e9e9e` }} target="_blank">{post.frontmatter.website}</a></p>
+                <p className="text-black mb0">View Website</p>
+                <p><a className="page-link" href={post.frontmatter.website}  rel="noopener noreferrer" style={{ color: `#9e9e9e` }} target="_blank">{post.frontmatter.website}</a></p>
               </div>
             )}
           </div>
         </div>
 
-        <ul style={{ display: `flex`, flexWrap: `wrap`, justifyContent: `space-between`, listStyle: `none`,  padding:`20px 40px` }}>
-          <li>
+        <div className="flex pb20 bb1 p1 pl2">
+          <div className="half pr1">
+            <PageLink to='/' arrow='true'>Projects</PageLink>
+          </div>
+          <div className="half pl1">
             {previous && previous.frontmatter.type === 'project' && (
-              <SlideLink direction="left"  to={`project${previous.fields.slug}`} rel="prev"> ← {previous.frontmatter.title} </SlideLink>
+              <SlideLink direction="down" to={`project${previous.fields.slug}`} rel="previous">
+                <p className="text-grey m0">Next Project</p>
+                <p className="h3 m0 text-black mb1">{previous.frontmatter.title}</p>
+                <img src={previous.frontmatter.featureImage.childImageSharp.fluid.srcWebp} alt='Next Project' />
+              </SlideLink>
             )}
-          </li>
-          <li>
-            {next && next.frontmatter.type === 'project' && (
-              <SlideLink direction="right" to={`project${next.fields.slug}`} rel="next"> {next.frontmatter.title} → </SlideLink>
-            )}
-          </li>
-        </ul>
-        <ul style={{ display: `flex`, flexWrap: `wrap`, justifyContent: `space-between`, listStyle: `none`,  padding:`20px 40px` }}>
-          <li>
-            {previous && previous.frontmatter.type === 'project' && (
-              <SlideLink direction="up"  to={`project${previous.fields.slug}`} rel="prev"> ↑ {previous.frontmatter.title} </SlideLink>
-            )}
-          </li>
-          <li>
-            {next && next.frontmatter.type === 'project' && (
-              <SlideLink direction="down" to={`project${next.fields.slug}`} rel="next"> {next.frontmatter.title} ↓ </SlideLink>
-            )}
-          </li>
-        </ul>
+          </div>
+        </div>
       </Layout>
     )
   }

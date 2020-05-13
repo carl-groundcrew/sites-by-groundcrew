@@ -2,17 +2,6 @@
 ## GLOBAL STYLING
 --------------------------------------------------------------*/
 
-$spacing:	40px;
-
-$black:		#000;
-$grey:		rgba(0,0,0,.1);
-
-
-$twelve:	1200px;
-$nine:		991px;
-$seven:		768px;
-
-
 /*================ Font styles ================*/
 
 @font-face {
@@ -33,17 +22,23 @@ body {
 	background-color: #fff;
 }
 
+.app {
+	background-color: #fff;
+	&.released {
+		transform: none !important;
+		height: auto !important;
+		overflow: visible;
+	}
+}
 
 /*================ Font styles ================*/
 
-h3 {
+h2, .h2 {
 	font-family: "FreightBigPro";
-	-webkit-font-smoothing: antialiased;
 	font-weight: 100;
 	margin: 0px;
 	font-size: 42px;
 	line-height: 1.35;
-	margin-bottom: 40px;
 	.common {
 		font-size: 36px;
 		@media (max-width: $nine) {
@@ -60,21 +55,49 @@ h3 {
 		font-size:26px;
 	}
 } 
+h3, .h3 {
+	font-family: "FreightBigPro";
+	font-weight: 100;
+	margin: 0px;
+	font-size: 28px;
+	margin-bottom: 20px;
+	line-height: 1.35;
+}
 
 .common {
 	font-family: "CommonSans";
 }
 
 p {
-	font-size: 16px;
+	font-size: 15px;
 	color:#9e9e9e;
 }
 
-.black {
+.text-black {
 	color:$black;
 }
-/*================ Images styles ================*/
 
+/*================ Link styles ================*/
+
+.link {
+	box-shadow: none;
+	text-decoration: none;
+}
+
+.page-link {
+	color:$grey-100;
+	box-shadow: none;
+	text-decoration: none;
+	svg {
+		margin-left: 10px;
+		transform: translateY(2.5px);
+		path {
+			fill:$grey-100;
+		}
+	}
+}
+
+/*================ Images styles ================*/
 
 img[aria-hidden="true"] {
 	filter: blur(30px);
@@ -129,6 +152,9 @@ img[aria-hidden="true"] {
 .mb0 {
 	margin-bottom: 0px;
 }
+.mb1 {
+	margin-bottom: $spacing;
+}
 
 .mt0 {
 	margin-top: 0px;
@@ -149,8 +175,20 @@ img[aria-hidden="true"] {
 
 /*================ Padding styles ================*/
 
+.p1 {
+	padding: $spacing;
+}
+.pt1 {
+	padding-top: $spacing;
+}
 .pl1 {
 	padding-left: $spacing;
+	@media (max-width: $seven) {
+		padding-left: 0px;
+	}
+}
+.pl2 {
+	padding-left: $spacing*2;
 	@media (max-width: $seven) {
 		padding-left: 0px;
 	}

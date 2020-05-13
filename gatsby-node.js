@@ -23,6 +23,13 @@ exports.createPages = ({ graphql, actions }) => {
               frontmatter {
                 title
                 type 
+                featureImage {
+                  childImageSharp {
+                    fluid {
+                      srcWebp
+                    }
+                  }
+                }
               }
             }
           }

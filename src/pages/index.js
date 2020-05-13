@@ -20,12 +20,12 @@ class IndexPage extends React.Component {
         <div className="image-wrapper" style={{backgroundColor:`#351f44`}}>
           <Image className="image-full" fluid={data.hero.childImageSharp.fluid} alt="Hero Image - Groundcrew" /> 
         </div>
-        <div className="intro" style={{  padding:`40px`, paddingLeft:`60px`, marginBottom:`150px`, maxWidth:`950px`}}> 
+        <div className="intro pl2 p1" style={{ marginBottom:`150px`, maxWidth:`950px`}}> 
           <h3><span className="common">We’re Groundcrew</span> a boutique and independent  brand and digital design studio based in Newstead, Brisbane.</h3>
         </div>
 
         <div className="projects" style={{ paddingBottom:`40px`}}>
-          <div className="title-area flex" style={{ padding:`20px 40px`, paddingLeft:`60px`,}}>
+          <div className="title-area flex p1 pl2">
             <span className="m0">Featured Projects</span>
             <span className="m0 mla">See All</span>
           </div>
