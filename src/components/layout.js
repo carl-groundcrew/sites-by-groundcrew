@@ -1,16 +1,22 @@
 import React from "react"
 import styled from "styled-components"
 import PageLink from "../components/pageLink"
+import Arrow from "../components/arrow"
+
 
 class Layout extends React.Component {
   render() {
     const { children } = this.props
     let header
 
+    function openMenu() {
+      alert('Menu coming soon');
+    }
+
     header = (
         <Header id="masthead">
           
-          <div className="menu width-100 flex align-self--start justify-center header-component">
+          <div onClick={openMenu} onKeyPress={openMenu} role='menu' tabIndex={0} className="menu width-100 flex align-self--start justify-center header-component">
             <img src={'/assets/menu.svg'} alt="Menu" style={{ width: `15px`, cursor:`pointer`, margin:`0px`}} />
           </div>
           
@@ -19,7 +25,7 @@ class Layout extends React.Component {
               <img src={'/assets/logo.svg'} alt="Logo" style={{ width: `15px`, boxShadow: `none`, textDecoration: `none`, color: `inherit`, margin:`0px` }} />
             </PageLink>
           </div>
-          
+
         </Header>
     )
 
@@ -31,12 +37,12 @@ class Layout extends React.Component {
         <main className="main-content">{children}</main>
      
         <Footer className="flex" style={{ paddingTop: `80px`}}>
-          <p className="m-100" style={{ textAlign: `left`, opacity: `0.4`, margin:0 }}>
+          <p className="m-100 text-grey" style={{ textAlign: `left`, margin:0 }}>
             © {new Date().getFullYear()} Groundcrew Agency Pty Ltd
           </p> 
           <p className="m-100" style={{ margin:`auto`, marginRight: `0px`}}>
-            <a style={{ textDecoration:`none`, boxShadow:`none`, color: `#000`, marginRight:`30px`}} href="https://www.facebook.com/groundcrew.com.au">Facebook</a>
-            <a style={{ textDecoration:`none`, boxShadow:`none`, color: `#000`}}  href="https://www.instagram.com/groundcrew.com.au">Instagram</a>
+            <a className="link text-black" rel='noopener noreferrer' target='_blank' href="https://www.facebook.com/groundcrew.com.au">Facebook <Arrow></Arrow></a>
+            <a className="link text-black ml20" rel='noopener noreferrer' target='_blank' href="https://www.instagram.com/groundcrew.com.au">Instagram <Arrow></Arrow></a>
           </p>
         </Footer>
       </Wrapper>

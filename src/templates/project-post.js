@@ -68,7 +68,7 @@ class ProjectPostTemplate extends React.Component {
           style={{ width: '100%', }} 
         />
         )}
-        <div className="flex pb20 bb1 p1 pl2">
+        <div className="flex pb20 bb1 p1 pl1 ml1">
           <div className="half pr1 br1" style={{ paddingBottom: `150px`}}>
             <div style={{maxWidth: `750px`}}>
               <MDXRenderer>{post.body}</MDXRenderer>
@@ -90,11 +90,11 @@ class ProjectPostTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="flex pb20 bb1 p1 pl2">
-          <div className="half pr1">
+        <div className="flex pb20 bb1 p1 pl1 ml1">
+          <div className="width-50 pr1">
             <PageLink to='/' arrow='true'>Projects</PageLink>
           </div>
-          <div className="half pl1">
+          <div className="width-50 pl1 ml1">
             {previous && previous.frontmatter.type === 'project' && (
               <SlideLink direction="down" to={`project${previous.fields.slug}`} rel="previous">
                 <p className="text-grey m0">Next Project</p>

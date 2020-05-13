@@ -12,17 +12,13 @@ class BlogPostTemplate extends React.Component {
     
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}
-        />
-
-        <div style={{ padding: `40px`, maxWidth: `700px`}}>
-          <p>{post.frontmatter.title}</p>
+        <SEO title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt}/>
+        <div className='ml1 p1 max-1000'>
+          <p className='text-black m0 mb20'>{post.frontmatter.title}</p>
           <MDXRenderer>{post.body}</MDXRenderer>
         </div>
        
-        <ul
+        <ul className='ml1'
           style={{ display: `flex`, flexWrap: `wrap`, justifyContent: `space-between`, listStyle: `none`,  padding:`20px 40px` }}>
           <li>
             {previous && (
@@ -59,6 +55,13 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        image {
+          childImageSharp {
+            fluid(maxWidth: 1600, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
       }
     }
   }

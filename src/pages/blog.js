@@ -1,52 +1,50 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-
-import Bio from "../components/bio"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
-import Button from "../components/button"
+import Image from "gatsby-image"
+import PageLink from "../components/pageLink"
 
 class Blog extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMdx.edges
-
+    const posts = data.allMdx.edges;
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
-        <Bio />
-        <div style={{ margin: "20px 0 40px" }}>
+        <div className='ml1 p1'>
           {posts.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug
+            const title = node.frontmatter.title || node.fields.slug            
             return (
-              <div key={node.fields.slug}>
-                <h3
-                  style={{
-                    marginBottom: rhythm(1 / 4),
-                  }}
-                >
-                  <Link
-                    style={{ boxShadow: `none` }}
-                    to={`blog${node.fields.slug}`}
-                  >
-                    {title}
-                  </Link>
-                </h3>
-                <small>{node.frontmatter.date}</small>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
-                  }}
-                />
+              <div className='pb1 mb1 bb1' key={node.fields.slug}>
+                  <div className='flex'>
+                    <div className='width-50'>
+                        <div className="max-375">
+                          <PageLink to={`blog${node.fields.slug}`}>
+                            <p className='link m0 text-black'>{title}</p>
+                            <p className='mt20 mb2' dangerouslySetInnerHTML={{ __html: node.frontmatter.description || node.excerpt}}/>
+                          </PageLink>
+                        </div>
+                    </div>
+                    <div className='width-50 pt1'></div>
+                  </div>
+                  <div className='flex'>
+                    <div className='width-50 pt1'></div>
+                    <div className='width-50'>
+                      {node.frontmatter.image && (
+                        <PageLink to={`blog${node.fields.slug}`}>
+                          <Image
+                          fluid={node.frontmatter.image.childImageSharp.fluid}
+                          alt="Groundcrew" style={{ width: '100%', }}/>
+                        </PageLink>
+                      )}
+                    </div>
+                  </div>
               </div>
             )
           })}
         </div>
-        <Link to="/">
-          <Button marginTop="85px">Go Home</Button>
-        </Link>
       </Layout>
     )
   }
@@ -75,6 +73,13 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            image {
+              childImageSharp {
+                fluid(maxWidth: 1600, quality: 90) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
           }
         }
       }

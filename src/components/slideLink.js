@@ -22,7 +22,7 @@ class pageLink extends React.Component {
   }
 
   render() {
-    const timing = 4
+    const timing = 3
     return (
       <TransitionLink className="link"
       exit={{ length:timing, direction: this.props.direction, trigger: ({ exit, node }) => this.exit(exit, node)}}
