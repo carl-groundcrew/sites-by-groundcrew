@@ -1,17 +1,17 @@
 import React from "react"
 import TransitionLink from "gatsby-plugin-transition-link"
-import {TimelineLite, gsap} from 'gsap'
+import gsap from 'gsap'
 
 class pageLink extends React.Component {
   exit(exit, node) {
-    const tl = new TimelineLite({paused: true});
+    const tl = gsap.timeline({paused: true});
     tl.to( node.querySelectorAll('.header-component'), { x: -50, ease: 'power1.out', duration:exit.length/2})
     tl.to( node.querySelector('.app'), { opacity: 0, ease: 'power1.out', duration:exit.length/2})
     return tl.play();
   }
 
   enter(entry, node) {
-    const tl = new TimelineLite({paused: true});
+    const tl = gsap.timeline({paused: true});
     tl.from( node.querySelector('.app'), { opacity: 0, ease: 'power1.in',duration:entry.length/2})
     tl.from( node.querySelectorAll('.header-component'), { x: -50, ease: 'power1.out', duration:entry.length/3})
     return tl.play();
