@@ -1,6 +1,6 @@
 import React from "react"
 import TransitionLink from "gatsby-plugin-transition-link"
-import {TimelineLite} from 'gsap'
+import {TimelineLite, gsap} from 'gsap'
 
 class pageLink extends React.Component {
   exit(exit, node) {
