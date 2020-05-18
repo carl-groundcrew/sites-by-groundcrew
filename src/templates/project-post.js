@@ -4,10 +4,31 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import SlideLink from "../components/slideLink"
-import PageLink from "../components/pageLink"
 import Image from "gatsby-image"
+import gsap from 'gsap'
 
 class ProjectPostTemplate extends React.Component {
+  constructor() {
+    super();
+    this.previewProject = this.previewProject.bind(this);
+    this.hidePreview = this.hidePreview.bind(this);
+  }
+
+  previewProject() {
+    const tl = gsap.timeline({paused: true});
+    tl.to( document.querySelectorAll('.project-preview'), { height: '5vh', ease: 'power1.out', duration:.5})
+    tl.to( document.querySelectorAll('.footer'), { y: '-5vh', ease: 'power1.out', duration:.5}, '-=.5')
+    tl.to( document.querySelectorAll('.main-header, .header-break'), { y: '-5vh', ease: 'power1.out', duration:.5}, '-=.5')
+    tl.play();
+  }
+
+  hidePreview() {
+    const tl = gsap.timeline({paused: true});
+    tl.to( document.querySelectorAll('.project-preview'), { height: 0, ease: 'power1.out', duration:.5})
+    tl.to( document.querySelectorAll('.footer'), { y: 0, ease: 'power1.out', duration:.5}, '-=.5')
+    tl.to( document.querySelectorAll('.main-header, .header-break'), { y: 0, ease: 'power1.out', duration:.5}, '-=.5')
+    tl.play();
+  }
 
   render() {
     const post = this.props.data.mdx
@@ -21,18 +42,17 @@ class ProjectPostTemplate extends React.Component {
           description={post.frontmatter.description || post.excerpt}
         />
         <div style={{backgroundColor:`${post.frontmatter.color}`}}>     
-         
-          {post.frontmatter.featureImage && !post.frontmatter.projectImage1 && (
+          {post.frontmatter.featureImage && (
             <Image
             fluid={post.frontmatter.featureImage.childImageSharp.fluid}
             alt="Project Image" style={{ width: '100%'}} />
           )}    
-          {post.frontmatter.projectImage1 && (
-            <Image
-              fluid={post.frontmatter.projectImage1.childImageSharp.fluid}
-              alt="Groundcrew" style={{ width: '100%', }} />
-          )}
         </div>
+        {post.frontmatter.projectImage1 && (
+          <Image
+            fluid={post.frontmatter.projectImage1.childImageSharp.fluid}
+            alt="Groundcrew" style={{ width: '100%', }} />
+        )}
         {post.frontmatter.projectImage2 && (
         <Image
           fluid={post.frontmatter.projectImage2.childImageSharp.fluid}
@@ -90,20 +110,21 @@ class ProjectPostTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="flex pb20 bb1 p1 pl1 ml1">
-          <div className="width-50 pr1">
-            <PageLink to='/' arrow='true'>Projects</PageLink>
-          </div>
-          <div className="width-50 pl1 ml1">
-            {previous && previous.frontmatter.type === 'project' && (
+        <div className="flex p1 pb2 pt2 mt2 ml1">
+          {previous && previous.frontmatter.type === 'project' && (
+            <div onMouseOver={this.previewProject} onMouseOut={this.hidePreview} onBlur={this.hidePreview} onFocus={this.previewProject} role='link' tabIndex={0} className='next-project text-center width-100'>
               <SlideLink direction="down" to={`project${previous.fields.slug}`} rel="previous">
                 <p className="text-grey m0">Next Project</p>
-                <p className="h3 m0 text-black mb1">{previous.frontmatter.title}</p>
-                <img src={previous.frontmatter.featureImage.childImageSharp.fluid.srcWebp} alt='Next Project' />
+                <p className="h0 m0 text-black mb1">{previous.frontmatter.title}</p>
               </SlideLink>
-            )}
-          </div>
+            </div>
+          )}
         </div>
+        {previous && previous.frontmatter.type === 'project' && (
+          <div className='project-preview'>
+            <img className='width-100' src={previous.frontmatter.featureImage.childImageSharp.fluid.srcWebp} alt='Next Project' />
+          </div>
+        )}
       </Layout>
     )
   }

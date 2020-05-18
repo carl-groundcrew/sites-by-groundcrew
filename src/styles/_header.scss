@@ -13,13 +13,31 @@
 	padding:15px 5px;
 	color:#fff;
 	height:100vh;
+	width: 40px;
 }
 .header-break {
 	position:fixed;
-	left:40px;
+	left:0px;
 	top:0px;
 	height: 100vh;
-	width: 1px;
-	background-color: rgba(196,196,196,.4);
-	z-index: 10;
+	width: 40px;
+	border-right: 1px solid rgba(196,196,196,.4);
+	z-index: 9;
+}
+.header-menu {
+	writing-mode: vertical-rl;
+    display: inline-block;
+    opacity: 0;
+    .page-link {
+    	display: inline-block;
+    	margin-bottom: 10px;
+    	transform: rotate(180deg);
+    	color:#fff;
+    	line-height: 30px;
+    }
+}
+.menu {
+	&:focus {
+		outline:none;
+	}
 }

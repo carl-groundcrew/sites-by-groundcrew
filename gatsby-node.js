@@ -25,7 +25,7 @@ exports.createPages = ({ graphql, actions }) => {
                 type 
                 featureImage {
                   childImageSharp {
-                    fluid {
+                    fluid(maxWidth: 1600, quality: 90) {
                       srcWebp
                     }
                   }
