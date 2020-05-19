@@ -60,9 +60,11 @@ class Layout extends React.Component {
           </div>
 
         </Header>
-    )
-    const isProject = window.location.pathname.includes('/project/');
+    ) 
+    
 
+    const isProject =this.props.location.pathname.includes('/project/');
+    
     return (
       <Wrapper className="app">
 
