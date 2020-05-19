@@ -123,7 +123,7 @@ class ProjectPostTemplate extends React.Component {
         </div>
         {previous && previous.frontmatter.type === 'project' && (
           <div className='project-preview'>
-            <img className='width-100' src={previous.frontmatter.featureImage.childImageSharp.fluid.srcWebp} alt='Next Project' />
+            <img className='width-100' src={previous.frontmatter.featureImage.childImageSharp.fluid.src} alt='Next Project' />
           </div>
         )}
       </Layout>

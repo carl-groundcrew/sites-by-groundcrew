@@ -32,17 +32,18 @@ class IndexPage extends React.Component {
         </div>
         <div className="projects with-cursor" role='link' tabIndex={0}  
             onMouseMove={e => {
+              console.log(e.clientX);
               const cursor = document.querySelector(".cursor")
-              cursor.style.left = `${e.pageX}px`
-              cursor.style.top = `${e.pageY}px`
+              cursor.style.left = `${e.clientX}px`
+              cursor.style.top = `${e.clientY}px`
             }}
             onMouseLeave={() => {
               const cursor = document.querySelector(".cursor")
-              cursor.classList.add("hide")
+              cursor.classList.remove("active")
             }}
             onMouseEnter={() => {
               const cursor = document.querySelector(".cursor")
-              cursor.classList.remove("hide")
+              cursor.classList.add("active")
             }}
           >
           <Cursor /> 
