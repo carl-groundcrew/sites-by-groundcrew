@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import SlideLink from "../components/slideLink"
 import Image from "gatsby-image"
+import PageLink from "../components/pageLink"
 import gsap from 'gsap'
 
 class ProjectPostTemplate extends React.Component {
@@ -113,12 +114,18 @@ class ProjectPostTemplate extends React.Component {
         </div>
 
         <div className="flex p1 pb2 pt2 mt2 ml1">
-          {previous && previous.frontmatter.type === 'project' && (
+          {previous && previous.frontmatter.type === 'project' ? (
             <div onMouseOver={this.previewProject} onMouseOut={this.hidePreview} onBlur={this.hidePreview} onFocus={this.previewProject} role='link' tabIndex={0} className='next-project text-center width-100'>
               <SlideLink direction="down" to={`project${previous.fields.slug}`} rel="previous">
                 <p className="text-grey m0">Next Project</p>
                 <p className="h0 m0 text-black mb1">{previous.frontmatter.title}</p>
               </SlideLink>
+            </div>
+          ) : (
+            <div className="back-projects mla mra mt2 mb2">
+              <PageLink to='/projects' rel="back">
+                <p className="h0 m0 mla mra text-black mb1">Back to all projects</p>
+              </PageLink>
             </div>
           )}
         </div>

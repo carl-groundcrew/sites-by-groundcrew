@@ -27,7 +27,11 @@ class IndexPage extends React.Component {
           </div>
           <div className="title-area width-100 align-self--bottom flex p1 pl2">
             <span className="m0">Featured Projects</span>
-            <span className="m0 mla">See All</span>
+            <div className='mla'>
+              <PageLink to='/projects'>
+                <span className="m0 text-black">See All <Arrow /></span>
+              </PageLink>
+            </div>
           </div>
         </div>
         <div className="projects with-cursor" role='link' tabIndex={0}  
