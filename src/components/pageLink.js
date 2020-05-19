@@ -6,6 +6,7 @@ class pageLink extends React.Component {
   exit(exit, node) {
     const tl = gsap.timeline({paused: true});
     tl.to( node.querySelectorAll('.header-component'), { x: -50, ease: 'power1.out', duration:exit.length/2})
+    tl.to( node.querySelector('.project-caption'), { x:-20, opacity:0, ease: 'power1.out', duration:exit.length/2}, '-='+exit.length/2)
     tl.to( node.querySelector('.app'), { opacity: 0, ease: 'power1.out', duration:exit.length/2})
     return tl.play();
   }
@@ -14,6 +15,7 @@ class pageLink extends React.Component {
     const tl = gsap.timeline({paused: true});
     tl.from( node.querySelector('.app'), { opacity: 0, ease: 'power1.in',duration:entry.length/2})
     tl.from( node.querySelectorAll('.header-component'), { x: -50, ease: 'power1.out', duration:entry.length/3})
+    tl.fromTo( node.querySelector('.project-caption'), {x:-20, opacity:0 }, { opacity:1, x: 0, ease: 'power1.out', duration:entry.length/3}, '-='+entry.length/3)
     return tl.play();
   }
 

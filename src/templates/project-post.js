@@ -18,7 +18,7 @@ class ProjectPostTemplate extends React.Component {
     const tl = gsap.timeline({paused: true});
     tl.to( document.querySelectorAll('.project-preview'), { height: '5vh', ease: 'power1.out', duration:.5})
     tl.to( document.querySelectorAll('.footer'), { y: '-5vh', ease: 'power1.out', duration:.5}, '-=.5')
-    tl.to( document.querySelectorAll('.main-header, .header-break'), { y: '-5vh', ease: 'power1.out', duration:.5}, '-=.5')
+    tl.to( document.querySelectorAll('.main-header .logo, .header-break'), { y: '-5vh', ease: 'power1.out', duration:.5}, '-=.5')
     tl.play();
   }
 
@@ -26,7 +26,7 @@ class ProjectPostTemplate extends React.Component {
     const tl = gsap.timeline({paused: true});
     tl.to( document.querySelectorAll('.project-preview'), { height: 0, ease: 'power1.out', duration:.5})
     tl.to( document.querySelectorAll('.footer'), { y: 0, ease: 'power1.out', duration:.5}, '-=.5')
-    tl.to( document.querySelectorAll('.main-header, .header-break'), { y: 0, ease: 'power1.out', duration:.5}, '-=.5')
+    tl.to( document.querySelectorAll('.main-header .logo, .header-break'), { y: 0, ease: 'power1.out', duration:.5}, '-=.5')
     tl.play();
   }
 
@@ -41,7 +41,8 @@ class ProjectPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <div style={{backgroundColor:`${post.frontmatter.color}`}}>     
+        <div style={{backgroundColor:`${post.frontmatter.color}`}}>   
+          <div className='project-caption'>{post.frontmatter.title}</div>
           {post.frontmatter.featureImage && (
             <Image
             fluid={post.frontmatter.featureImage.childImageSharp.fluid}

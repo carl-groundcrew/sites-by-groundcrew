@@ -61,24 +61,26 @@ class Layout extends React.Component {
 
         </Header>
     )
+    const isProject = window.location.pathname.includes('/project/');
 
     return (
       <Wrapper className="app">
-        
+
         {header}
 
         <div className="header-break header-component"></div>
         <main className="main-content">{children}</main>
-     
-        <Footer className="flex footer" style={{ paddingTop: `80px`}}>
-          <p className="m-100 text-grey" style={{ textAlign: `left`, margin:0 }}>
-            © {new Date().getFullYear()} Groundcrew Agency Pty Ltd
-          </p> 
-          <p className="m-100" style={{ margin:`auto`, marginRight: `0px`}}>
-            <a className="link text-black" rel='noopener noreferrer' target='_blank' href="https://www.facebook.com/groundcrew.com.au">Facebook <Arrow></Arrow></a>
-            <a className="link text-black ml20" rel='noopener noreferrer' target='_blank' href="https://www.instagram.com/groundcrew.com.au">Instagram <Arrow></Arrow></a>
-          </p>
-        </Footer>
+        { !isProject && (
+          <Footer className="flex footer" style={{ paddingTop: `80px`}}>
+            <p className="m-100 text-grey" style={{ textAlign: `left`, margin:0 }}>
+              © {new Date().getFullYear()} Groundcrew Agency Pty Ltd
+            </p> 
+            <p className="m-100" style={{ margin:`auto`, marginRight: `0px`}}>
+              <a className="link text-black" rel='noopener noreferrer' target='_blank' href="https://www.facebook.com/groundcrew.com.au">Facebook <Arrow></Arrow></a>
+              <a className="link text-black ml20" rel='noopener noreferrer' target='_blank' href="https://www.instagram.com/groundcrew.com.au">Instagram <Arrow></Arrow></a>
+            </p>
+          </Footer>
+        )}
       </Wrapper>
     )
   }

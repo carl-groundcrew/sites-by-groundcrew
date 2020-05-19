@@ -8,3 +8,11 @@
 	height: 0vh;
 	width: 100%;
 }
+
+.project-caption {
+	position: absolute;
+	z-index: 2;
+	left: 80px;
+	top: $spacing;
+	color:#fff;
+}

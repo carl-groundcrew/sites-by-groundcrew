@@ -4,6 +4,7 @@ import Image from "gatsby-image"
 import Arrow from "../components/arrow"
 import SEO from "../components/seo"
 import PageLink from "../components/pageLink"
+import Cursor from "../components/cursor"
 
 class IndexPage extends React.Component {
 
@@ -29,7 +30,22 @@ class IndexPage extends React.Component {
             <span className="m0 mla">See All</span>
           </div>
         </div>
-        <div className="projects">
+        <div className="projects with-cursor" role='link' tabIndex={0}  
+            onMouseMove={e => {
+              const cursor = document.querySelector(".cursor")
+              cursor.style.left = `${e.pageX}px`
+              cursor.style.top = `${e.pageY}px`
+            }}
+            onMouseLeave={() => {
+              const cursor = document.querySelector(".cursor")
+              cursor.classList.add("hide")
+            }}
+            onMouseEnter={() => {
+              const cursor = document.querySelector(".cursor")
+              cursor.classList.remove("hide")
+            }}
+          >
+          <Cursor /> 
           {projects.map(({ node }) => {
             return (
               <div className="single-project" key={node.fields.slug}>
