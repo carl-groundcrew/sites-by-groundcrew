@@ -16,3 +16,22 @@
 	top: $spacing;
 	color:#fff;
 }
+
+.project-information {
+	position: absolute;
+	bottom:$spacing;
+	right: $spacing;
+	writing-mode: vertical-rl;
+    display: inline-block;
+    transform:rotate(180deg);
+	margin: 0px;
+}
+
+.single-project {
+	&.half {
+		max-width: 50%;
+	}
+	&.right {
+		margin-left: auto;
+	}
+}

@@ -97,6 +97,9 @@ p {
 .text-black {
 	color:$black;
 }
+.text-white {
+	color:#fff;
+}
 
 .text-center {
 	text-align: center;
@@ -132,6 +135,12 @@ p {
 
 img[aria-hidden="true"] {
 	filter: blur(30px);
+}
+
+/*================ Position styles ================*/
+
+.position-relative {
+	position: relative;
 }
 
 /*================ Display styles ================*/
@@ -171,6 +180,11 @@ img[aria-hidden="true"] {
 	width: 50%;
 	@media (max-width: $seven) {
 		width: 100%;
+	}
+}
+.direction-r {
+	.flex {
+		flex-direction: row-reverse;
 	}
 }
 

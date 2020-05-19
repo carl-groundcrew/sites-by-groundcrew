@@ -14,6 +14,7 @@ class pageLink extends React.Component {
     tl.fromTo( node.querySelector('.app'), { y: '95vh', height:'100vh', overflow:'hidden'}, { y: 0, ease:'power2.inOut', duration:entry.length/2})
     tl.from( node.querySelectorAll('.header-component'), { x: -50, ease: 'power1.out', duration:entry.length/3, onComplete:this.afterAnimation})
     tl.fromTo( node.querySelector('.project-caption'), {x:-20, opacity:0 }, { opacity:1, x: 0, ease: 'power1.out', duration:entry.length/3}, '-='+entry.length/3)
+    tl.fromTo( node.querySelector('.project-information'), {x:20, opacity:0 }, { opacity:1, x: 0, ease: 'power1.out', duration:entry.length/3}, '-='+entry.length/3)
     return tl.play();
   }
   

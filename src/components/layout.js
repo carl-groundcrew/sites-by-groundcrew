@@ -50,6 +50,7 @@ class Layout extends React.Component {
           <div className="header-menu flex width-100 align-self--center header-component" ref={this.dropdownMenu}>
             <PageLink to='/contact'>Contact</PageLink>
             <PageLink to='/blog'>Blog</PageLink>
+            <PageLink to='/projects'>Projects</PageLink>
             <PageLink to='/'>Home</PageLink>
           </div>
             

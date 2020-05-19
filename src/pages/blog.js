@@ -10,19 +10,21 @@ class Blog extends React.Component {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMdx.edges;
+    var postNo = 1;
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
         <div className='ml1 p1'>
           {posts.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug            
+            const title = node.frontmatter.title || node.fields.slug 
+            postNo = postNo + 1;         
             return (
-              <div className='pb1 mb1 bb1' key={node.fields.slug}>
+              <div className={'blog-post pb1 mb1 bb1 direction-'+(postNo%2 ? 'r':'l')} key={node.fields.slug}>
                   <div className='flex'>
                     <div className='width-50'>
                         <div className="max-375">
                           <PageLink to={`blog${node.fields.slug}`}>
-                            <p className='link m0 text-black'>{title}</p>
+                            <p className='link m0 text-black'>{title} {node.index}</p>
                             <p className='mt20 mb2' dangerouslySetInnerHTML={{ __html: node.frontmatter.description || node.excerpt}}/>
                           </PageLink>
                         </div>
