@@ -97,6 +97,9 @@ p {
 .text-black {
 	color:$black;
 }
+.text-grey {
+	color:#9e9e9e;
+}
 .text-white {
 	color:#fff;
 }
@@ -275,6 +278,13 @@ img[aria-hidden="true"] {
 	padding-bottom: $spacing*2;
 }
 
+.pl20 {
+	padding-left: 20px;
+	@media (max-width: $seven) {
+		padding-left: 0px;
+	}
+}
+
 .pl1 {
 	padding-left: $spacing;
 	@media (max-width: $seven) {
@@ -288,6 +298,12 @@ img[aria-hidden="true"] {
 	}
 }
 
+.pr20 {
+	padding-right: 20px;
+	@media (max-width: $seven) {
+		padding-right: 0px;
+	}
+}
 .pr1 {
 	padding-right: $spacing;
 	@media (max-width: $seven) {

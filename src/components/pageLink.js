@@ -6,7 +6,8 @@ class pageLink extends React.Component {
   exit(exit, node) {
     const tl = gsap.timeline({paused: true});
     tl.to( node.querySelectorAll('.header-component'), { x: -50, ease: 'power1.out', duration:exit.length/2})
-    tl.to( node.querySelector('.project-caption'), { x:-20, opacity:0, ease: 'power1.out', duration:exit.length/2}, '-='+exit.length/2)
+    tl.to( node.querySelector('.fade-out-right'), { x:10, opacity:0, ease: 'power1.out', duration:exit.length/2}, '-='+exit.length/2)
+    tl.to( node.querySelector('.fade-out-left'), { x:-10, opacity:0, ease: 'power1.out', duration:exit.length/2}, '-='+exit.length/2)
     tl.to( node.querySelector('.app'), { opacity: 0, ease: 'power1.out', duration:exit.length/2})
     return tl.play();
   }
@@ -15,12 +16,12 @@ class pageLink extends React.Component {
     const tl = gsap.timeline({paused: true});
     tl.from( node.querySelector('.app'), { opacity: 0, ease: 'power1.in',duration:entry.length/2})
     tl.from( node.querySelectorAll('.header-component'), { x: -50, ease: 'power1.out', duration:entry.length/3})
-    tl.fromTo( node.querySelector('.project-caption'), {x:-20, opacity:0 }, { opacity:1, x: 0, ease: 'power1.out', duration:entry.length/3}, '-='+entry.length/3)
+    tl.fromTo( node.querySelector('.fade-in-left'), {x:10, opacity:0 }, { opacity:1, x: 0, ease: 'power1.out', duration:entry.length/3}, '-='+entry.length/3)
     return tl.play();
   }
 
   render() {
-    const timing = 1.5
+    const timing = 1.5;
     const arrow = ()=>{
       if(this.props.arrow){
         return <svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">

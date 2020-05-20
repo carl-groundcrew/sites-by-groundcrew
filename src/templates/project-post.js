@@ -38,18 +38,16 @@ class ProjectPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}
-        />
+        
+        <SEO title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />
+        
         <div className='project-banner position-relative' style={{backgroundColor:`${post.frontmatter.color}`}}>   
-          <div className='project-caption'>{post.frontmatter.title}</div>
           {post.frontmatter.featureImage && (
             <Image
             fluid={post.frontmatter.featureImage.childImageSharp.fluid}
             alt="Project Image" style={{ width: '100%'}} />
           )}  
-          <p className='project-information'>Featured by: <span className='text-white'>Awwwards / UIJAR / Mindsparkle</span></p>  
+          <p className='project-information fade-out-right fade-in-left'>Featured by: <span className='text-white'>Awwwards / UIJAR / Mindsparkle</span></p>  
         </div>
         {post.frontmatter.projectImage1 && (
           <Image

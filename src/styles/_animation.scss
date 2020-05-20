@@ -1,0 +1,35 @@
+/*--------------------------------------------------------------
+## ANIMATION STYLING
+--------------------------------------------------------------*/
+
+[data-sal] {
+  opacity: 0;
+  transition-duration: 0.75s;
+  transition-delay:.5s;
+  
+  &.delay {
+    transition-delay:.75s;
+  }
+
+  &.fade-up {
+    transform: translateY(20px);
+  }
+ 
+  &.right-rotated {
+    transform: translateX(10px) rotate(180deg);
+  }
+
+  &.right-rotated {
+    transform: translateX(10px) rotate(180deg);
+  }
+
+  &.sal-animate {
+    opacity: 1;
+    &.fade-up {
+      transform: translateY(0px);
+    }
+    &.right-rotated {
+      transform: translateX(0) rotate(180deg);
+    }
+  }
+}

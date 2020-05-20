@@ -2,6 +2,8 @@
 ## PROJECT STYLING
 --------------------------------------------------------------*/
 
+/*================ Next Project Preview ================*/
+
 .project-preview {
 	position: fixed;
 	bottom: 0px;
@@ -9,12 +11,15 @@
 	width: 100%;
 }
 
+/*================ Project Information ================*/
+
 .project-caption {
 	position: absolute;
 	z-index: 2;
 	left: 80px;
 	top: $spacing;
 	color:#fff;
+	pointer-events: none;
 }
 
 .project-information {
@@ -25,7 +30,10 @@
     display: inline-block;
     transform:rotate(180deg);
 	margin: 0px;
+	z-index: 1;
 }
+
+/*================ Project Wayfinder ================*/
 
 .single-project {
 	&.half {
@@ -33,5 +41,19 @@
 	}
 	&.right {
 		margin-left: auto;
+	}
+}
+
+/*================ Homepage Project ================*/
+
+.single-project {
+	.project-caption {
+		opacity: 0;
+		transition-duration: 0.75s;
+	}
+	&:hover {
+		.project-caption {
+			opacity: 1;
+		}
 	}
 }

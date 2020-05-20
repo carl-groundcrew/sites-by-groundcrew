@@ -52,7 +52,9 @@ class IndexPage extends React.Component {
           <Cursor /> 
           {projects.map(({ node }) => {
             return (
-              <div className="single-project" key={node.fields.slug}>
+              <div className="single-project position-relative" key={node.fields.slug}>
+                <div className='project-caption'>{node.frontmatter.title}</div>
+                <div className='project-information text-grey right-rotated' data-sal><p className='fade-out-left'>Featured by: <span className='text-white'>Awwwards / UIJAR / Mindsparkle</span></p></div>
                 {node.frontmatter.featureImage && (
                   <PageLink to={`project${node.fields.slug}`}>
                     <Image style={{backgroundColor:`${node.frontmatter.color}`}}

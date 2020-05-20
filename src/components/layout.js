@@ -51,6 +51,7 @@ class Layout extends React.Component {
             <PageLink to='/contact'>Contact</PageLink>
             <PageLink to='/blog'>Blog</PageLink>
             <PageLink to='/projects'>Projects</PageLink>
+            <PageLink to='/about'>About</PageLink>
             <PageLink to='/'>Home</PageLink>
           </div>
             
