@@ -17,8 +17,10 @@ class IndexPage extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="Home" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
 
-        <div className="image-wrapper" style={{backgroundColor:`#351f44`}}>
-          <Image className="image-full" fluid={data.hero.childImageSharp.fluid} alt="Hero Image - Groundcrew" /> 
+        <div className="height-100 position-relative" style={{ backgroundColor: '#000' }}>
+          <video className='background-video' autoPlay muted loop>
+            <source src='https://studiobrave.com.au/wp-content/uploads/2019/04/Studio-Brave-Website-A-Vimeo-1080p.mp4' type="video/mp4" />
+          </video>
         </div>
 
         <div className='height-100 flex flex-wrap'>

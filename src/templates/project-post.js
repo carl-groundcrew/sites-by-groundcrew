@@ -19,14 +19,14 @@ class ProjectPostTemplate extends React.Component {
 
   previewAllProjects() {
     const tl = gsap.timeline({paused: true});
-    tl.to( document.querySelectorAll('.background-video'), { opacity: 1, ease: 'power1.out', duration:1})
+    tl.to( document.querySelectorAll('.video-preview'), { opacity: 1, ease: 'power1.out', duration:1})
     tl.to( document.querySelectorAll('.video-overlay p'), { color: '#fff', ease: 'power1.out', duration:1}, '-=1')
     tl.play();
   }
 
   hideAllProjects() {
     const tl = gsap.timeline({paused: true});
-    tl.to( document.querySelectorAll('.background-video'), { opacity: 0, ease: 'power1.out', duration:1})
+    tl.to( document.querySelectorAll('.video-preview'), { opacity: 0, ease: 'power1.out', duration:1})
     tl.to( document.querySelectorAll('.video-overlay p'), { color: '#000', ease: 'power1.out', duration:1}, '-=1')
     tl.play();
   }
@@ -144,7 +144,7 @@ class ProjectPostTemplate extends React.Component {
                   </button>
                 </PageLink>
               </div>
-              <video className='background-video' autoPlay muted loop>
+              <video className='video-preview' autoPlay muted loop>
                 <source src='https://player.vimeo.com/external/420480222.hd.mp4?s=78d5e122fc5178951c7121983f971600296e1935&profile_id=175' type="video/mp4" />
               </video>
             </div>
