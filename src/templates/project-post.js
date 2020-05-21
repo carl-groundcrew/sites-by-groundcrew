@@ -13,6 +13,22 @@ class ProjectPostTemplate extends React.Component {
     super();
     this.previewProject = this.previewProject.bind(this);
     this.hidePreview = this.hidePreview.bind(this);
+    this.previewAllProjects = this.previewAllProjects.bind(this);
+    this.hideAllProjects = this.hideAllProjects.bind(this);
+  }
+
+  previewAllProjects() {
+    const tl = gsap.timeline({paused: true});
+    tl.to( document.querySelectorAll('.background-video'), { opacity: 1, ease: 'power1.out', duration:1})
+    tl.to( document.querySelectorAll('.video-overlay p'), { color: '#fff', ease: 'power1.out', duration:1}, '-=1')
+    tl.play();
+  }
+
+  hideAllProjects() {
+    const tl = gsap.timeline({paused: true});
+    tl.to( document.querySelectorAll('.background-video'), { opacity: 0, ease: 'power1.out', duration:1})
+    tl.to( document.querySelectorAll('.video-overlay p'), { color: '#000', ease: 'power1.out', duration:1}, '-=1')
+    tl.play();
   }
 
   previewProject() {
@@ -111,7 +127,7 @@ class ProjectPostTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="flex p1 pb2 pt2 mt2 ml1">
+        <div className="flex position-relative p1 pb2 pt4 ml1">
           {previous && previous.frontmatter.type === 'project' ? (
             <div onMouseOver={this.previewProject} onMouseOut={this.hidePreview} onBlur={this.hidePreview} onFocus={this.previewProject} role='link' tabIndex={0} className='next-project text-center width-100'>
               <SlideLink direction="down" to={`project${previous.fields.slug}`} rel="previous">
@@ -120,10 +136,17 @@ class ProjectPostTemplate extends React.Component {
               </SlideLink>
             </div>
           ) : (
-            <div className="back-projects mla mra mt2 mb2">
-              <PageLink to='/projects' rel="back">
-                <p className="h0 m0 mla mra text-black mb1">Back to all projects</p>
-              </PageLink>
+            <div className='back-projects flex width-100'>
+              <div className="video-overlay pt2 pb2 mla mra mt2 mb2">
+                <PageLink to='/projects' rel="back">
+                  <button onMouseOver={this.previewAllProjects} onMouseOut={this.hideAllProjects} onBlur={this.hideAllProjects} onFocus={this.previewAllProjects} role='link' tabIndex={0}>
+                    <p className="h0 m0 mla mra text-black mb1">Back to all projects</p>
+                  </button>
+                </PageLink>
+              </div>
+              <video className='background-video' autoPlay muted loop>
+                <source src='https://player.vimeo.com/external/420480222.hd.mp4?s=78d5e122fc5178951c7121983f971600296e1935&profile_id=175' type="video/mp4" />
+              </video>
             </div>
           )}
         </div>

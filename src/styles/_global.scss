@@ -140,6 +140,21 @@ img[aria-hidden="true"] {
 	filter: blur(30px);
 }
 
+/*================ Padding styles ================*/
+
+button {
+	appearance:none;
+	-webkit-appearance:none;
+	background: transparent;
+	border:none;
+	padding: 0px;
+	cursor: pointer;
+	&:focus {
+		outline:none;
+	}
+}
+
+
 /*================ Position styles ================*/
 
 .position-relative {
@@ -269,6 +284,9 @@ img[aria-hidden="true"] {
 }
 .pt2 {
 	padding-top: $spacing*2;
+}
+.pt4 {
+	padding-top: $spacing*4;
 }
 
 .pb1 {
