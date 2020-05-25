@@ -30,19 +30,15 @@ collections:
       - { name: website, label: Website, required: false}
       - { name: color, label: Project Color }
       - { name: featureImage, label: Feature Image, widget: image } 
-      - { name: projectImage1, label: Project Image 1, required: false, widget: image}
-      - { name: projectImage2, label: Project Image 2, required: false, widget: image}
-      - { name: projectImage3, label: Project Image 3, required: false, widget: image}
-      - { name: projectImage4, label: Project Image 4, required: false, widget: image}
-      - { name: projectImage5, label: Project Image 5, required: false, widget: image}
-      - { name: projectImage6, label: Project Image 6, required: false, widget: image} 
+      - { name: mobileImage, label: Mobile Feature Image, widget: image } 
       - label: Gallery
         name: galleryImages
         widget: list
         required: false
         fields:
-          - { label: Image, name: image, widget: image }
-          - { label: MobileImage, name: mobileImage, widget: image }
+          - { label: Image, name: image, widget: image, required: false }
+          - { label: Mobile Image, name: mobileImage, widget: image, required: false }
+          - { label: Video URL, name: video, required: false}
   - name: blog
     label: Blog
     folder: content/blog

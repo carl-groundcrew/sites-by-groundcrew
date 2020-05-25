@@ -31,7 +31,7 @@ class Projects extends React.Component {
               projectNo = 1;
             }
 
-            return (
+            return ( 
               <div className={'single-project position-relative mb1 '+classes} key={node.fields.slug}>
                 {node.frontmatter.featureImage && (
                   <PageLink to={`project${node.fields.slug}`}>

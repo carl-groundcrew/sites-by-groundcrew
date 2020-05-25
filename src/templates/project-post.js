@@ -50,8 +50,22 @@ class ProjectPostTemplate extends React.Component {
           <p className='project-information fade-out-right fade-in-left'>Featured by: <span className='text-white'>Awwwards / UIJAR / Mindsparkle</span></p>  
         </div>
 
-        
-        
+        {post.frontmatter.galleryImages && (
+          <div className='gallery-images'>
+            {post.frontmatter.galleryImages.map((node, i) => {
+              console.log(node); 
+              return (
+                <div className='project-asset' key={i}>
+                   <Image className='desktop-image' key={i} fluid={node.image.childImageSharp.fluid}
+                    alt={'Project Image '+(i)} style={{ width: '100%'}} />
+                     <Image className='mobile-image' key={i} fluid={node.mobileImage.childImageSharp.fluid}
+                    alt={'Mobile Project Image '+(i)} style={{ width: '100%'}} />
+                </div> 
+              )
+            })}
+          </div>
+
+        )}
 
         {post.frontmatter.projectImage1 && (
           <Image
@@ -162,6 +176,22 @@ export const pageQuery = graphql`
         color
         collaborations
         website
+        galleryImages {
+          image {
+            childImageSharp {
+              fluid(maxWidth: 1600, quality: 90) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+          mobileImage {
+            childImageSharp {
+              fluid(maxWidth: 1600, quality: 90) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
         featureImage {
           childImageSharp {
             fluid(maxWidth: 1600, quality: 90) {
