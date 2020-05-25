@@ -6,7 +6,7 @@ class pageLink extends React.Component {
   
   exit(exit, node) {
     const el = new TimelineLite({paused: true});
-    el.fromTo( node.querySelector('.app'), { position:'fixed', overflow:'hidden', left:'0px', width:'100%', top:window.scrollY*-1}, {  ease:'power2.inOut', duration:exit.length/2})
+    el.fromTo( node.querySelector('.app'), { overflowY:'hidden',position:'fixed',  left:'0px', width:'100vw', top:window.scrollY*-1}, {ease:'power2.inOut', duration:exit.length/2});
     return el.play();
   }
   enter(entry, node) {
