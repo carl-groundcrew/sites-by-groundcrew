@@ -40,9 +40,9 @@ collections:
         name: galleryImages
         widget: list
         required: false
-        fields: 
-          - { label: Image, name: image, widget: image}
-          - { label: Moble Image, name: mobileImage, widget: image}
+        fields:
+          - { label: Image, name: image, widget: image }
+          - { label: MobileImage, name: mobileImage, widget: image }
   - name: blog
     label: Blog
     folder: content/blog
