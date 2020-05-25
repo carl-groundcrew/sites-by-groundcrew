@@ -9,9 +9,6 @@ collaborations:
 website: https://redvets.com.au
 color: "#580c20"
 featureImage: assets/redvets.jpg
-galleryImages:
-  - assets/redvets.jpg
-  - assets/redvets.jpg
 ---
 ### Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 
