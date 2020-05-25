@@ -42,24 +42,41 @@ class ProjectPostTemplate extends React.Component {
         <SEO title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />
         
         <div className='project-banner position-relative' style={{backgroundColor:`${post.frontmatter.color}`}}>   
+          
           {post.frontmatter.featureImage && (
-            <Image
+            <Image className='height-100 mobile-hide'
             fluid={post.frontmatter.featureImage.childImageSharp.fluid}
             alt="Project Image" style={{ width: '100%'}} />
           )}  
+
+          {post.frontmatter.mobileImage && (
+            <Image className='height-100 mobile-show'
+            fluid={post.frontmatter.mobileImage.childImageSharp.fluid}
+            alt="Project Image" style={{ width: '100%'}} />
+          )}
+          {!post.frontmatter.mobileImage && (
+            <Image className='height-100 mobile-show'
+            fluid={post.frontmatter.featureImage.childImageSharp.fluid}
+            alt="Project Image" style={{ width: '100%'}} />
+          )}  
+
           <p className='project-information fade-out-right fade-in-left'>Featured by: <span className='text-white'>Awwwards / UIJAR / Mindsparkle</span></p>  
         </div>
 
         {post.frontmatter.galleryImages && (
           <div className='gallery-images'>
-            {post.frontmatter.galleryImages.map((node, i) => {
-              console.log(node); 
+            {post.frontmatter.galleryImages.map((node, i) => { 
               return (
                 <div className='project-asset' key={i}>
-                   <Image className='desktop-image' key={i} fluid={node.image.childImageSharp.fluid}
+                  <Image className='mobile-hide' fluid={node.image.childImageSharp.fluid}
                     alt={'Project Image '+(i)} style={{ width: '100%'}} />
-                     <Image className='mobile-image' key={i} fluid={node.mobileImage.childImageSharp.fluid}
+                  <Image className='mobile-show' fluid={node.mobileImage.childImageSharp.fluid}
                     alt={'Mobile Project Image '+(i)} style={{ width: '100%'}} />
+                  {node.video && (
+                    <video className='mobile-hide' style={{ width: '100%'}} autoPlay muted loop>
+                      <source src={node.video} type="video/mp4" />
+                    </video>
+                  )}
                 </div> 
               )
             })}
@@ -67,46 +84,7 @@ class ProjectPostTemplate extends React.Component {
 
         )}
 
-        {post.frontmatter.projectImage1 && (
-          <Image
-            fluid={post.frontmatter.projectImage1.childImageSharp.fluid}
-            alt="Groundcrew" style={{ width: '100%', }} />
-        )}
-        {post.frontmatter.projectImage2 && (
-        <Image
-          fluid={post.frontmatter.projectImage2.childImageSharp.fluid}
-          alt="Groundcrew"
-          style={{ width: '100%', }} 
-        />
-        )}
-        {post.frontmatter.projectImage3 && (
-        <Image
-          fluid={post.frontmatter.projectImage3.childImageSharp.fluid}
-          alt="Groundcrew"
-          style={{ width: '100%', }} 
-        />
-        )}
-        {post.frontmatter.projectImage4 && (
-        <Image
-          fluid={post.frontmatter.projectImage4.childImageSharp.fluid}
-          alt="Groundcrew"
-          style={{  width: '100%', }} 
-        />
-        )}
-        {post.frontmatter.projectImage5 && (
-        <Image
-          fluid={post.frontmatter.projectImage5.childImageSharp.fluid}
-          alt="Groundcrew"
-          style={{ width: '100%', }} 
-        />
-        )}
-        {post.frontmatter.projectImage6 && (
-        <Image
-          fluid={post.frontmatter.projectImage6.childImageSharp.fluid}
-          alt="Groundcrew"
-          style={{ width: '100%', }} 
-        />
-        )}
+        
         <div className="flex pb20 bb1 p1 pl1 ml1">
           <div className="half pr1 br1" style={{ paddingBottom: `150px`}}>
             <div style={{maxWidth: `750px`}}>
@@ -176,6 +154,20 @@ export const pageQuery = graphql`
         color
         collaborations
         website
+        featureImage {
+          childImageSharp {
+            fluid(maxWidth: 1600, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+        mobileImage {
+          childImageSharp {
+            fluid(maxWidth: 1600, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
         galleryImages {
           image {
             childImageSharp {
@@ -191,55 +183,7 @@ export const pageQuery = graphql`
               }
             }
           }
-        }
-        featureImage {
-          childImageSharp {
-            fluid(maxWidth: 1600, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-        projectImage1 {
-          childImageSharp {
-            fluid(maxWidth: 1600, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp_noBase64
-            }
-          }
-        }
-        projectImage2 {
-          childImageSharp {
-            fluid(maxWidth: 1600, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp_noBase64
-            }
-          }
-        }
-        projectImage3 {
-          childImageSharp {
-            fluid(maxWidth: 1600, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp_noBase64
-            }
-          }
-        }
-        projectImage4 {
-          childImageSharp {
-            fluid(maxWidth: 1600, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp_noBase64
-            }
-          }
-        }
-        projectImage5 {
-          childImageSharp {
-            fluid(maxWidth: 1600, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp_noBase64
-            }
-          }
-        }
-        projectImage6 {
-          childImageSharp {
-            fluid(maxWidth: 1600, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp_noBase64
-            }
-          }
+          video
         }
         date(formatString: "MMMM DD, YYYY")
         description

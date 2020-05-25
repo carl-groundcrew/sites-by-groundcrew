@@ -62,17 +62,3 @@
 }
 
 /*================ Project Image ================*/
-
-.project-asset {
-	.desktop-image {
-		@media (max-width: $seven) {
-			display: none;
-		}
-	}
-	.mobile-image {
-		display: none;
-		@media (max-width: $seven) {
-			display: block;
-		}
-	}
-}

@@ -363,6 +363,18 @@ button {
 
 /*================ Mobile styles ================*/
 
+.mobile-hide {
+	@media (max-width: $seven) {
+		display: none;
+	}
+}
+.mobile-show {
+	display: none;
+	@media (max-width: $seven) {
+		display: block;
+	}
+}
+
 .m-100 {
 	@media (max-width: $seven) {
 		width: 100%;
