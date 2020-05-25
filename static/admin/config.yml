@@ -36,8 +36,10 @@ collections:
       - { name: projectImage4, label: Project Image 4, required: false, widget: image}
       - { name: projectImage5, label: Project Image 5, required: false, widget: image}
       - { name: projectImage6, label: Project Image 6, required: false, widget: image} 
-      - { name: galleryImages, label: Gallery, widget: list, required: false, 
-        fields: {label: Image, name: image, widget: image}, {label: Image, name: mobileImage, widget: image}}
+      - { name: galleryImages, label: Gallery, widget: list, required: false,  fields: 
+        - label: Image, name: image, widget: image
+        - label: Mobile Image, name: mobileImage, widget: image
+      }
   - name: blog
     label: Blog
     folder: content/blog
