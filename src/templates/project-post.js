@@ -139,14 +139,9 @@ class ProjectPostTemplate extends React.Component {
             <div className='back-projects flex width-100'>
               <div className="video-overlay pt2 pb2 mla mra mt2 mb2">
                 <PageLink to='/projects' rel="back">
-                  <button onMouseOver={this.previewAllProjects} onMouseOut={this.hideAllProjects} onBlur={this.hideAllProjects} onFocus={this.previewAllProjects} role='link' tabIndex={0}>
-                    <p className="h0 m0 mla mra text-black mb1">Back to all projects</p>
-                  </button>
+                  <p className="h0 m0 mla mra text-black mb1">Back to all projects</p>
                 </PageLink>
               </div>
-              <video className='video-preview' autoPlay muted loop>
-                <source src='https://player.vimeo.com/external/420480222.hd.mp4?s=78d5e122fc5178951c7121983f971600296e1935&profile_id=175' type="video/mp4" />
-              </video>
             </div>
           )}
         </div>

@@ -20,6 +20,9 @@
 	top: $spacing;
 	color:#fff;
 	pointer-events: none;
+	&.l1 {
+		left: $spacing;
+	}
 }
 
 .project-information {
