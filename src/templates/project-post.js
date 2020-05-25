@@ -13,22 +13,6 @@ class ProjectPostTemplate extends React.Component {
     super();
     this.previewProject = this.previewProject.bind(this);
     this.hidePreview = this.hidePreview.bind(this);
-    this.previewAllProjects = this.previewAllProjects.bind(this);
-    this.hideAllProjects = this.hideAllProjects.bind(this);
-  }
-
-  previewAllProjects() {
-    const tl = gsap.timeline({paused: true});
-    tl.to( document.querySelectorAll('.video-preview'), { opacity: 1, ease: 'power1.out', duration:1})
-    tl.to( document.querySelectorAll('.video-overlay p'), { color: '#fff', ease: 'power1.out', duration:1}, '-=1')
-    tl.play();
-  }
-
-  hideAllProjects() {
-    const tl = gsap.timeline({paused: true});
-    tl.to( document.querySelectorAll('.video-preview'), { opacity: 0, ease: 'power1.out', duration:1})
-    tl.to( document.querySelectorAll('.video-overlay p'), { color: '#000', ease: 'power1.out', duration:1}, '-=1')
-    tl.play();
   }
 
   previewProject() {
@@ -65,6 +49,19 @@ class ProjectPostTemplate extends React.Component {
           )}  
           <p className='project-information fade-out-right fade-in-left'>Featured by: <span className='text-white'>Awwwards / UIJAR / Mindsparkle</span></p>  
         </div>
+
+        <div className='gallery-images'>
+          {post.frontmatter.galleryImages.map((image, i) => {
+            return (
+              <Image key={i}
+              fluid={image.childImageSharp.fluid}
+              alt={'Project Image '+(i)} style={{ width: '100%'}} />
+            )
+          })}
+        </div>
+
+        
+
         {post.frontmatter.projectImage1 && (
           <Image
             fluid={post.frontmatter.projectImage1.childImageSharp.fluid}
@@ -174,6 +171,13 @@ export const pageQuery = graphql`
         color
         collaborations
         website
+        galleryImages {
+          childImageSharp {
+            fluid(maxWidth: 1600, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
         featureImage {
           childImageSharp {
             fluid(maxWidth: 1600, quality: 90) {
