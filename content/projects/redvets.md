@@ -3,7 +3,7 @@ path: red-vets
 date: 2020-04-27T14:00:00.000Z
 title: REDVets
 type: project
-description: REDVets Toowomba
+description: Toowoomba’s 24/7 Referral and Emergency Department
 collaborations:
   - "Images: Nick Smith"
 website: https://redvets.com.au
