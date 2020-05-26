@@ -35,6 +35,12 @@ class ProjectPostTemplate extends React.Component {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous } = this.props.pageContext
+    var mobileClass = '';
+    if(post.frontmatter.mobileImage) {
+      mobileClass = 'mobile-hide'
+    } else {
+      mobileClass = ''
+    }
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -44,7 +50,7 @@ class ProjectPostTemplate extends React.Component {
         <div className='project-banner position-relative' style={{backgroundColor:`${post.frontmatter.color}`}}>   
           
           {post.frontmatter.featureImage && (
-            <Image className='height-100 mobile-hide'
+            <Image className={'height-100 '+mobileClass}
             fluid={post.frontmatter.featureImage.childImageSharp.fluid}
             alt="Project Image" style={{ width: '100%'}} />
           )}  
@@ -55,7 +61,6 @@ class ProjectPostTemplate extends React.Component {
             alt="Project Image" style={{ width: '100%'}} />
           )}
          
-
           <p className='project-information fade-out-right fade-in-left'>Featured by: <span className='text-white'>Awwwards / UIJAR / Mindsparkle</span></p>  
         </div>
 
