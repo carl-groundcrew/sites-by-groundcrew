@@ -66,16 +66,14 @@ class ProjectPostTemplate extends React.Component {
         {post.frontmatter.galleryImages && (
           <div className='gallery-images'>
             {post.frontmatter.galleryImages.map((node, i) => { 
+              console.log(node);
               return (
                 <div className='project-asset' key={i}>
-                  {node.image && (
-                    <Image className='mobile-hide' fluid={node.image.childImageSharp.fluid}
-                    alt={'Project Image '+(i)} style={{ width: '100%'}} />
-                  )}
-                  {node.mobileImage && (
-                    <Image className='mobile-show' fluid={node.mobileImage.childImageSharp.fluid}
+                 
+                  <Image className='mobile-hide' fluid={node.image.childImageSharp.fluid}
+                    alt={'Project Image '+(i)} style={{ width: '100%'}} />           
+                  <Image className='mobile-show' fluid={node.mobileImage.childImageSharp.fluid}
                     alt={'Mobile Project Image '+(i)} style={{ width: '100%'}} />
-                  )}
                   {node.video && (
                     <video className='mobile-hide' style={{ width: '100%'}} autoPlay muted loop>
                       <source src={node.video} type="video/mp4" />

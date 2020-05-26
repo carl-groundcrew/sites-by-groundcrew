@@ -9,6 +9,7 @@ class Projects extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
+    const websites = data.websites.nodes;
     const projects = data.allMdx.edges;
     var projectNo =1;
     var classes ='';
@@ -48,6 +49,17 @@ class Projects extends React.Component {
             )
           })}
         </div>
+        <div className='featured-websites p1 pt0 ml1'>
+
+          {websites.map((node) => {
+            console.log(node.frontmatter.websites);
+            return (
+              <div>
+
+              </div>
+            )
+          })}
+        </div>
       </Layout>
     )
   }
@@ -83,6 +95,15 @@ export const pageQuery = graphql`
               }
             }
             description
+          }
+        }
+      }
+    }
+    websites: allMdx(filter: {fields: {slug: {eq: "/projects/"}}}) {
+      nodes {
+        frontmatter {
+          websites {
+            name
           }
         }
       }
