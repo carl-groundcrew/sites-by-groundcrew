@@ -10,7 +10,7 @@ galleryImages:
   - image: assets/cherub-5.jpg
 title: Cherub
 type: project
-description: Hair Studio
+description: "Hair Studio "
 website: https://www.cherubsydney.com
 ---
 ### Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
