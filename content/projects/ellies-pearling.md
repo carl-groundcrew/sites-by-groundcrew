@@ -9,8 +9,7 @@ collaborations:
 website: https://elliespearling.com
 color: "#aaa4a6"
 featureImage: assets/ellies.jpg
-galleryImages:
-  - video: https://player.vimeo.com/external/404510769.hd.mp4?s=805548d41efc30529badac48e09492efe83e8354&profile_id=175
+galleryImages: []
 ---
 ### Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
