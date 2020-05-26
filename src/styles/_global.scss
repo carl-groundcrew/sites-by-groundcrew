@@ -11,7 +11,29 @@
 @font-face {
   font-family: "FreightBigPro";
   src: url("../../static/fonts/Freight-BigLight.woff")   format("woff");
-} 
+}
+@font-face {
+    font-family: 'Saol-Standard';
+    src: url("../../static/fonts/SaolStandard-Regular.woff")   format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Saol-Display';
+    src: url("../../static/fonts/SaolDisplay-Light.woff")   format("woff");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Saol-Display';
+    src: url("../../static/fonts/SaolDisplay-LightItalic.woff")   format("woff");
+    font-weight: 300;
+    font-style: italic;
+}
+
+
 
 /*================ Font styles ================*/
 
@@ -34,15 +56,17 @@ body {
 /*================ Font styles ================*/
 
 .h0 {
-	font-family: "FreightBigPro";
+	font-family: 'Saol-Display';
 	font-weight: 100;
 	margin: 0px;
 	font-size: 120px;
 	line-height: 1.35;
+	transition: 0.5s ease all;
+	font-style: italic;
 }
 
 h1, .h1 {
-	font-family: "FreightBigPro";
+	font-family: 'Saol-Display';
 	font-weight: 100;
 	margin: 0px;
 	font-size: 60px;
@@ -55,20 +79,11 @@ h1, .h1 {
 	}
 }
 h2, .h2 {
-	font-family: "FreightBigPro";
+	font-family: "Saol-Display";
 	font-weight: 100;
 	margin: 0px;
 	font-size: 42px;
 	line-height: 1.35;
-	.common {
-		font-size: 36px;
-		@media (max-width: $nine) {
-			font-size:26px;
-		}
-		@media (max-width: $seven) {
-			font-size:22px;
-		}
-	}
 	@media (max-width: $nine) {
 		font-size:32px;
 	}
@@ -77,7 +92,7 @@ h2, .h2 {
 	}
 } 
 h3, .h3 {
-	font-family: "FreightBigPro";
+	font-family: 'Saol-Display';	
 	font-weight: 100;
 	margin: 0px;
 	font-size: 28px;
@@ -94,6 +109,9 @@ p {
 	color:#9e9e9e;
 }
 
+.uppercase {
+	text-transform: uppercase;
+}
 .text-black {
 	color:$black;
 }
@@ -106,6 +124,9 @@ p {
 
 .text-center {
 	text-align: center;
+}
+.text-right {
+	text-align: right;
 }
 
 /*================ Link styles ================*/
@@ -182,12 +203,22 @@ button {
 	align-self: center;
 }
 
+.align-items--center {
+	align-items: center;
+}
+
 .align-self--bottom {
 	align-self: flex-end;
 }
 
 .justify-center {
 	justify-content: center;
+}
+
+/*================ Width styles ================*/
+
+.width-25 {
+	width: 25%;
 }
 
 .width-100 {
@@ -342,6 +373,10 @@ button {
 	@media (max-width: $seven) {
 		border-right: none;
 	}
+}
+
+.bt1 {
+	border-top: 1px solid $grey;
 }
 .bb1 {
 	border-bottom: 1px solid $grey;

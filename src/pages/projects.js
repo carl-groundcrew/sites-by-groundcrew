@@ -3,13 +3,14 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Image from "gatsby-image"
+import Arrow from "../components/arrow"
 import PageLink from "../components/pageLink"
 
 class Projects extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-    const allWebsites = data.websites.nodes[0].frontmatter;
+    const allWebsites = data.websites.nodes[0].frontmatter.websites;
     const projects = data.allMdx.edges;
     var projectNo =1;
     var classes ='';
@@ -51,7 +52,25 @@ class Projects extends React.Component {
           })}
         </div>
         <div className='featured-websites p1 pt0 ml1'>
-        
+          {allWebsites.map(function(website){
+            return (
+              <div className='website-feature align-items--center flex bt1 pt1 pb1' key={website.name}>
+                <div className='website-image width-25'>
+                  <a href={website.link} rel='noopener noreferrer' target='_blank'>
+                    <div className='image-2-1'>
+                       <Image className='background-image' fluid={website.image.childImageSharp.fluid} alt={website.name} />  
+                    </div>
+                  </a>
+                </div>
+                <div className='title ma'>
+                  <p className='h3 common text-black m0'>{website.name}</p>
+                </div>
+                <div className='external-link width-25 text-right'>
+                  <a className='link text-black' href={website.link} rel='noopener noreferrer' target='_blank'>View Website <Arrow /></a>
+                </div>
+              </div>
+            )
+          })}
         </div>
       </Layout>
     )
@@ -97,6 +116,14 @@ export const pageQuery = graphql`
         frontmatter {
           websites {
             name
+            link
+            image {
+              childImageSharp {
+                fluid(maxWidth: 600, quality: 90) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
           }
         }
       }

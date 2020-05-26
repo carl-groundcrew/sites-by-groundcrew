@@ -122,9 +122,10 @@ class ProjectPostTemplate extends React.Component {
             </div>
           ) : (
             <div className='back-projects flex width-100'>
-              <div className="video-overlay pt2 pb2 mla mra mt2 mb2">
+              <div className="video-overlay pt2 pb2 mla mra mt2 mb2 text-center">
                 <PageLink to='/projects' rel="back">
-                  <p className="h0 m0 mla mra text-black mb1">Back to all projects</p>
+                  <p className="text-grey m0">Back to all</p>
+                  <p className="h0 m0 mla mra text-black mb1">Projects</p>
                 </PageLink>
               </div>
             </div>
@@ -133,7 +134,7 @@ class ProjectPostTemplate extends React.Component {
         {previous && previous.frontmatter.type === 'project' && (
           <div className='project-preview'>
             {previous.frontmatter.featureImage && (
-              <img className='width-100' src={previous.frontmatter.featureImage.childImageSharp.fluid.src} alt='Next Project' />
+              <img className='width-100 min-height-100' src={previous.frontmatter.featureImage.childImageSharp.fluid.src} alt='Next Project' />
             )}
           </div>
         )}

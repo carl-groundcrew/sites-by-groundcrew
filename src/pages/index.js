@@ -25,7 +25,7 @@ class IndexPage extends React.Component {
 
         <div className='height-100 flex flex-wrap'>
           <div className="intro width-100 ml1 pl1 p1" style={{ marginBottom:`150px`, maxWidth:`950px`}}> 
-            <h2><span className="common">We’re Groundcrew</span> a boutique and independent  brand and digital design studio based in Newstead, Brisbane.</h2>
+            <h2><span className="uppercase">We’re Groundcrew</span> a boutique and independent  brand and digital design studio based in Newstead, Brisbane.</h2>
           </div>
           <div className="title-area width-100 align-self--bottom flex p1 pl2">
             <span className="m0">Featured Projects</span>
@@ -72,7 +72,7 @@ class IndexPage extends React.Component {
           <div className="width-50 br1 pr1">
             <PageLink to='/blog'>
               <p className="h2 text-black">
-              Fresh of the press <br />
+              <span className='common'>Fresh of the press</span><br />
               See all <Arrow size='large'></Arrow>
               </p>
             </PageLink>
