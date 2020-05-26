@@ -5,6 +5,8 @@ collaborations:
   - "Images: Nick Smith"
 color: "#93000f"
 featureImage: assets/cherub.jpg
+galleryImages:
+  - video: https://player.vimeo.com/external/422645525.hd.mp4?s=2dbf14414b4661aead1e892a3f73cc38d22612f5&profile_id=175
 projectImage1: assets/Intro.png
 projectImage2: assets/cherub-banner.jpg
 projectImage3: assets/Rectangle 8.jpg
