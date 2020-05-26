@@ -47,16 +47,16 @@ class ProjectPostTemplate extends React.Component {
         
         <SEO title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />
         
-        <div className='project-banner position-relative' style={{backgroundColor:`${post.frontmatter.color}`}}>   
+        <div className='project-banner position-relative height-100' style={{backgroundColor:`${post.frontmatter.color}`}}>   
           
           {post.frontmatter.featureImage && (
-            <Image className={'height-100 '+mobileClass}
+            <Image className={'min-height-100 '+mobileClass}
             fluid={post.frontmatter.featureImage.childImageSharp.fluid}
             alt="Project Image" style={{ width: '100%'}} />
           )}  
 
           {post.frontmatter.mobileImage && (
-            <Image className='height-100 mobile-show'
+            <Image className='min-height-100 mobile-show'
             fluid={post.frontmatter.mobileImage.childImageSharp.fluid}
             alt="Project Image" style={{ width: '100%'}} />
           )}
