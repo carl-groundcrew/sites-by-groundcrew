@@ -54,11 +54,7 @@ class ProjectPostTemplate extends React.Component {
             fluid={post.frontmatter.mobileImage.childImageSharp.fluid}
             alt="Project Image" style={{ width: '100%'}} />
           )}
-          {!post.frontmatter.mobileImage && (
-            <Image className='height-100 mobile-show'
-            fluid={post.frontmatter.featureImage.childImageSharp.fluid}
-            alt="Project Image" style={{ width: '100%'}} />
-          )}  
+         
 
           <p className='project-information fade-out-right fade-in-left'>Featured by: <span className='text-white'>Awwwards / UIJAR / Mindsparkle</span></p>  
         </div>
