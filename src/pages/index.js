@@ -53,6 +53,7 @@ class IndexPage extends React.Component {
           >
           <Cursor /> 
           {projects.map(({ node }) => {
+            console.log(node);
             return (
               <div className="single-project position-relative" key={node.fields.slug}>
                 <div className='project-caption'>{node.frontmatter.title}</div>
@@ -131,7 +132,7 @@ export const pageQuery = graphql`
     }
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC}
-      filter: {fileAbsolutePath: {regex: "/projects/"}}) {
+      filter: {frontmatter: {type: {eq: "project"}}}) {
       edges {
         node {
           excerpt

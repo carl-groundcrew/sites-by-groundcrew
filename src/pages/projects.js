@@ -9,10 +9,11 @@ class Projects extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-    const websites = data.websites.nodes;
+    const allWebsites = data.websites.nodes[0].frontmatter;
     const projects = data.allMdx.edges;
     var projectNo =1;
     var classes ='';
+    console.log(allWebsites);
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="Projects By Groundcrew" />
@@ -50,15 +51,7 @@ class Projects extends React.Component {
           })}
         </div>
         <div className='featured-websites p1 pt0 ml1'>
-
-          {websites.map((node) => {
-            console.log(node.frontmatter.websites);
-            return (
-              <div>
-
-              </div>
-            )
-          })}
+        
         </div>
       </Layout>
     )

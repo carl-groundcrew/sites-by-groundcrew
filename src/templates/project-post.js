@@ -178,14 +178,14 @@ export const pageQuery = graphql`
         galleryImages {
           image {
             childImageSharp {
-              fluid(maxWidth: 1600, quality: 90) {
+              fluid(maxWidth: 2000, quality: 90) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
           mobileImage {
             childImageSharp {
-              fluid(maxWidth: 1600, quality: 90) {
+              fluid(maxWidth: 1000, quality: 90) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
