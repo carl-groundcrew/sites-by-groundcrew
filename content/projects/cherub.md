@@ -6,7 +6,6 @@ collaborations:
 color: "#93000f"
 featureImage: assets/cherub-banner.jpg
 galleryImages:
-  - image: assets/cherub-banner.jpg
   - video: https://player.vimeo.com/external/422645525.hd.mp4?s=2dbf14414b4661aead1e892a3f73cc38d22612f5&profile_id=175
     image: ""
 projectImage1: assets/Intro.png
