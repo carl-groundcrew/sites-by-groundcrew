@@ -18,7 +18,7 @@ projectImage5: assets/cherub-4.jpg
 projectImage6: assets/cherub-5.jpg
 title: Cherub
 type: project
-description: Hair Studio
+description: "Hair Studio "
 website: https://www.cherubsydney.com
 image: assets/cherub.jpg
 ---
