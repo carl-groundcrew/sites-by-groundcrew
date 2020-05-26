@@ -15,6 +15,19 @@ collections:
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Intro text, name: intro, widget: text}
+      - label: "Projects"
+        name: "projects"
+        file: "content/pages/projects.md"
+        fields:
+          - label: Websites 
+            name: websites
+            widget: list
+            required: false
+            fields:
+              - { label: Thumbnail, name: image, widget: image, required: false }
+              - { label: Name, name: name}
+              - { label: Link, name: link}
+          
   - name: projects
     label: Projects
     folder: content/projects 
