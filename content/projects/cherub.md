@@ -10,12 +10,6 @@ galleryImages:
     image: ""
   - image: assets/groundcrew_cherub_2.jpg
   - image: assets/cherub-5.jpg
-projectImage1: assets/Intro.png
-projectImage2: assets/cherub-banner.jpg
-projectImage3: assets/Rectangle 8.jpg
-projectImage4: assets/cherub-3.jpg
-projectImage5: assets/cherub-4.jpg
-projectImage6: assets/cherub-5.jpg
 title: Cherub
 type: project
 description: Hair Studio
