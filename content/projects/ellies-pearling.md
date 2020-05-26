@@ -12,6 +12,6 @@ featureImage: assets/ellies.jpg
 galleryImages:
   - video: https://player.vimeo.com/external/404510769.hd.mp4?s=805548d41efc30529badac48e09492efe83e8354&profile_id=175
 ---
-## For one night only, style hunters and those alike take the streets of Brisbane for Marie Claire Up Late. We were engaged by James Street to create branding and design for the event’s 8th year.
+### Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-Penny Baldas – Cherub Sydney
+Client Name – Business
