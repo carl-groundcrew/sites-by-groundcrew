@@ -24,7 +24,7 @@ collections:
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
       - { name: type, label: Type, widget: hidden, default: project}
-      - { name: description, label: Description }
+      - { name: description, label: Caption }
       - { name: body, label: Body, widget: markdown }
       - { name: collaborations, label: Collaborations, widget: list, required: false }
       - { name: website, label: Website, required: false}

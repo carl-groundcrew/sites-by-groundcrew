@@ -35,7 +35,10 @@ class Projects extends React.Component {
               <div className={'single-project position-relative mb1 '+classes} key={node.fields.slug}>
                 {node.frontmatter.featureImage && (
                   <PageLink to={`project${node.fields.slug}`}>
-                    <div className='project-caption l1'>{node.frontmatter.title}</div>
+                    <div className='project-caption l1'>
+                      <p className='title text-white m0'>{node.frontmatter.title}</p>
+                      <p className='description m0'>{node.frontmatter.description}</p>
+                    </div>
                     <Image style={{backgroundColor:`${node.frontmatter.color}`}}
                       fluid={node.frontmatter.featureImage.childImageSharp.fluid}
                       alt={node.frontmatter.title}/>  

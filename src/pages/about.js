@@ -94,7 +94,7 @@ class About extends React.Component {
                 </div>
                 <div className='information'>
                   <p className='m0 text-black'>Jackson Todd</p>
-                  <p className='m0'>Designer</p>
+                  <p className='m0'>Big Grey Square</p>
                 </div>
               </div>
               <div className='member width-50 pl20 fade-up delay' data-sal>
@@ -103,7 +103,7 @@ class About extends React.Component {
                 </div>
                 <div className='information'>
                   <p className='m0 text-black'>Amelie Hirschland</p>
-                  <p className='m0'>Designer</p>
+                  <p className='m0'>Big Grey Square</p>
                 </div>
               </div>
             </div>
