@@ -13,8 +13,7 @@ exports.createPages = ({ graphql, actions }) => {
       {
         posts: allMdx(
           sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
+          filter: {frontmatter: {type: {eq: "project"}}}) {
           edges {
             node {
               fields {
@@ -34,6 +33,21 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
+        blog: allMdx(
+          sort: { fields: [frontmatter___date], order: DESC }
+          filter: {frontmatter: {type: {eq: "blog"}}}) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+                type 
+              }
+            }
+          }
+        }
       }
     `
   ).then(result => {
@@ -42,10 +56,27 @@ exports.createPages = ({ graphql, actions }) => {
     }
 
     const posts = result.data.posts.edges
+    const blog = result.data.blog.edges
 
     posts.forEach((post, index) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
       const next = index === 0 ? null : posts[index - 1].node
+      const path = post.node.frontmatter.type
+      const component = path === 'blog' ? blogPost : projectPost
+      createPage({
+        path: `${path}${post.node.fields.slug}`,
+        component: component,
+        context: {
+          slug: post.node.fields.slug,
+          previous,
+          next,
+        },
+      })
+    })
+
+    blog.forEach((post, index) => {
+      const previous = index === blog.length - 1 ? null : blog[index + 1].node
+      const next = index === 0 ? null : blog[index - 1].node
       const path = post.node.frontmatter.type
       const component = path === 'blog' ? blogPost : projectPost
       createPage({

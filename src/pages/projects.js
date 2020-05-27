@@ -14,7 +14,6 @@ class Projects extends React.Component {
     const projects = data.allMdx.edges;
     var projectNo =1;
     var classes ='';
-    console.log(allWebsites);
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="Projects By Groundcrew" />

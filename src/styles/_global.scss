@@ -2,16 +2,27 @@
 ## GLOBAL STYLING
 --------------------------------------------------------------*/
 
+body {
+	font-family: "CommonSans";
+	-webkit-font-smoothing: antialiased;
+	background-color: #fff;
+}
+
+.app {
+	background-color: #fff;
+	&.released {
+		transform: none !important;
+		height: auto !important;
+		overflow: visible;
+	}
+}
+
 /*================ Font styles ================*/
 
 @font-face {
   font-family: "CommonSans";
   src: url("../../static/fonts/CommonSans-Regular.woff")   format("woff");
 } 
-@font-face {
-  font-family: "FreightBigPro";
-  src: url("../../static/fonts/Freight-BigLight.woff")   format("woff");
-}
 @font-face {
     font-family: 'Saol-Standard';
     src: url("../../static/fonts/SaolStandard-Regular.woff")   format("woff");
@@ -31,26 +42,6 @@
     src: url("../../static/fonts/SaolDisplay-LightItalic.woff")   format("woff");
     font-weight: 300;
     font-style: italic;
-}
-
-
-
-/*================ Font styles ================*/
-
-
-body {
-	font-family: "CommonSans";
-	-webkit-font-smoothing: antialiased;
-	background-color: #fff;
-}
-
-.app {
-	background-color: #fff;
-	&.released {
-		transform: none !important;
-		height: auto !important;
-		overflow: visible;
-	}
 }
 
 /*================ Font styles ================*/

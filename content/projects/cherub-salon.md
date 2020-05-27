@@ -1,5 +1,5 @@
 ---
-path: cherub
+path: cherub-salon
 date: 2020-04-28T14:00:00.000Z
 title: Cherub
 type: project
