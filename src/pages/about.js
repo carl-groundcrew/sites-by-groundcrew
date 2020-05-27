@@ -16,8 +16,8 @@ class About extends React.Component {
           <Image className="image-full" fluid={data.hero.childImageSharp.fluid} alt="Hero Image - Groundcrew" /> 
         </div>
         <div className='flex flex-wrap'>
-          <div className="intro width-100 ml1 pl1 p1" style={{ marginBottom:`250px`, maxWidth:`950px`}}> 
-            <h2><span className="common">We’re Groundcrew</span> a boutique and independent  brand and digital design studio based in Newstead, Brisbane.</h2>
+          <div className="intro width-100 ml1 pl1 p1" style={{ marginBottom:`150px`, maxWidth:`950px`}}> 
+            <h2><span className="uppercase">We’re Groundcrew</span> a boutique and independent  brand and digital design studio based in Newstead, Brisbane.</h2>
           </div>
         </div>
         <div className='team ml1 p1 mt2'>

@@ -50,9 +50,9 @@ class ProjectPostTemplate extends React.Component {
         <div className='project-banner position-relative' style={{backgroundColor:`${post.frontmatter.color}`}}>   
           
           {post.frontmatter.featureImage && (
-            <Image className={'min-height-100 '+mobileClass}
+            <Image className={'width-100 min-height-100 '+mobileClass}
             fluid={post.frontmatter.featureImage.childImageSharp.fluid}
-            alt="Project Image" style={{ width: '100%'}} />
+            alt="Project Banner Desktop" />
           )}  
 
           {post.frontmatter.mobileImage && (
@@ -134,7 +134,9 @@ class ProjectPostTemplate extends React.Component {
         {previous && previous.frontmatter.type === 'project' && (
           <div className='project-preview'>
             {previous.frontmatter.featureImage && (
-              <img className='width-100 min-height-100' src={previous.frontmatter.featureImage.childImageSharp.fluid.src} alt='Next Project' />
+              <Image className={'width-100 min-height-100 '+mobileClass}
+              fluid={previous.frontmatter.featureImage.childImageSharp.fluid}
+              alt="Project Image" />
             )}
           </div>
         )}

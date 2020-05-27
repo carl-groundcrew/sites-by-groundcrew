@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import Image from "gatsby-image"
 import Arrow from "../components/arrow"
+import ContactBanner from "../components/contactBanner"
 import SEO from "../components/seo"
 import PageLink from "../components/pageLink"
 import Cursor from "../components/cursor"
@@ -98,16 +99,7 @@ class IndexPage extends React.Component {
             })}
           </div>
         </div>
-        <div className='contact height-80 flex flex-wrap'>
-          <div className='ml1 p1'>
-            <PageLink to='/contact'>
-              <p className="h2 text-black">
-                <span className='common'>Have a project</span> <br />
-                Let's talk <Arrow size='large'></Arrow>
-              </p>
-            </PageLink>
-          </div>
-        </div>
+        <ContactBanner />
       </Layout>
     )
   }
