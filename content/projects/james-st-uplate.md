@@ -6,7 +6,7 @@ type: project
 description: JSUL2020
 collaborations:
   - "Images: Nick Smith"
-website: https://www.jamesst.com.au
+website: ""
 color: "#351f44"
 featureImage: assets/hero.jpg
 ---
