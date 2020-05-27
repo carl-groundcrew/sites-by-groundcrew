@@ -3,6 +3,8 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import ContactBanner from "../components/contactBanner"
+import FeaturedPost from "../components/featuredPost"
 
 class About extends React.Component {
   render() {
@@ -20,7 +22,7 @@ class About extends React.Component {
             <h2><span className="uppercase">We’re Groundcrew</span> a boutique and independent  brand and digital design studio based in Newstead, Brisbane.</h2>
           </div>
         </div>
-        <div className='team ml1 p1 mt2'>
+        <div className='team ml1 p1 mt2 bb1'>
           <h2><span className="common">Our Team</span></h2>
           <div className='members mt1'>
             
@@ -107,9 +109,10 @@ class About extends React.Component {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
+        <FeaturedPost />
+        <ContactBanner />
       </Layout>
     )
   }

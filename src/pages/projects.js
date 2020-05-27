@@ -5,6 +5,8 @@ import SEO from "../components/seo"
 import Image from "gatsby-image"
 import Arrow from "../components/arrow"
 import PageLink from "../components/pageLink"
+import ContactBanner from "../components/contactBanner"
+import FeaturedPost from "../components/featuredPost"
 
 class Projects extends React.Component {
   render() {
@@ -39,7 +41,7 @@ class Projects extends React.Component {
                   <PageLink to={`project${node.fields.slug}`}>
                     <div className='project-caption l1'>
                       <p className='title text-white m0'>{node.frontmatter.title}</p>
-                      <p className='description m0'>{node.frontmatter.description}</p>
+                      <p className='description text-white opacity-06 m0'>{node.frontmatter.description}</p>
                     </div>
                     <Image style={{backgroundColor:`${node.frontmatter.color}`}}
                       fluid={node.frontmatter.featureImage.childImageSharp.fluid}
@@ -50,7 +52,7 @@ class Projects extends React.Component {
             )
           })}
         </div>
-        <div className='featured-websites p1 pt0 ml1'>
+        <div className='featured-websites p1 pt0 ml1 bb1'>
           {allWebsites.map(function(website){
             return (
               <div className='website-feature align-items--center flex bt1 pt1 pb1' key={website.name}>
@@ -71,6 +73,8 @@ class Projects extends React.Component {
             )
           })}
         </div>
+        <FeaturedPost />
+        <ContactBanner />
       </Layout>
     )
   }

@@ -35,6 +35,10 @@ class ProjectPostTemplate extends React.Component {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous } = this.props.pageContext
+    var website = post.frontmatter.website;
+    if(website) {
+      var url = website.split("//")[1];
+    }
     var mobileClass = '';
     if(post.frontmatter.mobileImage) {
       mobileClass = 'mobile-hide'
@@ -106,7 +110,7 @@ class ProjectPostTemplate extends React.Component {
             {post.frontmatter.website && (
               <div>
                 <p className="text-black mb0">View Website</p>
-                <p><a className="page-link" href={post.frontmatter.website}  rel="noopener noreferrer" style={{ color: `#9e9e9e` }} target="_blank">{post.frontmatter.website}</a></p>
+                <p><a className="page-link" href={website}  rel="noopener noreferrer" style={{ color: `#9e9e9e` }} target="_blank">{url}</a></p>
               </div>
             )}
           </div>

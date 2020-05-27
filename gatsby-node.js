@@ -1,6 +1,7 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const { fmImagesToRelative } = require('gatsby-remark-relative-images');
+const { Image } = require('gatsby-image');
 
 
 exports.createPages = ({ graphql, actions }) => {
@@ -25,7 +26,13 @@ exports.createPages = ({ graphql, actions }) => {
                 featureImage {
                   childImageSharp {
                     fluid(maxWidth: 1600, quality: 90) {
+                      base64
+                      aspectRatio
                       src
+                      srcSet
+                      srcWebp
+                      srcSetWebp
+                      sizes
                     }
                   }
                 }
