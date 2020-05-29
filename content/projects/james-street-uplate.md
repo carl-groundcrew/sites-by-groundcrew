@@ -11,10 +11,10 @@ color: "#351f44"
 featureImage: assets/hero.jpg
 galleryImages:
   - image: assets/js_mockups_logo.jpg
-  - image: assets/js_mockups_image_01.jpg
   - image: assets/js_mockups_flag.jpg
-  - image: assets/js_mockups_image_02.jpg
+  - image: assets/js_mockups_image_01.jpg
   - image: assets/js_mockups_minimag.jpg
+  - image: assets/js_mockups_image_02.jpg
   - image: assets/js_mockups_socialmedia.jpg
 ---
 ### For one night only, style hunters and those alike take the streets of Brisbane for Marie Claire Up Late. We were engaged by James Street to create branding and design for the event’s 8th year.
