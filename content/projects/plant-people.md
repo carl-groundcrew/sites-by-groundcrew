@@ -11,6 +11,7 @@ color: "#C8BEBA"
 featureImage: assets/plantpeople.jpg
 galleryImages:
   - video: https://vimeo.com/423853995
+  - {}
 ---
 ### Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
