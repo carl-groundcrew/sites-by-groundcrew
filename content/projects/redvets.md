@@ -9,7 +9,7 @@ collaborations:
 website: https://redvets.com.au
 color: "#857c76"
 featureImage: assets/groundcrew_redvets_5.jpg
-mobileFeature: assets/redvetsmobile.jpg
+mobileFeature: assets/groundcrew_redvets_5.jpg
 galleryImages:
   - image: assets/groundcrew_redvets_3.jpg
     video: "
