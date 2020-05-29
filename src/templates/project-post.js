@@ -39,12 +39,12 @@ class ProjectPostTemplate extends React.Component {
     if(website) {
       var url = website.split("//")[1];
     }
-    //var mobileClass = '';
-    //if(post.frontmatter.mobileImage) {
-    var mobileClass = 'mobile-hide'
-    //} else {
-    // mobileClass = ''
-    //}
+    var mobileClass = '';
+    if(post.frontmatter.mobileFeature) {
+      mobileClass = 'mobile-hide'
+    } else {
+      mobileClass = ''
+    }
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -59,9 +59,9 @@ class ProjectPostTemplate extends React.Component {
             alt="Project Banner Desktop" />
           )}  
 
-          {post.frontmatter.featureImage && (
+          {post.frontmatter.mobileFeature && (
             <Image className='min-height-100 mobile-show'
-            fluid={post.frontmatter.featureImage.childImageSharp.fluid}
+            fluid={post.frontmatter.mobileFeature.childImageSharp.fluid}
             alt="Project Image" style={{ width: '100%'}} />
           )}
          
@@ -77,8 +77,8 @@ class ProjectPostTemplate extends React.Component {
                   <Image className='mobile-hide' fluid={node.image.childImageSharp.fluid}
                     alt={'Project Image '+(i)} style={{ width: '100%'}} />  
                   )}   
-                  {node.image && (      
-                    <Image className='mobile-show' fluid={node.image.childImageSharp.fluid}
+                  {node.imageMobile && (      
+                    <Image className='mobile-show' fluid={node.imageMobile.childImageSharp.fluid}
                     alt={'Mobile Project Image '+(i)} style={{ width: '100%'}} />
                   )}
                   {node.video && (
@@ -175,8 +175,22 @@ export const pageQuery = graphql`
             }
           }
         }
+        mobileFeature {
+          childImageSharp {
+            fluid(maxWidth: 1600, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
         galleryImages {
           image {
+            childImageSharp {
+              fluid(maxWidth: 3000, quality: 90) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+          imageMobile {
             childImageSharp {
               fluid(maxWidth: 3000, quality: 90) {
                 ...GatsbyImageSharpFluid_withWebp
