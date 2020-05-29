@@ -7,6 +7,8 @@ description: "Place Elevation "
 website: https://notionprojects.com.au
 color: "#c5c5c5"
 featureImage: assets/notion.jpg
+galleryImages:
+  - image: assets/cherub-5.jpg
 ---
 ### Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 
