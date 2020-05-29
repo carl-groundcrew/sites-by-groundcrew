@@ -7,7 +7,7 @@ description: Toowoomba’s 24/7 Referral and Emergency Department
 collaborations:
   - "Images: Nick Smith"
 website: https://redvets.com.au
-color: "#580c20"
+color: "#857c76"
 featureImage: assets/groundcrew_redvets_5.jpg
 galleryImages:
   - image: assets/groundcrew_redvets_3.jpg
