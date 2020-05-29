@@ -43,14 +43,14 @@ collections:
       - { name: website, label: Website, required: false}
       - { name: color, label: Project Color }
       - { name: featureImage, label: Feature Image, widget: image } 
-      - { name: mobileImage, label: Mobile Feature Image, required: false, widget: image } 
+      - { name: mobileFeature, label: Mobile Feature Image, required: false, widget: image } 
       - label: Gallery
         name: galleryImages
         widget: list
         required: false
         fields:
           - { label: Image, name: image, widget: image, required: false }
-          - { label: Mobile Image, name: mobileImage, widget: image, required: false }
+          - { label: Mobile Image, name: imageMobile, widget: image, required: false }
           - { label: Video URL, name: video, required: false}
   - name: blog
     label: Blog

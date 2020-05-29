@@ -91,6 +91,13 @@ h3, .h3 {
 	line-height: 1.35;
 }
 
+h4, .h4 {
+	font-weight: 100;
+	margin: 0px;
+	font-size: 28px;
+	line-height: 1.35;
+}
+
 .common {
 	font-family: "CommonSans";
 }
@@ -179,6 +186,11 @@ button {
 	position: relative;
 }
 
+div {
+	&:focus {
+		outline:none;
+	}
+}
 /*================ Display styles ================*/
 
 .flex {

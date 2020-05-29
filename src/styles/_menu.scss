@@ -1,0 +1,70 @@
+/*--------------------------------------------------------------
+## MENU STYLING
+--------------------------------------------------------------*/
+
+.overlay-menu {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0px;
+	left: 0px;
+	z-index: 100;
+	background-color: #fff;
+	display: none;
+	opacity: 0;
+	padding-right: $spacing*4;
+	a {
+		display: block;
+	}
+	.h4 {
+		display: inline-block;
+		transition:0.5s ease all;
+		&:hover {
+			color:#000;
+		}
+	}
+	.close {
+		position: absolute;
+		right: $spacing*2;
+		top: $spacing*2;
+		width: 30px;
+		height: 30px;
+		cursor:pointer;
+		background-image: url('/assets/arrow.svg');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+	.main-navigation {
+		padding-top: $spacing*2;
+		padding-left: $spacing*2;
+	}
+	.secondary-menu {
+		height: 100vh;
+		position: relative;
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: none; /* Hide scrollbar in FF */
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		text-align: right;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		&::-webkit-scrollbar {
+ 	 		display: none;
+		}
+		.menu-item {
+			white-space: nowrap;
+			position: relative;
+			cursor: pointer;
+			font-size: 7vw;
+			padding-top: 1rem;
+			display: block;
+			transition: transform 0.2s;
+		}
+	}
+}

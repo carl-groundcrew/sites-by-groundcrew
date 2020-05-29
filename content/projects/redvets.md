@@ -9,10 +9,8 @@ collaborations:
 website: https://redvets.com.au
 color: "#580c20"
 featureImage: assets/groundcrew_redvets_5.jpg
-mobileImage: ""
 galleryImages:
   - image: assets/groundcrew_redvets_3.jpg
-    mobileImage: ""
     video: "
       https://player.vimeo.com/external/393614275.hd.mp4?s=7a944da4eb51d98cbea6\
       e2f74de52f4c02c8f038&profile_id=175"
