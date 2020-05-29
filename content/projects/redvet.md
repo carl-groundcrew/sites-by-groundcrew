@@ -13,7 +13,7 @@ mobileFeature: assets/groundcrew_redvets_5.jpg
 galleryImages:
   - image: assets/groundcrew_redvets_3.jpg
     video: ""
-  - image: assets/groundcrew_redvets_4.jpg
+  - image: assets/groundcrew_redvets_4_1.jpg
   - image: assets/groundcrew_redvets_6.jpg
   - image: assets/groundcrew_redvets_2.jpg
     imageMobile: assets/groundcrew_redvets_2.jpg
