@@ -6,6 +6,7 @@ type: project
 description: Boutique Jeweller
 color: "#000"
 featureImage: assets/groundcrew_ag_2.jpg
+homepage: "True"
 galleryImages:
   - image: assets/groundcrew_ag_5.jpg
   - image: assets/groundcrew_ag_6.jpg
