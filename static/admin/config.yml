@@ -42,7 +42,7 @@ collections:
       - { name: collaborations, label: Collaborations, widget: list, required: false }
       - { name: website, label: Website, required: false}
       - { name: color, label: Project Color }
-      - { name: homepage, label: Homepage Featured?, widget: select, multiple: true, options: ['True', 'False'], default: ['False']}
+      - { name: homepage, label: Homepage Featured?, widget: select, options: ['False','True'], default: 'False'}
       - { name: featureImage, label: Feature Image, widget: image } 
       - { name: mobileFeature, label: Mobile Feature Image, required: false, widget: image } 
       - label: Gallery
