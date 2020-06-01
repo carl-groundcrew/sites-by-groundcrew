@@ -8,6 +8,7 @@ collaborations:
   - "Images: Nick Smith"
 website: ""
 color: "#351f44"
+homepage: "False"
 featureImage: assets/hero.jpg
 galleryImages:
   - image: assets/js_mockups_logo.jpg
