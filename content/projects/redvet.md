@@ -8,6 +8,7 @@ collaborations:
   - "Images: Nick Smith"
 website: https://redvets.com.au
 color: "#857c76"
+homepage: "True"
 featureImage: assets/groundcrew_redvets_5.jpg
 mobileFeature: assets/groundcrew_redvets_5.jpg
 galleryImages:
