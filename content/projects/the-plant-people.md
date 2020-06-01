@@ -8,6 +8,7 @@ collaborations:
   - "Images: Nick Smith"
 website: https://theplantpeople.com.au
 color: "#C8BEBA"
+homepage: "True"
 featureImage: assets/plantpeople.jpg
 mobileFeature: assets/plantpeople.jpg
 galleryImages:
