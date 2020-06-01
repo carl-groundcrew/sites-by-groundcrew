@@ -8,6 +8,7 @@ color: "#000"
 homepage: "True"
 featureImage: assets/groundcrew_ag_2.jpg
 galleryImages:
+  - image: assets/groundcrew_ag_8.jpg
   - image: assets/groundcrew_ag_5.jpg
   - image: assets/groundcrew_ag_6.jpg
   - image: assets/groundcrew_ag_4.jpg
