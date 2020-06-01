@@ -94,7 +94,7 @@ export const pageQuery = graphql`
     }
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC}
-      filter: {frontmatter: {type: {eq: "project"}}}) {
+      filter: {frontmatter: {homepage: {eq: "True"}, type: {eq: "project"}}}) {
       edges {
         node {
           excerpt
