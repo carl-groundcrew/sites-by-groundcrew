@@ -8,6 +8,7 @@ collaborations:
   - "Images: Nick Smith"
 website: https://www.cherubsydney.com
 color: "#bdb79f"
+homepage: "True"
 featureImage: assets/cherub-banner.jpg
 galleryImages:
   - image: assets/groundcrew_cherub_1.jpg
