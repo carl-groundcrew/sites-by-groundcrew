@@ -17,6 +17,7 @@ galleryImages:
   - image: assets/cherub_website.jpg
   - video: https://player.vimeo.com/external/422645525.hd.mp4?s=2dbf14414b4661aead1e892a3f73cc38d22612f5&profile_id=175
   - {}
+  - image: assets/cherub_image_7.jpg
 ---
 ### Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
