@@ -14,6 +14,7 @@ mobileFeature: assets/plantpeople.jpg
 galleryImages:
   - video: https://player.vimeo.com/external/423853995.hd.mp4?s=ad42325f5091e72226850575584dadaf5c48a026&profile_id=175
   - image: assets/tpp_1.jpg
+  - image: assets/tpp1.jpg
 ---
 ### Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
