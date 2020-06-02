@@ -15,5 +15,6 @@ galleryImages:
   - image: assets/groundcrew_ag_3.jpg
   - image: assets/groundcrew_ag_1.jpg
   - image: assets/groundcrew_ag_7.jpg
+  - image: assets/groundcrew_ag_9.jpg
 ---
 lorum ipsumd
