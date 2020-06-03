@@ -12,11 +12,10 @@ homepage: "False"
 featureImage: assets/mcul_girl_1.jpg
 galleryImages:
   - image: assets/uplate_1.jpg
-  - image: assets/uplate_8.jpg
-  - image: assets/uplate_3.jpg
-  - image: assets/uplate_5.jpg
+  - image: assets/uplate_11.jpg
   - image: assets/uplate_4.jpg
-  - image: assets/uplate_6.jpg
   - image: assets/uplate_9.jpg
+  - image: assets/uplate_3.jpg
+  - image: assets/uplate_6.jpg
 ---
 f
