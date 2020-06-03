@@ -10,5 +10,7 @@ website: f
 color: f
 homepage: "False"
 featureImage: assets/mcul_girl_1.jpg
+galleryImages:
+  - image: assets/uplate_1.jpg
 ---
 f
