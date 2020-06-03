@@ -10,5 +10,6 @@ homepage: "False"
 featureImage: assets/mgc_mockups_-.jpg
 galleryImages:
   - video: https://player.vimeo.com/external/425332264.sd.mp4?s=1a3b71d96a899b9697f66c75f58a4d4beddce62c&profile_id=164
+  - image: assets/mgc_mockups_3.jpg
 ---
 lor
