@@ -17,6 +17,6 @@ galleryImages:
   - image: assets/uplate_5.jpg
   - image: assets/uplate_4.jpg
   - image: assets/uplate_6.jpg
-  - image: assets/uplate_7.jpg
+  - image: assets/uplate_9.jpg
 ---
 f
