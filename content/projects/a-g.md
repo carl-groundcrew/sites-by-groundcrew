@@ -14,6 +14,7 @@ galleryImages:
   - image: assets/groundcrew_ag_4.jpg
   - image: assets/groundcrew_ag_9.jpg
   - image: assets/groundcrew_ag_1.jpg
+  - image: assets/ag_10.jpg
   - image: assets/groundcrew_ag_3.jpg
   - image: assets/groundcrew_ag_7.jpg
 ---
