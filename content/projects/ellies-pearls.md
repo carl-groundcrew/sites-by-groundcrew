@@ -11,8 +11,7 @@ color: "#aaa4a6"
 homepage: "True"
 featureImage: assets/ellies.jpg
 galleryImages:
-  - video: https://player.vimeo.com/external/423854550.hd.mp4?s=ebeceff97fa1a6f9e7b7f931379c432f73e7b1da&profile_id=175
-  - video: https://vimeo.com/user107757236/
+  - video: https://player.vimeo.com/external/425705595.hd.mp4?s=9bb70428eb39650bdcab363889a1809dee1beebc&profile_id=174
 ---
 ### Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
