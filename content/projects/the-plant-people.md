@@ -17,6 +17,7 @@ galleryImages:
   - image: assets/tpp_1.jpg
   - image: assets/tpp_4.jpg
   - image: assets/tpp1.jpg
+  - image: assets/tpp_5.jpg
 ---
 ### Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
