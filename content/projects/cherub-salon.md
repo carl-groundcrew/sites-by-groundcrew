@@ -12,7 +12,6 @@ homepage: "True"
 featureImage: assets/cherub-banner.jpg
 galleryImages:
   - image: assets/groundcrew_cherub_2.jpg
-  - image: assets/cherub_image_7.jpg
   - image: assets/cherub-5.jpg
   - image: assets/cherub_website.jpg
   - video: https://player.vimeo.com/external/422645525.hd.mp4?s=2dbf14414b4661aead1e892a3f73cc38d22612f5&profile_id=175
