@@ -9,7 +9,7 @@ collaborations:
 website: d
 color: d
 homepage: "True"
-featureImage: assets/archie_2b.jpg
+featureImage: assets/archie_1.jpg
 galleryImages:
   - image: assets/archie_3.jpg
   - image: assets/archie_2.jpg
