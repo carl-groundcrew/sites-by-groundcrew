@@ -9,6 +9,8 @@ collaborations:
 website: SDFS
 color: "#000"
 homepage: "False"
-featureImage: assets/vald_1.jpg
+featureImage: assets/vald_2.jpg
+galleryImages:
+  - image: assets/vald_2.jpg
 ---
 DDF
