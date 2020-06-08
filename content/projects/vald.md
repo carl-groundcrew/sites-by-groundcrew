@@ -11,6 +11,6 @@ color: "#000"
 homepage: "False"
 featureImage: assets/vald_2.jpg
 galleryImages:
-  - image: assets/vald_2.jpg
+  - image: assets/vald_4.jpg
 ---
 DDF
