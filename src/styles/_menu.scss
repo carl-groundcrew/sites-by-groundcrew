@@ -10,7 +10,7 @@
 	left: 0px;
 	z-index: 100;
 	background-color: #fff;
-	display: none;
+ 	visibility: hidden;
 	opacity: 0;
 	padding-right: $spacing*4;
 	a {
@@ -44,7 +44,7 @@
 		position: relative;
 		overflow: auto;
 		-webkit-overflow-scrolling: touch;
-		scrollbar-width: none; /* Hide scrollbar in FF */
+		scrollbar-width: none; 
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;

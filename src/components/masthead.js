@@ -17,15 +17,15 @@ class Masthead extends React.Component {
 
   showMenu(event) {
     event.preventDefault();
-  
     this.setState({ showMenu: true }, () => {
       const tl = gsap.timeline({paused: true});
-      tl.to( document.querySelectorAll('.overlay-menu'), { autoAlpha: 1, display:'block', opacity:1, ease: 'power1.out', duration:.5})
+      tl.to( document.querySelectorAll('.overlay-menu'), { autoAlpha: 1, display:'block', opacity:1, ease: 'power1.out', duration:.5, onComplete:function(){document.body.classList.add('no-scroll');}})
       tl.play();
     });
   }
 
   closeMenu(event) {
+    document.body.classList.remove('no-scroll');
     const tl = gsap.timeline({paused: true});
     tl.fromTo( document.querySelectorAll('.overlay-menu'),{}, { autoAlpha: 0, display:'none', opacity:0, ease: 'power1.out', duration:.5})
     tl.play();
@@ -54,7 +54,7 @@ class Masthead extends React.Component {
               <PageLink to='/blog'><p className='m0 h4'>Blog</p></PageLink>
               <PageLink to='/contact'><p className='m0 h4'>Contact</p></PageLink>
             </div>
-            <div className='secondary-menu mla mra text-right'>
+            <div className='secondary-menu mla mr0 text-right pl1 pr1'>
               <ProjectLinks />
             </div>
             <div className='close' onClick={this.closeMenu} onKeyPress={this.closeMenu} role='menu' tabIndex={0}></div>

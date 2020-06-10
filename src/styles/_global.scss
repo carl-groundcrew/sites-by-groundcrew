@@ -6,6 +6,10 @@ body {
 	font-family: "CommonSans";
 	-webkit-font-smoothing: antialiased;
 	background-color: #fff;
+	&.no-scroll {
+		position: fixed;
+		overflow: hidden;
+	}
 }
 
 .app {
