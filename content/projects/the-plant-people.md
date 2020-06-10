@@ -18,6 +18,8 @@ galleryImages:
   - image: assets/tpp_1b.jpg
   - video: https://player.vimeo.com/external/427278928.hd.mp4?s=314a3b39c168bdf71066d65570f81a4e55edce73&profile_id=175
   - image: assets/tpp-card1.jpg
+  - image: assets/oeh-posters.jpg
+  - image: assets/posters_animated_gif.gif
 ---
 ### Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
