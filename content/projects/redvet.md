@@ -23,7 +23,6 @@ galleryImages:
   - image: assets/groundcrew_redvets_9.jpg
   - image: assets/2485025.jpg
   - image: assets/groundcrew_redvets_6.jpg
-  - image: assets/groundcrew_redvets_13.jpg
   - image: assets/images-1.jpg
 ---
 ### Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
