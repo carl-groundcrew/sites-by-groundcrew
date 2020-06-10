@@ -21,6 +21,7 @@ galleryImages:
     imageMobile: assets/groundcrew_redvets_2.jpg
   - image: assets/groundcrew_redvets_11.jpg
   - image: assets/groundcrew_redvets_9.jpg
+  - image: assets/2485025.jpg
   - image: assets/groundcrew_redvets_6.jpg
   - image: assets/groundcrew_redvets_13.jpg
   - image: assets/images-1.jpg
