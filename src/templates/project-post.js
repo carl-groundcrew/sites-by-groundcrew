@@ -129,9 +129,9 @@ class ProjectPostTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="flex position-relative p1 pb2 pt4 ml1">
+        <div className="height-100 flex position-relative p1 pb2 pt4 ml1">
           {previous && previous.frontmatter.type === 'project' ? (
-            <button ref={this.nextProject} className='next-project text-center width-100' onMouseOver={this.previewProject} onClick={this.clickProject} onMouseOut={this.hidePreview} onBlur={this.hidePreview} onFocus={this.previewProject}>
+            <button className='align-self--center next-project text-center width-100' onMouseOver={this.previewProject} onClick={this.clickProject} onMouseOut={this.hidePreview} onBlur={this.hidePreview} onFocus={this.previewProject}>
               <SlideLink direction="down" to={`project${previous.fields.slug}`} rel="previous">
                 <p className="text-grey m0">Next Project</p>
                 <p className="h0 m0 text-black mb1">{previous.frontmatter.title}</p>
@@ -153,7 +153,7 @@ class ProjectPostTemplate extends React.Component {
             {previous.frontmatter.featureImage && (
               <Image className={'width-100 min-height-100 '+mobileClass}
               fluid={previous.frontmatter.featureImage.childImageSharp.fluid}
-              alt="Project Image" />
+              alt="Project Image" />  
             )}
           </div>
         )}
