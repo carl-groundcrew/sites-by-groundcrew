@@ -15,6 +15,7 @@ galleryImages:
   - image: assets/groundcrew_redvets_4_1.jpg
   - image: assets/groundcrew_redvets_3.jpg
     video: ""
+  - video: https://player.vimeo.com/external/429160574.hd.mp4?s=f63554b7b0df695c5448538880969adc2b188e6d&profile_id=175
   - image: assets/groundcrew_redvets_1.jpg
   - image: assets/groundcrew_redvets_8.jpg
   - image: assets/groundcrew_redvets_2.jpg
