@@ -74,8 +74,11 @@ class ProjectPostTemplate extends React.Component {
             fluid={post.frontmatter.mobileFeature.childImageSharp.fluid}
             alt="Project Image" style={{ width: '100%'}} />
           )}
-         
-          <p className='project-information fade-out-right fade-in-left'>Featured by: <span className='text-white'>Awwwards / UIJAR / Mindsparkle</span></p>  
+          <div className='banner-information'>
+            <div className='inner'>
+              <p className='project-byline h1 text-italic fade-in-left'>{post.frontmatter.description} </p>
+            </div>
+          </div>
         </div>
 
         {post.frontmatter.galleryImages && (
@@ -178,6 +181,7 @@ export const pageQuery = graphql`
         color
         collaborations
         website
+        description
         featureImage {
           childImageSharp {
             fluid(maxWidth: 1600, quality: 90) {

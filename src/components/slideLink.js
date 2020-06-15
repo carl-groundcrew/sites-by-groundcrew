@@ -15,13 +15,14 @@ class pageLink extends React.Component {
     const tl = new TimelineLite({paused: true});
     tl.fromTo( node.querySelector('.app'), { y: '95vh', height:'100vh', overflow:'hidden'}, { y: 0, ease:'power2.inOut', duration:entry.length/2})
     tl.from( node.querySelectorAll('.header-component'), { x: -50, ease: 'power1.out', duration:entry.length/3, onComplete:this.afterAnimation})
-    tl.fromTo( node.querySelector('.project-information'), {x:10, opacity:0 }, { opacity:1, x: 0, ease: 'power1.out', duration:entry.length/3}, '-='+entry.length/3)
+    tl.fromTo( node.querySelector('.project-byline'), {y:0, opacity:0 }, { opacity:1, y: 0, ease: 'power1.out', duration:entry.length/3}, '-='+entry.length/3)
     return tl.play();
   }
   
   afterAnimation() {
     var app = document.querySelector('.app');
     app.classList.add('released');
+    app.style.overflow = 'unset';
     document.documentElement.style.pointerEvents = 'auto'
     document.documentElement.style.overflow = 'auto'
   }

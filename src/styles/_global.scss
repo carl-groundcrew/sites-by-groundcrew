@@ -12,6 +12,10 @@ body {
 	}
 }
 
+.tl-edges {
+	overflow-x: unset;
+}
+
 .app {
 	background-color: #fff;
 	&.released {
