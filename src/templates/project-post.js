@@ -13,22 +13,32 @@ class ProjectPostTemplate extends React.Component {
     super();
     this.previewProject = this.previewProject.bind(this);
     this.hidePreview = this.hidePreview.bind(this);
+    this.clickProject = this.clickProject.bind(this);
   }
 
+  componentDidMount() {
+    this.nextProject = true;
+  }
+
+  clickProject() {
+    this.nextProject = false;   
+  }
   previewProject() {
     const tl = gsap.timeline({paused: true});
     tl.to( document.querySelectorAll('.project-preview'), { height: '5vh', ease: 'power1.out', duration:.5})
     tl.to( document.querySelectorAll('.footer'), { y: '-5vh', ease: 'power1.out', duration:.5}, '-=.5')
     tl.to( document.querySelectorAll('.main-header .logo, .header-break'), { y: '-5vh', ease: 'power1.out', duration:.5}, '-=.5')
-    tl.play();
+    tl.play(); 
   }
 
   hidePreview() {
-    const tl = gsap.timeline({paused: true});
-    tl.to( document.querySelectorAll('.project-preview'), { height: 0, ease: 'power1.out', duration:.5})
-    tl.to( document.querySelectorAll('.footer'), { y: 0, ease: 'power1.out', duration:.5}, '-=.5')
-    tl.to( document.querySelectorAll('.main-header .logo, .header-break'), { y: 0, ease: 'power1.out', duration:.5}, '-=.5')
-    tl.play();
+    if(this.nextProject) {
+      const tl = gsap.timeline({paused: true});
+      tl.to( document.querySelectorAll('.project-preview'), { height: 0, ease: 'power1.out', duration:.5})
+      tl.to( document.querySelectorAll('.footer'), { y: 0, ease: 'power1.out', duration:.5}, '-=.5')
+      tl.to( document.querySelectorAll('.main-header .logo, .header-break'), { y: 0, ease: 'power1.out', duration:.5}, '-=.5')
+      tl.play();
+    }
   }
 
   render() {
@@ -118,12 +128,12 @@ class ProjectPostTemplate extends React.Component {
 
         <div className="flex position-relative p1 pb2 pt4 ml1">
           {previous && previous.frontmatter.type === 'project' ? (
-            <div onMouseOver={this.previewProject} onMouseOut={this.hidePreview} onBlur={this.hidePreview} onFocus={this.previewProject} role='link' tabIndex={0} className='next-project text-center width-100'>
+            <button ref={this.nextProject} className='next-project text-center width-100' onMouseOver={this.previewProject} onClick={this.clickProject} onMouseOut={this.hidePreview} onBlur={this.hidePreview} onFocus={this.previewProject}>
               <SlideLink direction="down" to={`project${previous.fields.slug}`} rel="previous">
                 <p className="text-grey m0">Next Project</p>
                 <p className="h0 m0 text-black mb1">{previous.frontmatter.title}</p>
               </SlideLink>
-            </div>
+            </button>
           ) : (
             <div className='back-projects flex width-100'>
               <div className="video-overlay pt2 pb2 mla mra mt2 mb2 text-center">

@@ -5,6 +5,8 @@ import {TimelineLite} from 'gsap'
 class pageLink extends React.Component {
   
   exit(exit, node) {
+    document.documentElement.style.pointerEvents = 'none'
+    document.documentElement.style.overflow = 'hidden'
     const el = new TimelineLite({paused: true});
     el.fromTo( node.querySelector('.app'), { overflowY:'hidden',position:'fixed',  left:'0px', width:'100vw', top:window.scrollY*-1}, {ease:'power2.inOut', duration:exit.length/2});
     return el.play();
@@ -20,6 +22,8 @@ class pageLink extends React.Component {
   afterAnimation() {
     var app = document.querySelector('.app');
     app.classList.add('released');
+    document.documentElement.style.pointerEvents = 'auto'
+    document.documentElement.style.overflow = 'auto'
   }
 
   render() {

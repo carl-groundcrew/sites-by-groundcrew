@@ -1,6 +1,6 @@
 import React from "react"
 import PageLink from "../components/pageLink"
-import ProjectLinks from "../components/projectLinks"
+import InfiniteMenu from "../components/infiniteMenu"
 import gsap from 'gsap'
 
 class Masthead extends React.Component {
@@ -55,7 +55,7 @@ class Masthead extends React.Component {
               <PageLink to='/contact'><p className='m0 h4'>Contact</p></PageLink>
             </div>
             <div className='secondary-menu mla mr0 text-right pl1 pr1'>
-              <ProjectLinks />
+              <InfiniteMenu />
             </div>
             <div className='close' onClick={this.closeMenu} onKeyPress={this.closeMenu} role='menu' tabIndex={0}></div>
           </div>

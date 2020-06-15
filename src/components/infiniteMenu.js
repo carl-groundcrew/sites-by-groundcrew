@@ -2,7 +2,7 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import PageLink from "../components/pageLink"
 
-class ProjectLinks extends React.Component {
+class infiniteMenu extends React.Component {
 
   getScrollPos() {
       return (window.pageYOffset || window.scrollTop) - (window.clientTop || 0);
@@ -115,4 +115,4 @@ const linkQuery = graphql`
   }
 `
 
-export default ProjectLinks
+export default infiniteMenu
