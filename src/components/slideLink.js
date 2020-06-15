@@ -25,6 +25,7 @@ class pageLink extends React.Component {
     app.style.overflow = 'unset';
     document.documentElement.style.pointerEvents = 'auto'
     document.documentElement.style.overflow = 'auto'
+    document.querySelector('.tl-edges').style.overflowX = 'unset'
   }
 
   render() {
