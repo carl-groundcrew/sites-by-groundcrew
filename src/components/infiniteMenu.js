@@ -58,6 +58,9 @@ class infiniteMenu extends React.Component {
 
   scrollUpdate() {  
       this.scrollingPosition = this.clonesHeight+this.scrollPos;
+      if(this.scrollPos === 0){
+        document.querySelector('.secondary-menu').scrollTo(0,this.clonesHeight);
+      }
       if ( this.scrollingPosition <= 0 ) {
         document.querySelector('.secondary-menu').scrollTo(0,0);
       }
