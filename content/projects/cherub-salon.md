@@ -9,7 +9,7 @@ collaborations:
 website: https://www.cherubsydney.com
 color: "#bdb79f"
 homepage: "True"
-featureImage: assets/cherub-banner.jpg
+featureImage: assets/cherub_hero_1.jpg
 galleryImages:
   - image: assets/groundcrew_cherub_2.jpg
   - image: assets/cherub-5.jpg
