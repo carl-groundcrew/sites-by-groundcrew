@@ -9,7 +9,7 @@ collaborations:
 website: https://elliespearling.com
 color: "#aaa4a6"
 homepage: "True"
-featureImage: assets/ellies_desktop.jpg
+featureImage: assets/ellies_desktop_1.jpg
 mobileFeature: assets/ellies_desktop.jpg
 galleryImages:
   - video: https://player.vimeo.com/external/425705595.hd.mp4?s=9bb70428eb39650bdcab363889a1809dee1beebc&profile_id=174
