@@ -8,7 +8,7 @@ collaborations:
   - "Images: Nick Smith"
 website: https://theplantpeople.com.au
 color: "#C8BEBA"
-homepage: "True"
+homepage: "False"
 featureImage: assets/plantpeople.jpg
 galleryImages:
   - video: https://player.vimeo.com/external/423853995.hd.mp4?s=ad42325f5091e72226850575584dadaf5c48a026&profile_id=175
