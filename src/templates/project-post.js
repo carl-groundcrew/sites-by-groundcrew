@@ -76,7 +76,7 @@ class ProjectPostTemplate extends React.Component {
           )}
           <div className='banner-information'>
             <div className='inner'>
-              <p className='project-byline h1 text-italic fade-in-bottom'>{post.frontmatter.description} </p>
+              <p className='project-byline h1 italic fade-in-bottom'>{post.frontmatter.description} </p>
             </div>
           </div>
         </div>

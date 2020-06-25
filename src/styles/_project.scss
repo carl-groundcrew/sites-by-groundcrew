@@ -71,6 +71,14 @@
 
 /*================ Homepage Project ================*/
 
+.project-title--fixed {
+	position: fixed;
+	bottom:$spacing;
+	left: $spacing*2;
+	z-index: 10;
+	 
+}
+
 .single-project {
 	.project-caption {
 		opacity: 0;

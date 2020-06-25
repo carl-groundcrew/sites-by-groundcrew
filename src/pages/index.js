@@ -59,7 +59,7 @@ class IndexPage extends React.Component {
                 <div className='project-caption'>{node.frontmatter.title}</div>
                 <div className='project-information text-grey right-rotated' data-sal><p className='fade-out-left'>Featured by: <span className='text-white'>Awwwards / UIJAR / Mindsparkle</span></p></div>
                 {node.frontmatter.featureImage && (
-                  <PageLink to={`project${node.fields.slug}`}>
+                  <PageLink to={`project${node.fields.slug}`} caption={node.frontmatter.description}>
                     <Image className='min-height-100' style={{backgroundColor:`${node.frontmatter.color}`}}
                       fluid={node.frontmatter.featureImage.childImageSharp.fluid}
                       alt={node.frontmatter.title}/>  
