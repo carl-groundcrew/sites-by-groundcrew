@@ -1,6 +1,6 @@
 ---
 path: A.G
-date: 2020-05-31T22:21:53.102Z
+date: 2020-06-30T14:00:00.000Z
 title: A.G
 type: project
 description: Boutique Jeweller
