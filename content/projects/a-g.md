@@ -4,7 +4,7 @@ date: 2020-06-30T14:00:00.000Z
 title: A.G
 type: project
 description: Boutique Jeweller
-color: "#000"
+color: "#c8b19e"
 homepage: "True"
 featureImage: assets/groundcrew_ag_2.jpg
 galleryImages:
