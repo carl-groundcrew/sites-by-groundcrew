@@ -9,11 +9,28 @@ import PageLink from "../components/pageLink"
 import Cursor from "../components/cursor"
 
 class IndexPage extends React.Component {
+  
+  mouseOver(e) {
+    var title =  e.target.closest(".single-project").getAttribute('data-title');
+    document.querySelector('.cursor .title').innerHTML = title;
+    const cursor = document.querySelector(".cursor")
+    cursor.classList.add("active")
+  }
+  mouseOut() {
+    const cursor = document.querySelector(".cursor")
+    cursor.classList.remove("active")
+  }
+  mouseMove(e) {
+    const cursor = document.querySelector(".cursor")
+    cursor.style.left = `${e.clientX}px`
+    cursor.style.top = `${e.clientY}px`
+  }
 
   render() {
     const { data } = this.props
     const siteTitle = "Sites by Groundcrew"
     const projects = data.allMdx.edges
+
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="Home" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
@@ -37,26 +54,11 @@ class IndexPage extends React.Component {
             </div>
           </div>
         </div>
-        <div className="projects with-cursor" role='link' tabIndex={0}  
-            onMouseMove={e => {
-              const cursor = document.querySelector(".cursor")
-              cursor.style.left = `${e.clientX}px`
-              cursor.style.top = `${e.clientY}px`
-            }}
-            onMouseLeave={() => {
-              const cursor = document.querySelector(".cursor")
-              cursor.classList.remove("active")
-            }}
-            onMouseEnter={() => {
-              const cursor = document.querySelector(".cursor")
-              cursor.classList.add("active")
-            }}
-          >
+        <div className="projects with-cursor">
           <Cursor /> 
           {projects.map(({ node }) => {
             return (
-              <div className="single-project position-relative" key={node.fields.slug}>
-                <div className='project-caption'>{node.frontmatter.title}</div>
+              <div className="single-project position-relative" data-title={node.frontmatter.title} role='link' tabIndex={0} onMouseMove={this.mouseMove} onMouseEnter={this.mouseOver} key={node.fields.slug}>
                 <div className='project-information text-grey right-rotated' data-sal><p className='fade-out-left'>Featured by: <span className='text-white'>Awwwards / UIJAR / Mindsparkle</span></p></div>
                 {node.frontmatter.featureImage && (
                   <PageLink to={`project${node.fields.slug}`} caption={node.frontmatter.description}>
