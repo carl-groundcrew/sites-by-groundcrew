@@ -6,6 +6,7 @@ import ContactBanner from "../components/contactBanner"
 import FeaturedPost from "../components/featuredPost"
 import SEO from "../components/seo"
 import PageLink from "../components/pageLink"
+import ProjectLink from "../components/projectLink"
 import Cursor from "../components/cursor"
 
 class IndexPage extends React.Component {
@@ -55,17 +56,16 @@ class IndexPage extends React.Component {
           </div>
         </div>
         <div className="projects with-cursor">
-          <Cursor /> 
           {projects.map(({ node }) => {
             return (
-              <div className="single-project position-relative" data-title={node.frontmatter.title} role='link' tabIndex={0} onMouseMove={this.mouseMove} onMouseEnter={this.mouseOver} key={node.fields.slug}>
+              <div className="single-project position-relative" data-title={node.frontmatter.title} role='link' tabIndex={0} onBlur={this.mouseOut} onMouseMove={this.mouseMove} onMouseEnter={this.mouseOver} onMouseOut={this.mouseOut} key={node.fields.slug}>
                 <div className='project-information text-grey right-rotated' data-sal><p className='fade-out-left'>Featured by: <span className='text-white'>Awwwards / UIJAR / Mindsparkle</span></p></div>
                 {node.frontmatter.featureImage && (
-                  <PageLink to={`project${node.fields.slug}`} caption={node.frontmatter.description}>
+                  <ProjectLink to={`project${node.fields.slug}`} project={node.frontmatter.title} caption={node.frontmatter.description}>
                     <Image className='min-height-100' style={{backgroundColor:`${node.frontmatter.color}`}}
                       fluid={node.frontmatter.featureImage.childImageSharp.fluid}
                       alt={node.frontmatter.title}/>  
-                  </PageLink>
+                  </ProjectLink>
                 )}
               </div>
             )
@@ -73,6 +73,7 @@ class IndexPage extends React.Component {
         </div>
         <FeaturedPost />
         <ContactBanner />
+         <Cursor /> 
       </Layout>
     )
   }
