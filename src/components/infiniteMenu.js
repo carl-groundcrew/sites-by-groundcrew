@@ -40,7 +40,7 @@ class infiniteMenu extends React.Component {
   initEvents() {
     this.cloneItems();
     window.addEventListener('resize', () => this.resize());
-    window.addEventListener('scroll', this.handleScroll, true);
+    //window.addEventListener('scroll', this.handleScroll, true);
   }
 
   handleScroll = () => {

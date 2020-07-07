@@ -6,17 +6,18 @@ class projectLink extends React.Component {
   
   exit(exit, node) {
 
-    var y = node.querySelector('.single-project[data-title="'+this.props.project+'"]').offsetTop;
+    var offsetY = node.querySelector('.single-project[data-title="'+this.props.project+'"]').offsetTop;
+     
     window.scroll({
-      top: y,
+      top: offsetY,
       behavior: 'smooth'
     });
 
     const tl = gsap.timeline({paused: true});
-    tl.to( node.querySelectorAll('.header-component'), { x: -50, ease: 'power1.out', duration:exit.length/2})
-    tl.to( node.querySelector('.fade-out-right'), { x:10, opacity:0, ease: 'power1.out', duration:exit.length/2}, '-='+exit.length/2)
-    tl.to( node.querySelector('.fade-out-left'), { x:-10, opacity:0, ease: 'power1.out', duration:exit.length/2}, '-='+exit.length/2)
-    tl.to( node.querySelectorAll('.app'), { opacity: 0, ease: 'power1.out', duration:exit.length/2})
+    tl.to( node.querySelectorAll('.header-component'), { x: -50, ease: 'power1.out', duration:exit.length/3, delay:exit.length/3})
+    tl.to( node.querySelector('.fade-out-right'), { x:10, opacity:0, ease: 'power1.out', duration:exit.length/3}, '-='+exit.length/3)
+    tl.to( node.querySelector('.fade-out-left'), { x:-10, opacity:0, ease: 'power1.out', duration:exit.length/3}, '-='+exit.length/3)
+    tl.to( node.querySelectorAll('.app'), { opacity: 0, ease: 'power1.out', duration:exit.length/3})
     return tl.play();
   }
 
@@ -42,7 +43,7 @@ class projectLink extends React.Component {
       }  
     }
     return (
-      <TransitionLink className='page-link' exit={{ length:timing, trigger: ({ exit, node }) => this.exit(exit, node)}} entry={{ delay:timing-0.1, length:timing, trigger: ({ entry, node }) => this.enter(entry, node)}} to={this.props.to}>
+      <TransitionLink className='page-link' exit={{ length:timing, trigger: ({ exit, node }) => this.exit(exit, node)}} entry={{ delay:timing, length:timing, trigger: ({ entry, node }) => this.enter(entry, node)}} to={this.props.to}>
         {this.props.children}
         {arrow()}
       </TransitionLink>
