@@ -5,23 +5,23 @@ import {TimelineLite} from 'gsap'
 class projectLink extends React.Component {
   
   exit(exit, node) {
-    document.querySelector('.tl-edges').style.overflowX = 'hidden'
-    document.documentElement.style.pointerEvents = 'none'
-    document.documentElement.style.overflow = 'hidden'
-    node.querySelector('.app').style.overflowY = 'hidden'
-    node.querySelector('.app').style.fixed = 'fixed'
-    node.querySelector('.app').style.top = window.scrollY*-1
+    //document.querySelector('.tl-edges').style.overflowX = 'hidden'
+    //document.documentElement.style.pointerEvents = 'none'
+    //document.documentElement.style.overflow = 'hidden'
+    //node.querySelector('.app').style.overflowY = 'hidden'
+    //node.querySelector('.app').style.fixed = 'fixed'
+    //node.querySelector('.app').style.top = window.scrollY*-1
     
     var offsetY = node.querySelector('.single-project[data-title="'+this.props.project+'"]').offsetTop;
 
-    window.scroll({
-      top: offsetY,
-      behavior: 'smooth'
-    });
+    //window.scroll({
+    //  top: offsetY,
+    //  behavior: 'smooth'
+    //});
 
-    //const el = new TimelineLite({paused: true});
-    //el.fromTo( node.querySelector('.app'), { overflowY:'hidden',position:'fixed',  left:'0px', width:'100vw', top:window.scrollY*-1}, { ease:'power2.inOut', duration:exit.length/2});
-    //return el.play();
+    const el = new TimelineLite({paused: true});
+    el.fromTo( node.querySelector('.app'), { overflowY:'hidden',position:'fixed',  left:'0px', width:'100vw', top:window.scrollY*-1}, { top:offsetY*-1, ease:'power2.inOut', duration:1});
+    return el.play();
   }
   enter(entry, node) {
     const tl = new TimelineLite({paused: true});
@@ -41,11 +41,11 @@ class projectLink extends React.Component {
   }
 
   render() {
-    const timing = 2.5
+    
     return (
       <TransitionLink className="link"
-      exit={{ length:timing, direction: this.props.direction, trigger: ({ exit, node }) => this.exit(exit, node)}}
-      entry={{ length:timing, delay:0.4, direction: this.props.direction, trigger: ({ entry, node }) => this.enter(entry, node)}}
+      exit={{zIndex: 3, length:1.5, direction: this.props.direction, trigger: ({ exit, node }) => this.exit(exit, node)}}
+      entry={{ zIndex: 2, length:5, delay:1, direction: this.props.direction, trigger: ({ entry, node }) => this.enter(entry, node)}}
       to={this.props.to}>
         {this.props.children}
       </TransitionLink>
