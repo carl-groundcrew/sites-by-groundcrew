@@ -25,7 +25,7 @@ class Masthead extends React.Component {
     this.setState({ showMenu: true }, () => {
       const tl = gsap.timeline({paused: true});
       tl.to( document.querySelectorAll('.overlay-menu'), { autoAlpha: 1, display:'block', opacity:1, ease: 'power1.out', duration:.5, onComplete:function(){document.body.classList.add('no-scroll');}})
-      tl.staggerFromTo(document.querySelectorAll('.overlay-menu .main-navigation .page-link .h4'), 1, {y:'100%'}, {y:0, duration:.75, ease: 'power1.in',}, 0.15);
+      tl.staggerFromTo(document.querySelectorAll('.overlay-menu .main-navigation .page-link'), .75, {y:'20px', opacity:0}, {y:0, opacity:1, ease: 'power1.out',}, 0.1);
       tl.play();
     });
   }
@@ -39,16 +39,16 @@ class Masthead extends React.Component {
 
   showProjects() {
     this.setState({ showProjects: true }, () => {
-      const projectTimeline = gsap.timeline({paused: true});
-      projectTimeline.staggerTo(document.querySelectorAll('.overlay-menu .secondary-menu .menu-item'), .75, {opacity:1, y:'0%', ease: 'power1.out',}, 0.075);
-      projectTimeline.play();
+      const tl = gsap.timeline({paused: true});
+      tl.staggerFromTo(document.querySelectorAll('.overlay-menu .secondary-menu .page-link'), .75, {y:'20px', opacity:0}, {y:0, opacity:1, ease: 'power1.out',}, 0.1);
+      tl.play();
     });
   }
 
   hideProjects() {
     this.setState({ showProjects: false }, () => {
       const tl = gsap.timeline({paused: true});
-      tl.staggerTo(document.querySelectorAll('.overlay-menu .secondary-menu .menu-item'), .65, { y:'100%', duration:.75, ease: 'power1.in',}, 0);
+      tl.staggerTo(document.querySelectorAll('.overlay-menu .secondary-menu .page-link'), .5, { opacity:0, y:'20px', ease: 'power1.in',}, 0);
       tl.play();
     });
   }
