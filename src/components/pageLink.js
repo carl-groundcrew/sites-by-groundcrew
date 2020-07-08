@@ -23,7 +23,7 @@ class pageLink extends React.Component {
   }
 
   render() {
-    const timing = 2;
+    const timing = 1.5;
     const arrow = ()=>{
       if(this.props.arrow){
         return <svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">

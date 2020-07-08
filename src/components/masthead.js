@@ -25,7 +25,7 @@ class Masthead extends React.Component {
     this.setState({ showMenu: true }, () => {
       const tl = gsap.timeline({paused: true});
       tl.to( document.querySelectorAll('.overlay-menu'), { autoAlpha: 1, display:'block', opacity:1, ease: 'power1.out', duration:.5, onComplete:function(){document.body.classList.add('no-scroll');}})
-      tl.staggerFromTo(document.querySelectorAll('.overlay-menu .main-navigation .page-link'), .75, {y:'20px', opacity:0}, {y:0, opacity:1, ease: 'power1.out',}, 0.1);
+      tl.staggerFromTo(document.querySelectorAll('.overlay-menu .main-navigation .page-link'), .65, {y:'20px', opacity:0}, {y:0, opacity:1, ease: 'power1.out',}, 0.1);
       tl.play();
     });
   }
@@ -38,19 +38,11 @@ class Masthead extends React.Component {
   }
 
   showProjects() {
-    this.setState({ showProjects: true }, () => {
-      const tl = gsap.timeline({paused: true});
-      tl.staggerFromTo(document.querySelectorAll('.overlay-menu .secondary-menu .page-link'), .75, {y:'20px', opacity:0}, {y:0, opacity:1, ease: 'power1.out',}, 0.1);
-      tl.play();
-    });
+    this.setState({ showProjects: true });
   }
 
   hideProjects() {
-    this.setState({ showProjects: false }, () => {
-      const tl = gsap.timeline({paused: true});
-      tl.staggerTo(document.querySelectorAll('.overlay-menu .secondary-menu .page-link'), .5, { opacity:0, y:'20px', ease: 'power1.in',}, 0);
-      tl.play();
-    });
+    this.setState({ showProjects: false });
   }
 
   render() {
@@ -76,7 +68,7 @@ class Masthead extends React.Component {
               <PageLink to='/blog'><button onMouseEnter={this.hideProjects}><p className='m0 h4'>Blog</p></button></PageLink>
               <PageLink to='/contact'><button onMouseEnter={this.hideProjects}><p className='m0 h4'>Contact</p></button></PageLink>
             </div>
-            <div className='secondary-menu mla mr0 text-right pl1 pr1'>
+            <div  className={`secondary-menu mla mr0 text-right pl1 pr1 ${this.state.showProjects ? "active" : ""}`}>
               <InfiniteMenu ref={this.infiniteMenu} />
             </div>
             <div className='close' onClick={this.closeMenu} onKeyPress={this.closeMenu} role='menu' tabIndex={0}></div>

@@ -51,7 +51,19 @@
 }
 
 .secondary-menu {
+	transform: translateY(10px);
+	opacity: 0; 
+	transition: 0.75s ease transform, 0.75s ease opacity;
+	&.active {
+		opacity: 1;
+		transform: none;
+	}
 	.page-link {
-		opacity: 0;
+		.menu-item {
+			transition: 0.75s ease transform;
+			&:hover {
+				transform:translateX(-30px);
+			}
+		}
 	}
 }
