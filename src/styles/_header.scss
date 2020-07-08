@@ -41,3 +41,24 @@
 		outline:none;
 	}
 }
+
+.main-navigation {
+	.page-link {
+		overflow: hidden;
+		.h4 {
+			transform: translateY(100%);
+		}
+		.active {
+			color: #000;
+		}
+	}
+}
+
+.secondary-menu {
+	.page-link {
+		overflow: hidden;
+		.menu-item {
+			transform: translateY(100%);
+		}
+	}
+}

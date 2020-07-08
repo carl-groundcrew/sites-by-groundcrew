@@ -4,6 +4,10 @@ import PageLink from "../components/pageLink"
 
 class infiniteMenu extends React.Component {
 
+  alertMessage() {
+    alert('function called');
+  }
+
   getScrollPos() {
       return (window.pageYOffset || window.scrollTop) - (window.clientTop || 0);
   }
@@ -11,17 +15,19 @@ class infiniteMenu extends React.Component {
   setScrollPos(pos) {
         window.scrollTop = pos;
   }
-
   componentDidMount(el) {
     this.DOM = {el: el};
     this.DOM.menuItems =  document.querySelectorAll('.infinite-menu .menu__item');
-    this.initEvents();
+    //this.initEvents();
+    setTimeout(() => { this.cloneItems(); this.initScroll();}, 1000);
+    
   }
 
   componentWillUnmount() {
     console.log('remove scroll');
-    window.removeEventListener('scroll', this.handleScroll, true); 
+    window.removeEventListener('scroll', this.handleScroll, true);
   }
+    
 
   cloneItems() {
     const itemHeight = this.DOM.menuItems[0].offsetHeight;
@@ -38,16 +44,15 @@ class infiniteMenu extends React.Component {
   }
   
   initEvents() {
-    this.cloneItems();
     window.addEventListener('resize', () => this.resize());
-    //window.addEventListener('scroll', this.handleScroll, true);
+    window.addEventListener('scroll', this.handleScroll, true);
   }
 
   handleScroll = () => {
+    console.log('handle scroll');
     var scroll = document.querySelector('.infinite-menu').getBoundingClientRect().top;
     this.scrollPos = scroll;
     this.scrollUpdate();
-    console.log('handle scroll');
   }
 
   resize() {
