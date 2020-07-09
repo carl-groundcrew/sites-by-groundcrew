@@ -5,19 +5,8 @@ import {TimelineLite} from 'gsap'
 class projectLink extends React.Component {
   
   exit(exit, node) {
-    //document.querySelector('.tl-edges').style.overflowX = 'hidden'
-    //document.documentElement.style.pointerEvents = 'none'
-    //document.documentElement.style.overflow = 'hidden'
-    //node.querySelector('.app').style.overflowY = 'hidden'
-    //node.querySelector('.app').style.fixed = 'fixed'
-    //node.querySelector('.app').style.top = window.scrollY*-1
     
     var offsetY = node.querySelector('.single-project[data-title="'+this.props.project+'"]').offsetTop;
-
-    //window.scroll({
-    //  top: offsetY,
-    //  behavior: 'smooth'
-    //});
 
     const el = new TimelineLite({paused: true});
     el.fromTo( node.querySelector('.app'), { overflowY:'hidden',position:'fixed',  left:'0px', width:'100vw', top:window.scrollY*-1}, { top:offsetY*-1, ease:'power2.inOut', duration:1});
@@ -30,7 +19,7 @@ class projectLink extends React.Component {
     const tl = new TimelineLite({paused: true});
     tl.fromTo( node.querySelector('.app'), { y: '0', height:'100vh', overflow:'hidden'}, { y: 0, ease:'power2.inOut', duration:entry.length/2})
     tl.from( node.querySelectorAll('.header-component'), { x: -50, ease: 'power1.out', duration:entry.length/3, onComplete:this.afterAnimation})
-    tl.fromTo( node.querySelector('.project-byline'), {y:15, opacity:0 }, { opacity:1, y: 0, ease: 'power1.out', duration:entry.length/3}, '-='+entry.length/3)
+    tl.fromTo( node.querySelector('.project-byline'), {y:15, opacity:0 }, { opacity:1, y: 0, ease: 'power1.out', duration:.75}, '-=1')
     return tl.play();
   }
   

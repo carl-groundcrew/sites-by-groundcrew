@@ -36,11 +36,12 @@
 		bottom: $spacing;
 		position: absolute;
 		overflow: hidden;
+		padding: 0px 10px;
 		.project-byline {
 			z-index: 2;
 			color:#fff;
 			pointer-events: none;
-			line-height: 1;
+			line-height: .9;
 		}	
 	}
 }
