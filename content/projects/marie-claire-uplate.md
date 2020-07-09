@@ -3,7 +3,7 @@ path: uplate19
 date: 2020-06-03T04:19:35.213Z
 title: Marie Claire UpLate
 type: project
-description: Up Late
+description: Marie Claire UpLate
 collaborations:
   - Photography by x
 website: ""
