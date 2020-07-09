@@ -3,7 +3,7 @@ path: uplate
 date: 2020-05-29T14:00:00.000Z
 title: James St Uplate
 type: project
-description: A Campaign for JSUL2020
+description: JSUL2020
 collaborations:
   - "Images: Nick Smith"
 website: ""
