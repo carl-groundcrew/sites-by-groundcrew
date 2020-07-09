@@ -3,7 +3,7 @@ path: cherub-salon
 date: 2020-04-28T14:00:00.000Z
 title: Cherub
 type: project
-description: Hair Studio
+description: Pony. Bob. Lob. Bangs.
 collaborations:
   - "Images: Nick Smith"
 website: https://www.cherubsydney.com
