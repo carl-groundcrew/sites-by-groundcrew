@@ -18,4 +18,6 @@ galleryImages:
   - image: assets/groundcrew_ag_3.jpg
   - image: assets/groundcrew_ag_7.jpg
 ---
-lorum ipsumd
+### Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+John Smith – A.G Designer Jeweller
