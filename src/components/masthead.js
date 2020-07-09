@@ -21,7 +21,6 @@ class Masthead extends React.Component {
 
   showMenu(event) {
     event.preventDefault();
-    this.infiniteMenu.current.initEvents()
     this.setState({ showMenu: true }, () => {
       const tl = gsap.timeline({paused: true});
       tl.to( document.querySelectorAll('.overlay-menu'), { autoAlpha: 1, display:'block', opacity:1, ease: 'power1.out', duration:.5, onComplete:function(){document.body.classList.add('no-scroll');}})
@@ -38,6 +37,7 @@ class Masthead extends React.Component {
   }
 
   showProjects() {
+    this.infiniteMenu.current.initEvents()
     this.setState({ showProjects: true });
 
   }

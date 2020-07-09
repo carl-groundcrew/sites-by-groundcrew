@@ -54,6 +54,13 @@
 		transition: 0.75s ease transform, 0.75s ease opacity; 
 		transform: translateY(20px);
 		opacity: 0;
+		&.active {
+			opacity: 1;
+			transform: none;  
+			.menu-item {
+				transform:translateX(-30px);
+			}
+		}
 		.menu-item {
 			transition: 0.75s ease transform;
 			&:hover {

@@ -1,6 +1,6 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import PageLink from "../components/pageLink"
+import MenuLink from "../components/transitions/menuLink"
 
 class infiniteMenu extends React.Component {
 
@@ -90,9 +90,9 @@ class infiniteMenu extends React.Component {
             {projects.map(({ node }) => {
                 return (
                   <div className='menu__item' key={node.frontmatter.title}>
-                    <PageLink className='' to={`project${node.fields.slug}`}>
+                    <MenuLink target={node.frontmatter.title} to={`project${node.fields.slug}`}>
                       <p className='menu-item text-black h1 m0'>{node.frontmatter.title}</p>
-                    </PageLink>
+                    </MenuLink>
                   </div>
                 )
               })}
