@@ -5,9 +5,9 @@ title: Marie Claire UpLate
 type: project
 description: Up Late
 collaborations:
-  - f
-website: f
-color: f
+  - Photography by x
+website: ""
+color: "#87888f"
 homepage: "False"
 featureImage: assets/mcul_girl_1.jpg
 galleryImages:
@@ -18,4 +18,6 @@ galleryImages:
   - image: assets/uplate_3.jpg
   - image: assets/uplate_6.jpg
 ---
-f
+### Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+Jamie Smith – James St
