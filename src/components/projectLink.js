@@ -21,6 +21,7 @@ class projectLink extends React.Component {
 
     const el = new TimelineLite({paused: true});
     el.fromTo( node.querySelector('.app'), { overflowY:'hidden',position:'fixed',  left:'0px', width:'100vw', top:window.scrollY*-1}, { top:offsetY*-1, ease:'power2.inOut', duration:1});
+    el.to( node.querySelectorAll('.header-component'), { x: -50, ease: 'power1.out', duration:1}, '-=1')
     return el.play();
   }
   enter(entry, node) {
