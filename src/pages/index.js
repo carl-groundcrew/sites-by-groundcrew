@@ -55,10 +55,10 @@ class IndexPage extends React.Component {
             </div>
           </div>
         </div>
-        <div className="projects with-cursor">
+        <div className="projects">
           {projects.map(({ node }) => {
             return (
-              <div className="single-project position-relative" data-title={node.frontmatter.title} role='link' tabIndex={0} onBlur={this.mouseOut} onMouseMove={this.mouseMove} onMouseEnter={this.mouseOver} onMouseOut={this.mouseOut} key={node.fields.slug}>
+              <div className="single-project position-relative with-cursor" data-title={node.frontmatter.title} role='link' tabIndex={0} onBlur={this.mouseOut} onMouseMove={this.mouseMove} onMouseEnter={this.mouseOver} onMouseOut={this.mouseOut} key={node.fields.slug}>
                 <div className='project-information text-grey right-rotated' data-sal><p className='fade-out-left'>Featured by: <span className='text-white'>Awwwards / UIJAR / Mindsparkle</span></p></div>
                 {node.frontmatter.featureImage && (
                   <ProjectLink to={`project${node.fields.slug}`} project={node.frontmatter.title} caption={node.frontmatter.description}>

@@ -16,7 +16,7 @@ class pageLink extends React.Component {
     const tl = new TimelineLite({paused: true});
     tl.fromTo( node.querySelector('.app'), { y: '95vh', height:'100vh', overflow:'hidden'}, { y: 0, ease:'power2.inOut', duration:entry.length/2})
     tl.from( node.querySelectorAll('.header-component'), { x: -50, ease: 'power1.out', duration:entry.length/3, onComplete:this.afterAnimation})
-    tl.fromTo( node.querySelector('.project-byline'), {y:'100%'}, { y:'0%', ease: 'power3.out', duration:entry.length/3}, '-='+entry.length/3)
+    tl.fromTo( node.querySelector('.project-byline'), {y:'100%'}, { y:'0%', ease: 'power3.out', duration:1.5}, '-='+entry.length/3)
     return tl.play();
   }
   
