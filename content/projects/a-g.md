@@ -3,7 +3,7 @@ path: A.G
 date: 2020-06-30T14:00:00.000Z
 title: A.G
 type: project
-description: Boutique Jeweller
+description: Boutique Designer Jeweller
 color: "#c8b19e"
 homepage: "True"
 featureImage: assets/groundcrew_ag_2.jpg
