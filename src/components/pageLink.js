@@ -13,9 +13,8 @@ class pageLink extends React.Component {
   }
 
   enter(entry, node) {
-    document.body.classList.remove('no-scroll');
     const tl = gsap.timeline({paused: true});
-    tl.from( node.querySelector('.app'), { opacity: 0, ease: 'power1.in',duration:entry.length/2})
+    tl.from( node.querySelector('.app'), { opacity: 0, ease: 'power1.in',duration:entry.length/2,  onComplete:function(){document.body.classList.remove('no-scroll');}})
     tl.from( node.querySelectorAll('.header-component'), { x: -50, ease: 'power1.out', duration:entry.length/3})
     tl.fromTo( node.querySelector('.fade-in-left'), {x:10, opacity:0 }, { opacity:1, x: 0, ease: 'power1.out', duration:entry.length/3}, '-='+entry.length/3)
     tl.fromTo( node.querySelector('.project-byline'), {y:15, opacity:0 }, { opacity:1, y: 0, ease: 'power1.out', duration:.75}, '-=1')
