@@ -5,9 +5,9 @@ title: Archie Bolden
 type: project
 description: Who is A.B?
 collaborations:
-  - d
-website: d
-color: d
+  - ""
+website: ""
+color: "#d4d4d4"
 homepage: "True"
 featureImage: assets/archie_logo_1.jpg
 galleryImages:
@@ -20,4 +20,6 @@ galleryImages:
   - image: assets/archie_box_1.jpg
   - image: assets/archie_box_2.jpg
 ---
-f
+### Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+John Smith – Archie Bolden
