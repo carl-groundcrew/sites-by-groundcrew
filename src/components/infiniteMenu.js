@@ -17,8 +17,9 @@ class infiniteMenu extends React.Component {
   }
   componentDidMount(el) {
     this.DOM = {el: el};
+    var clones = document.querySelectorAll('.loop__clone');
+    clones.forEach(function(item, index){ item.parentNode.removeChild(item);});    
     this.DOM.menuItems =  document.querySelectorAll('.infinite-menu .menu__item');
-    //this.initEvents();
     setTimeout(() => { this.cloneItems(); this.initScroll();}, 1000);
     
   }
@@ -32,6 +33,7 @@ class infiniteMenu extends React.Component {
   cloneItems() {
     const itemHeight = this.DOM.menuItems[0].offsetHeight;
     const menu = document.querySelector('.infinite-menu');
+
     let totalClones=0;    
     this.DOM.menuItems.forEach(item => {
       const clone = item.cloneNode(true);
@@ -56,8 +58,8 @@ class infiniteMenu extends React.Component {
   }
 
   resize() {
-      this.cloneItems();
-      this.initScroll();
+      //this.cloneItems();
+      //this.initScroll();
   } 
 
   initScroll() {

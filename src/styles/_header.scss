@@ -3,7 +3,6 @@
 --------------------------------------------------------------*/
 
 #masthead {
-	mix-blend-mode: difference;
 	position:fixed;
 	left:0px;
 	top:0px;
@@ -51,14 +50,10 @@
 }
 
 .secondary-menu {
-	transform: translateY(10px);
-	opacity: 0; 
-	transition: 0.75s ease transform, 0.75s ease opacity;
-	&.active {
-		opacity: 1;
-		transform: none;
-	}
 	.page-link {
+		transition: 0.75s ease transform, 0.75s ease opacity; 
+		transform: translateY(20px);
+		opacity: 0;
 		.menu-item {
 			transition: 0.75s ease transform;
 			&:hover {
@@ -66,4 +61,19 @@
 			}
 		}
 	}
+	&.active {
+		.page-link {
+			opacity: 1;
+			transform: none;
+		}
+	}
 }
+
+$num: 1;
+
+@while $num < 50 {
+    .secondary-menu .menu__item:nth-of-type(#{$num}) .page-link {
+		transition-delay: 0.1s * $num;
+    }
+    $num: $num + 1;
+} 

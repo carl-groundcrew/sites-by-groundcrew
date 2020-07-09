@@ -39,6 +39,7 @@ class Masthead extends React.Component {
 
   showProjects() {
     this.setState({ showProjects: true });
+
   }
 
   hideProjects() {
@@ -63,7 +64,7 @@ class Masthead extends React.Component {
           <div className='flex'>
             <div className='main-navigation'>
               <PageLink to='/'><button onMouseEnter={this.hideProjects}><p className='m0 h4'>Home</p></button></PageLink> 
-              <PageLink to='/projects'><button onMouseEnter={this.showProjects}><p className={`m0 h4 ${this.state.showProjects ? "active" : ""}`}>Projects</p></button></PageLink>
+              <PageLink to='/projects'><button data-project='true' onMouseEnter={this.showProjects}><p className={`m0 h4 ${this.state.showProjects ? "active" : ""}`}>Projects</p></button></PageLink>
               <PageLink to='/about'><button onMouseEnter={this.hideProjects}><p className='m0 h4'>About</p></button></PageLink>
               <PageLink to='/blog'><button onMouseEnter={this.hideProjects}><p className='m0 h4'>Blog</p></button></PageLink>
               <PageLink to='/contact'><button onMouseEnter={this.hideProjects}><p className='m0 h4'>Contact</p></button></PageLink>
