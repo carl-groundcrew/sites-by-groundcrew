@@ -64,7 +64,7 @@ class ProjectPostTemplate extends React.Component {
         <div className='project-banner position-relative' style={{backgroundColor:`${post.frontmatter.color}`}}>   
           
           {post.frontmatter.featureImage && (
-            <Image className={'width-100 min-height-100 '+mobileClass}
+            <Image className={'width-100 min-height-100 max-height-100'+mobileClass}
             fluid={post.frontmatter.featureImage.childImageSharp.fluid}
             alt="Project Banner Desktop" />
           )}  

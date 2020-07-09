@@ -48,7 +48,7 @@ class projectLink extends React.Component {
     return (
       <TransitionLink className="link"
       exit={{zIndex: 3, length:1.5, direction: this.props.direction, trigger: ({ exit, node }) => this.exit(exit, node)}}
-      entry={{ zIndex: 2, length:5, delay:1, direction: this.props.direction, trigger: ({ entry, node }) => this.enter(entry, node)}}
+      entry={{ zIndex: 2, length:3, delay:1, direction: this.props.direction, trigger: ({ entry, node }) => this.enter(entry, node)}}
       to={this.props.to}>
         {this.props.children}
       </TransitionLink>
