@@ -3,7 +3,7 @@ path: uplate19
 date: 2020-06-03T04:19:35.213Z
 title: Marie Claire
 type: project
-description: Marie Claire
+description: Lorem ipsum dolor
 collaborations:
   - Photography by x
 website: ""
