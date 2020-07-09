@@ -3,7 +3,7 @@ path: ellies-pearling
 date: 2020-02-25T14:00:00.000Z
 title: "Ellies Pearling "
 type: project
-description: The worlds oldest pearling family
+description: A true pearling family
 collaborations:
   - "Images & Video: Sam Thies"
 website: https://elliespearling.com
