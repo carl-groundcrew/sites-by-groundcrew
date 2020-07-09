@@ -2,6 +2,11 @@
 ## GLOBAL STYLING
 --------------------------------------------------------------*/
 
+html {
+	overflow: unset;
+	scroll-behavior: smooth;
+}
+
 body {
 	font-family: "CommonSans";
 	-webkit-font-smoothing: antialiased;
